@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="41"/>
+			<integer value="44"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -239,6 +239,7 @@
 											<object class="NSMutableArray" key="NSTableColumns">
 												<bool key="EncodedWithXMLCoder">YES</bool>
 												<object class="NSTableColumn" id="497857321">
+													<string key="NSIdentifier">status</string>
 													<double key="NSWidth">1.700000e+01</double>
 													<double key="NSMinWidth">8.000000e+00</double>
 													<double key="NSMaxWidth">3.402823e+38</double>
@@ -298,6 +299,7 @@
 													<reference key="NSTableView" ref="735805376"/>
 												</object>
 												<object class="NSTableColumn" id="962839921">
+													<string key="NSIdentifier">name</string>
 													<double key="NSWidth">2.650000e+02</double>
 													<double key="NSMinWidth">4.000000e+01</double>
 													<double key="NSMaxWidth">1.000000e+03</double>
@@ -327,6 +329,7 @@
 													<reference key="NSTableView" ref="735805376"/>
 												</object>
 												<object class="NSTableColumn" id="190920253">
+													<string key="NSIdentifier">time</string>
 													<double key="NSWidth">4.553320e+01</double>
 													<double key="NSMinWidth">1.000000e+01</double>
 													<double key="NSMaxWidth">3.402823e+38</double>
@@ -354,6 +357,7 @@
 													<reference key="NSTableView" ref="735805376"/>
 												</object>
 												<object class="NSTableColumn" id="149261188">
+													<string key="NSIdentifier">artist</string>
 													<double key="NSWidth">1.450000e+02</double>
 													<double key="NSMinWidth">1.000000e+01</double>
 													<double key="NSMaxWidth">3.402823e+38</double>
@@ -380,6 +384,7 @@
 													<reference key="NSTableView" ref="735805376"/>
 												</object>
 												<object class="NSTableColumn" id="436676746">
+													<string key="NSIdentifier">album</string>
 													<double key="NSWidth">1.530000e+02</double>
 													<double key="NSMinWidth">1.000000e+01</double>
 													<double key="NSMaxWidth">3.402823e+38</double>

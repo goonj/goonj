@@ -22,8 +22,41 @@
 */
 
 #import "GPlaylistController.h"
+#import "GTrack.h"
 
 
 @implementation GPlaylistController
+
+-(id)init
+{
+	if (self = [super init]) {
+		playlist = [[NSMutableArray alloc] initWithCapacity:0];
+		
+		// Some testing code. Remove in release.
+		GTrack *item = [[GTrack alloc] init];
+		[item setValue:@"Death is the Road to Awe" forKey:@"name"];
+		[item setValue:@"Clint Mansell" forKey:@"artist"];
+		[item setValue:@"3:12" forKey:@"time"];
+		[item setValue:@"Unknown" forKey:@"album"];
+		[playlist addObject:item];
+	}
+
+	return self;
+}
+
+
+-(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+	return [playlist count];
+}
+
+
+-(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
+{
+	GTrack *track = [playlist objectAtIndex:row];
+	NSString *identifier = [column identifier];
+	
+	return [track valueForKey:identifier];
+}
 
 @end

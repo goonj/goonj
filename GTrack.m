@@ -1,7 +1,8 @@
 /*
-	File: GPlaylistController.h
-	Description: The Goonj playlist controller. Data source and delegate for
-	the NSTableView in MainWindow.xib (interface).
+	File: GTrack.m
+	Description: A track in the Goonj library/playlist. Stores ID3 tags in
+	a NSMutableDictionary. In the future, use initWithFile to read in the
+	tags (implementation).
 
 	This file is part of Goonj.
 
@@ -21,16 +22,31 @@
 	Copyright 2009 Ankur Sethi.
 */
 
-#import <Cocoa/Cocoa.h>
+
+#import "GTrack.h"
 
 
-@interface GPlaylistController : NSObject {
-	// playlist is an array of GTrack instances.
-	NSMutableArray *playlist;
+@implementation GTrack
+
+-(id)init
+{
+	if (self = [super init]) {
+		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
+	}
+
+	return self;
 }
 
-// NSTableView delegate methods.
--(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;
--(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row;
+
+-(NSString *)valueForKey:(NSString *)key
+{
+	return [properties objectForKey:key];
+}
+
+
+-(void)setValue:(NSString *)value forKey:(NSString *)key
+{
+	[properties setObject:value forKey:key];
+}
 
 @end
