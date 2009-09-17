@@ -1,7 +1,7 @@
 /*
 	File: GPlaylistController.h
 	Description: The Goonj playlist controller. Data source and delegate for
-	the NSTableView in MainWindow.xib (implementation).
+	the NSTableView in MainWindow.xib (interface).
 
 	This file is part of Goonj.
 
