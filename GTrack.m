@@ -49,4 +49,9 @@
 	[properties setObject:value forKey:key];
 }
 
+
+-(void)readPropertiesFromID3Tags
+{
+}
+
 @end

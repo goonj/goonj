@@ -27,12 +27,13 @@
 
 @interface GTrack : NSObject {
 	// In the future, properties will be populated by reading the ID3
-	// tags of whatever file is passed to initWithFile:.
+	// tags of whatever file is passed to initWithFile:
 	NSMutableDictionary *properties;
 }
 
 -(id)initWithFile:(NSString *)path;
 -(NSString *)valueForKey:(NSString *)key;
 -(void)setValue:(NSString *)value forKey:(NSString *)key;
+-(void)readPropertiesFromID3Tags;
 
 @end

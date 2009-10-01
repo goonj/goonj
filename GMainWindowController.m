@@ -38,6 +38,8 @@
 	[mainWindow setExcludedFromWindowsMenu:YES];
 	[mainWindow makeMainWindow];
 	[mainWindow setReleasedWhenClosed:NO];
+
+	[playlistView registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
 	
 	[self showMainWindow];
 }

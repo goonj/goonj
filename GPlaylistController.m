@@ -35,9 +35,6 @@
 		// Some testing code. Remove in release.
 		GTrack *item = [[GTrack alloc] init];
 		[item setValue:@"Death is the Road to Awe" forKey:@"name"];
-		[item setValue:@"Clint Mansell" forKey:@"artist"];
-		[item setValue:@"3:12" forKey:@"time"];
-		[item setValue:@"Unknown" forKey:@"album"];
 		[playlist addObject:item];
 	}
 
@@ -55,8 +52,9 @@
 {
 	GTrack *track = [playlist objectAtIndex:row];
 	NSString *identifier = [column identifier];
+	NSString *objectValue = [track valueForKey:identifier];
 	
-	return [track valueForKey:identifier];
+	return objectValue ? objectValue : @"Unknown";
 }
 
 @end
