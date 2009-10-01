@@ -29,6 +29,7 @@
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSMenuItem *goonjWindowMenuItem;
 	IBOutlet NSMenuItem *closeWindowMenuItem;
+	IBOutlet NSTableView *playlistView;
 }
 
 - (void)setupUI;
