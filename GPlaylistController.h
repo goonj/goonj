@@ -22,12 +22,19 @@
 */
 
 #import <Cocoa/Cocoa.h>
+#import "GTrack.h"
 
 
 @interface GPlaylistController : NSObject {
 	// playlist is an array of GTrack instances.
 	NSMutableArray *playlist;
+	NSString *playlistPath;
+	BOOL playlistDirty;
+	
+	IBOutlet NSWindow *mainWindow;
 }
+
+-(void)addTrack:(GTrack *)track;
 
 // NSTableView delegate methods.
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;

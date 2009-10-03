@@ -27,18 +27,23 @@
 
 @implementation GPlaylistController
 
--(id)init
+-(void)awakeFromNib
 {
-	if (self = [super init]) {
-		playlist = [[NSMutableArray alloc] initWithCapacity:0];
-		
-		// Some testing code. Remove in release.
-		GTrack *item = [[GTrack alloc] init];
-		[item setValue:@"Death is the Road to Awe" forKey:@"name"];
-		[playlist addObject:item];
-	}
+	playlist = [[NSMutableArray alloc] initWithCapacity:0];
+	playlistPath = [[NSString alloc] init];
+	playlistDirty = NO;
+	
+	// Some testing code. Remove in release.
+	GTrack *item = [[GTrack alloc] init];
+	[self addTrack:item];
+}
 
-	return self;
+
+-(void)addTrack:(GTrack *)track
+{
+	[playlist addObject:track];
+	playlistDirty = YES;
+	[mainWindow setDocumentEdited:YES];
 }
 
 
