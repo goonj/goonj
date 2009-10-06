@@ -28,13 +28,17 @@
 @interface GPlaylistController : NSObject {
 	// playlist is an array of GTrack instances.
 	NSMutableArray *playlist;
-	NSString *playlistPath;
 	BOOL playlistDirty;
 	
 	IBOutlet NSWindow *mainWindow;
+	IBOutlet NSTableView *playlistView;
 }
 
 - (void) addTrack:(GTrack *)track;
+- (void) newPlaylist;
+- (void) savePlaylist:(NSURL *)url;
+- (void) loadPlaylist:(NSURL *)url;
+- (void) savePlaylistAs:(NSURL *)url;
 
 // NSTableView delegate methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;

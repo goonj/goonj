@@ -74,4 +74,24 @@
 	[mainWindow makeKeyAndOrderFront:self];
 }
 
+- (IBAction) newPlaylist:(id)sender
+{
+	[playlistController newPlaylist];
+}
+
+- (IBAction) loadPlaylist:(id)sender
+{
+
+}
+
+- (IBAction) savePlaylist:(id)sender
+{
+
+}
+
+- (IBAction) savePlaylistAs:(id)sender
+{
+
+}
+
 @end

@@ -23,6 +23,7 @@
 */
 
 #import <Cocoa/Cocoa.h>
+#import "GPlaylistController.h"
 
 
 @interface GMainWindowController : NSObject {
@@ -30,6 +31,7 @@
 	IBOutlet NSMenuItem *goonjWindowMenuItem;
 	IBOutlet NSMenuItem *closeWindowMenuItem;
 	IBOutlet NSTableView *playlistView;
+	IBOutlet GPlaylistController *playlistController;
 }
 
 - (void) setupUI;
@@ -42,5 +44,9 @@
 // Actions.
 - (void) closeMainWindow;
 - (void) showMainWindow;
+- (IBAction) newPlaylist:(id)sender;
+- (IBAction) loadPlaylist:(id)sender;
+- (IBAction) savePlaylist:(id)sender;
+- (IBAction) savePlaylistAs:(id)sender;
 
 @end

@@ -32,10 +32,6 @@
 	playlist = [[NSMutableArray alloc] initWithCapacity:0];
 	playlistPath = [[NSString alloc] init];
 	playlistDirty = NO;
-	
-	// Some testing code. Remove in release.
-	GTrack *item = [[GTrack alloc] init];
-	[self addTrack:item];
 }
 
 - (void) addTrack:(GTrack *)track
@@ -43,6 +39,25 @@
 	[playlist addObject:track];
 	playlistDirty = YES;
 	[mainWindow setDocumentEdited:YES];
+	[playlistView reloadData];
+}
+
+- (void) newPlaylist
+{
+	[playlist removeAllObjects];
+	playlistDirty = NO;
+	[mainWindow setDocumentEdited:NO];
+	[playlistView reloadData];
+}
+
+- (void) savePlaylist:(NSURL *)url
+{
+	NSLog(@"save playlist");
+}
+
+- (void) loadPlaylist:(NSURL *)url
+{
+	NSLog(@"load playlist");
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
