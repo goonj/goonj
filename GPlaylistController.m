@@ -27,7 +27,7 @@
 
 @implementation GPlaylistController
 
--(void)awakeFromNib
+- (void) awakeFromNib
 {
 	playlist = [[NSMutableArray alloc] initWithCapacity:0];
 	playlistPath = [[NSString alloc] init];
@@ -38,22 +38,19 @@
 	[self addTrack:item];
 }
 
-
--(void)addTrack:(GTrack *)track
+- (void) addTrack:(GTrack *)track
 {
 	[playlist addObject:track];
 	playlistDirty = YES;
 	[mainWindow setDocumentEdited:YES];
 }
 
-
--(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [playlist count];
 }
 
-
--(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
+- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
 {
 	GTrack *track = [playlist objectAtIndex:row];
 	NSString *identifier = [column identifier];

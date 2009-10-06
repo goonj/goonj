@@ -27,7 +27,7 @@
 
 @implementation GMainWindowController
 
-- (void)setupUI
+- (void) setupUI
 {
 	[closeWindowMenuItem setTarget:self];
 	[closeWindowMenuItem setAction:@selector(closeMainWindow)];
@@ -44,22 +44,19 @@
 	[self showMainWindow];
 }
 
-
-- (void)windowWillClose:(NSNotification *)notification
+- (void) windowWillClose:(NSNotification *)notification
 {
 	[goonjWindowMenuItem setState:NSOffState];
 	[goonjWindowMenuItem setAction:@selector(showMainWindow)];
 }
 
-
-- (void)windowDidBecomeKey:(NSNotification *)notification
+- (void) windowDidBecomeKey:(NSNotification *)notification
 {
 	[goonjWindowMenuItem setState:NSOnState];
 	[goonjWindowMenuItem setAction:@selector(closeMainWindow)];
 }
 
-
-- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+- (BOOL) validateMenuItem:(NSMenuItem *)menuItem
 {
 	if (menuItem == closeWindowMenuItem)
 		return [mainWindow isVisible] ? YES : NO ;
@@ -67,14 +64,12 @@
 	return YES;
 }
 
-
-- (void)closeMainWindow
+- (void) closeMainWindow
 {
 	[mainWindow performClose:self];
 }
 
-
-- (void)showMainWindow
+- (void) showMainWindow
 {
 	[mainWindow makeKeyAndOrderFront:self];
 }

@@ -25,15 +25,14 @@
 
 @implementation GAppController
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	NSLog(@"Application finished launching.");
 	if (![self loadMainWindow])
 		[NSApp terminate:self];
 }
 
-
-- (BOOL)loadMainWindow
+- (BOOL) loadMainWindow
 {
 	if (![NSBundle loadNibNamed:@"MainWindow" owner:mainWindowController])
 		return NO;

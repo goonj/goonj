@@ -34,10 +34,10 @@
 	IBOutlet NSWindow *mainWindow;
 }
 
--(void)addTrack:(GTrack *)track;
+- (void) addTrack:(GTrack *)track;
 
 // NSTableView delegate methods.
--(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;
--(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row;
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
+- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row;
 
 @end

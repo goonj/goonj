@@ -32,15 +32,15 @@
 	IBOutlet NSTableView *playlistView;
 }
 
-- (void)setupUI;
-- (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
+- (void) setupUI;
+- (BOOL) validateMenuItem:(NSMenuItem *)menuItem;
 
 // NSWindow delegate methods.
-- (void)windowWillClose:(NSNotification *)notification;
-- (void)windowDidBecomeKey:(NSNotification *)notification;
+- (void) windowWillClose:(NSNotification *)notification;
+- (void) windowDidBecomeKey:(NSNotification *)notification;
 
 // Actions.
-- (void)closeMainWindow;
-- (void)showMainWindow;
+- (void) closeMainWindow;
+- (void) showMainWindow;
 
 @end

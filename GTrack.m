@@ -28,7 +28,7 @@
 
 @implementation GTrack
 
--(id)init
+- (id) init
 {
 	if (self = [super init]) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
@@ -37,21 +37,24 @@
 	return self;
 }
 
-
--(NSString *)valueForKey:(NSString *)key
+- (NSString *) valueForKey:(NSString *)key
 {
 	return [properties objectForKey:key];
 }
 
-
--(void)setValue:(NSString *)value forKey:(NSString *)key
+- (void) setValue:(NSString *)value forKey:(NSString *)key
 {
 	[properties setObject:value forKey:key];
 }
 
-
--(void)readPropertiesFromID3Tags
+- (void) readPropertiesFromID3Tags
 {
+    
+}
+
+- (id) initWithFile:(NSString *)path
+{
+
 }
 
 @end

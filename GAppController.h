@@ -28,7 +28,7 @@
 	IBOutlet GMainWindowController *mainWindowController;
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
-- (BOOL)loadMainWindow;
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification;
+- (BOOL) loadMainWindow;
 
 @end

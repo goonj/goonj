@@ -31,9 +31,9 @@
 	NSMutableDictionary *properties;
 }
 
--(id)initWithFile:(NSString *)path;
--(NSString *)valueForKey:(NSString *)key;
--(void)setValue:(NSString *)value forKey:(NSString *)key;
--(void)readPropertiesFromID3Tags;
+- (id) initWithFile:(NSString *)path;
+- (NSString *) valueForKey:(NSString *)key;
+- (void) setValue:(NSString *)value forKey:(NSString *)key;
+- (void) readPropertiesFromID3Tags;
 
 @end
