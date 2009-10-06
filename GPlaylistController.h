@@ -36,12 +36,13 @@
 
 - (void) addTrack:(GTrack *)track;
 - (void) newPlaylist;
-- (void) savePlaylist:(NSURL *)url;
+- (BOOL) savePlaylist:(NSURL *)url;
 - (void) loadPlaylist:(NSURL *)url;
-- (void) savePlaylistAs:(NSURL *)url;
 
 // NSTableView delegate methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row;
+
+@property (readonly) BOOL playlistDirty;
 
 @end

@@ -28,10 +28,16 @@
 
 @implementation GTrack
 
-- (id) init
+@synthesize path;
+
+- (id) initWithFile:(NSURL *)path
 {
-	if (self = [super init]) {
+	self = [super init];
+
+	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
+		[self setPath:path];
+		[self readPropertiesFromID3Tags];
 	}
 
 	return self;
@@ -42,19 +48,9 @@
 	return [properties objectForKey:key];
 }
 
-- (void) setValue:(NSString *)value forKey:(NSString *)key
-{
-	[properties setObject:value forKey:key];
-}
-
 - (void) readPropertiesFromID3Tags
 {
     
-}
-
-- (id) initWithFile:(NSString *)path
-{
-
 }
 
 @end
