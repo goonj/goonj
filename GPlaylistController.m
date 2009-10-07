@@ -53,6 +53,9 @@
 
 - (BOOL) savePlaylist:(NSURL *)url
 {
+	// TODO: Move this code out of the playlist controller and into its
+	// own class.
+
 	// Set up the namespace.
 	NSXMLNode *XSPFNamespace = [[NSXMLNode alloc] initWithKind:NSXMLNamespaceKind];
 	[XSPFNamespace setName:@""];
@@ -88,11 +91,11 @@
 		[XSPFTrackList addChild:XSPFTrack];
 
 		XSPFLocation = [[NSXMLElement alloc] initWithName:@"location"];
-		[XSPFLocation setStringValue:[track path]];
+		[XSPFLocation setStringValue:[[track path] absoluteString]];
 		[XSPFTrack addChild:XSPFLocation];
 	}
 
-	// Write data to file.
+	// Write data to file. TODO: replace existing file when saving.
 	NSData *XMLData = [XSPFDoc XMLDataWithOptions:NSXMLNodePrettyPrint];
 	if ([XMLData writeToFile:[url absoluteString] atomically:NO]) {
 		[mainWindow setDocumentEdited:NO];
@@ -102,9 +105,35 @@
 	return NO;
 }
 
-- (void) loadPlaylist:(NSURL *)url
+- (BOOL) loadPlaylist:(NSURL *)url
 {
-	NSLog(@"load playlist");
+	// TODO: Move this code out of the playlist controller and into its
+	// own class.
+	
+	[self newPlaylist];
+	
+	NSError *err = nil;
+	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:url
+		options:(NSXMLNodePreserveWhitespace|NSXMLNodePreserveCDATA)
+		error:&err];
+	
+	if (XSPFDoc == nil)
+		return NO;
+	
+	NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
+	
+	// There should be only ONE tracklist in a playlist, anyway.
+	NSXMLElement *XSPFTrackList = [[XSPFRoot elementsForName:@"trackList"] objectAtIndex:0];
+	NSArray *XSPFTracks = [XSPFTrackList elementsForName:@"track"];
+
+	GTrack *track;
+	for (NSXMLElement *XSPFTrack in XSPFTracks) {
+		NSXMLElement *XSPFLocation = [[XSPFTrack elementsForName:@"location"] objectAtIndex:0];
+		track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:[XSPFLocation stringValue]]];
+		[self addTrack:track];
+	}
+	
+	return YES;
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
