@@ -33,6 +33,7 @@
 {
 	playlist = [[NSMutableArray alloc] initWithCapacity:0];
 	playlistDirty = NO;
+    [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 
 - (void) addTrack:(GTrack *)track
@@ -119,6 +120,20 @@
 	NSString *objectValue = [track valueForKey:identifier];
 	
 	return objectValue ? objectValue : @"Unknown";
+}
+
+- (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info 
+                  proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
+{
+    NSLog(@"In validateDrop now");
+    return NSDragOperationEvery;
+}
+
+- (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row 
+     dropOperation:(NSTableViewDropOperation)dropOperation
+{
+    NSLog(@"In acceptDrop now");
+    return YES;
 }
 
 @end
