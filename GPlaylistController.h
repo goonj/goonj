@@ -38,7 +38,7 @@
 - (void) addTrack:(GTrack *)track;
 - (void) newPlaylist;
 - (BOOL) savePlaylist:(NSURL *)url;
-- (void) loadPlaylist:(NSURL *)url;
+- (BOOL) loadPlaylist:(NSURL *)url;
 
 // NSTableView delegate methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
