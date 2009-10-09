@@ -18,7 +18,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		C566A013107B1A7F000D322E /* CODESTANDARDS in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* CODESTANDARDS */; };
+		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		63ECAFC4105B59A000E635C7 /* GPlaylistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C566A012107B1A7F000D322E /* CODESTANDARDS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CODESTANDARDS; sourceTree = "<group>"; };
+		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
 				6383907F1058B30000DCE47D /* LICENSE */,
 				638390801058B30000DCE47D /* README */,
-				C566A012107B1A7F000D322E /* CODESTANDARDS */,
+				C566A012107B1A7F000D322E /* HACKING */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -192,7 +192,7 @@
 				638390811058B30000DCE47D /* LICENSE in Resources */,
 				638390821058B30000DCE47D /* README in Resources */,
 				638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */,
-				C566A013107B1A7F000D322E /* CODESTANDARDS in Resources */,
+				C566A013107B1A7F000D322E /* HACKING in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
