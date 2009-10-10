@@ -138,6 +138,10 @@
 	return YES;
 }
 
+////
+// TableView delegate methods
+////
+
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
 {
 	return [playlist count];
@@ -152,17 +156,44 @@
 	return objectValue ? objectValue : @"Unknown";
 }
 
+- (void) tableView:(NSTableView *)tableView setObjectValue:(id)object 
+  forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    id aRecord;
+    aRecord = [playlist objectAtIndex:row];
+    [aRecord setObject:object forKey:[tableColumn identifier]];
+}
+
+////
+// Drag and drop operations
+////
+
 - (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info 
                   proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
 {
-    NSLog(@"In validateDrop now");
-    return NSDragOperationEvery;
+    return NSDragOperationGeneric;
 }
 
 - (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row 
      dropOperation:(NSTableViewDropOperation)dropOperation
 {
-    NSLog(@"In acceptDrop now");
+    NSPasteboard *pboard = [info draggingPasteboard];
+    NSString *currentFile;
+    NSArray *files;
+    int numberOfFiles;
+    
+    if ([[pboard types] containsObject:NSFilenamesPboardType]) {
+        files = [pboard propertyListForType:NSFilenamesPboardType];
+        numberOfFiles = [files count];
+    }
+    
+    for (currentFile in files) {
+        id draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
+        [playlist addObject:draggedTrack];
+    }
+
+    [playlistView reloadData];
+    
     return YES;
 }
 

@@ -43,6 +43,7 @@
 // NSTableView delegate methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row;
+- (void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
 
 @property (readonly) BOOL playlistDirty;
 
