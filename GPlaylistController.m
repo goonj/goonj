@@ -68,17 +68,17 @@
 	NSXMLNode *XSPFVersion = [[NSXMLNode alloc] initWithKind:NSXMLAttributeKind];
 	[XSPFVersion setName:@"version"];
 	[XSPFVersion setStringValue:@"1.0"];
-	
+
 	// Create root element.
 	NSXMLElement *XSPFRoot = [[NSXMLElement alloc] initWithName:@"playlist"];
 	[XSPFRoot addNamespace:XSPFNamespace];
 	[XSPFRoot addAttribute:XSPFVersion];
-	
+
 	// Create the actual document.
 	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithRootElement:XSPFRoot];
 	[XSPFDoc setVersion:@"1.0"];
 	[XSPFDoc setCharacterEncoding:@"UTF-8"];
-	
+
 	NSXMLElement *XSPFTrackList = [[NSXMLElement alloc] initWithName:@"trackList"];
 	[XSPFRoot addChild:XSPFTrackList];
 
@@ -111,19 +111,19 @@
 {
 	// TODO: Move this code out of the playlist controller and into its
 	// own class.
-	
+
 	[self newPlaylist];
-	
+
 	NSError *err = nil;
 	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:url
 		options:(NSXMLNodePreserveWhitespace|NSXMLNodePreserveCDATA)
 		error:&err];
-	
+
 	if (XSPFDoc == nil)
 		return NO;
-	
+
 	NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
-	
+
 	// There should be only ONE tracklist in a playlist, anyway.
 	NSXMLElement *XSPFTrackList = [[XSPFRoot elementsForName:@"trackList"] objectAtIndex:0];
 	NSArray *XSPFTracks = [XSPFTrackList elementsForName:@"track"];
@@ -134,12 +134,12 @@
 		track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:[XSPFLocation stringValue]]];
 		[self addTrack:track];
 	}
-	
+
 	return YES;
 }
 
 ////
-// TableView delegate methods
+#pragma mark TableView delegate methods
 ////
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
@@ -152,11 +152,11 @@
 	GTrack *track = [playlist objectAtIndex:row];
 	NSString *identifier = [column identifier];
 	NSString *objectValue = [track valueForKey:identifier];
-	
+
 	return objectValue ? objectValue : @"Unknown";
 }
 
-- (void) tableView:(NSTableView *)tableView setObjectValue:(id)object 
+- (void) tableView:(NSTableView *)tableView setObjectValue:(id)object
   forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     id aRecord;
@@ -165,35 +165,35 @@
 }
 
 ////
-// Drag and drop operations
+#pragma mark Drag and drop operations
 ////
 
-- (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info 
+- (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info
                   proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
 {
     return NSDragOperationGeneric;
 }
 
-- (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row 
+- (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row
      dropOperation:(NSTableViewDropOperation)dropOperation
 {
     NSPasteboard *pboard = [info draggingPasteboard];
     NSString *currentFile;
     NSArray *files;
     int numberOfFiles;
-    
+
     if ([[pboard types] containsObject:NSFilenamesPboardType]) {
         files = [pboard propertyListForType:NSFilenamesPboardType];
         numberOfFiles = [files count];
     }
-    
+
     for (currentFile in files) {
         id draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
         [playlist addObject:draggedTrack];
     }
 
     [playlistView reloadData];
-    
+
     return YES;
 }
 

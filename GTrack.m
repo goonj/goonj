@@ -34,11 +34,13 @@
 - (id) initWithFile:(NSURL *)path
 {
 	self = [super init];
-
+    NSString *location;
+    location = [path absoluteString];
+    
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
-		[self setPath:path];
-		[self readPropertiesFromID3Tags];
+        [properties setValue:location forKey:@"location"];
+
 	}
 
 	return self;
