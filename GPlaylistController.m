@@ -53,7 +53,7 @@
 	[playlistView reloadData];
 }
 
-- (BOOL) savePlaylist:(NSURL *)aUrl
+- (BOOL) savePlaylist:(NSURL *)aURL
 {
 	// TODO: Move this code out of the playlist controller and into its
 	// own class.
@@ -99,7 +99,7 @@
 
 	// Write data to file. TODO: replace existing file when saving.
 	NSData *XMLData = [XSPFDoc XMLDataWithOptions:NSXMLNodePrettyPrint];
-	if ([XMLData writeToFile:[aUrl absoluteString] atomically:NO]) {
+	if ([XMLData writeToFile:[aURL absoluteString] atomically:NO]) {
 		[mainWindow setDocumentEdited:NO];
 		return YES;
 	}
@@ -107,7 +107,7 @@
 	return NO;
 }
 
-- (BOOL) loadPlaylist:(NSURL *)aUrl
+- (BOOL) loadPlaylist:(NSURL *)aURL
 {
 	// TODO: Move this code out of the playlist controller and into its
 	// own class.
@@ -115,7 +115,7 @@
 	[self newPlaylist];
 
 	NSError *err = nil;
-	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:aUrl
+	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:aURL
 		options:(NSXMLNodePreserveWhitespace|NSXMLNodePreserveCDATA)
 		error:&err];
 
