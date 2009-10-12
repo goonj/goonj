@@ -18,5 +18,30 @@
 	along with Goonj. If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2009 Pratul Kalia.
-	Copyright 2009 Ankur Sethi.
+    Copyright 2009 Ankur Sethi.
 */
+
+////
+Formatting and spacing
+////
+- Each file has the GNU GPLv3 license header on the top. If you add code to a
+  particular file, you should add your name to the Copyrights at the end of the
+  license header. Put your full name and please see that the list is sorted via
+  last name.
+  
+- Indent all code using 4 spaces only. No tabs.
+
+- The header of each file must contain the file name and a small description of
+  what the file does.
+
+
+////
+Classes
+////
+-
+
+
+////
+Methods
+////
+- 
