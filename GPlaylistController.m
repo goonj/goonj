@@ -45,6 +45,27 @@
 	[playlistView reloadData];
 }
 
+- (void) addTracksFromDirectory:(NSString *)aDirectory
+{
+	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager]
+		enumeratorAtPath:aDirectory];
+	
+	NSString *fileName, *filePath;
+	GTrack *track;
+	BOOL isDirectory;
+	while (fileName = [dirEnum nextObject]) {
+		filePath = [aDirectory stringByAppendingPathComponent:fileName];
+		[[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
+
+		if (isDirectory == YES)
+			[self addTracksFromDirectory:filePath];
+		else {
+			track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:filePath]];
+			[playlist addObject:track];
+		}
+	}
+}
+
 - (void) newPlaylist
 {
 	[playlist removeAllObjects];
@@ -178,21 +199,22 @@
      dropOperation:(NSTableViewDropOperation)dropOperation
 {
     NSPasteboard *pboard = [info draggingPasteboard];
-    NSString *currentFile;
     NSArray *files;
-    GTrack *draggedTrack;
-    int numberOfFiles;
 
-    if ([[pboard types] containsObject:NSFilenamesPboardType]) {
+    if ([[pboard types] containsObject:NSFilenamesPboardType])
         files = [pboard propertyListForType:NSFilenamesPboardType];
-        numberOfFiles = [files count];
-    }
 
-    for (currentFile in files) {
-        draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
-        [playlist addObject:draggedTrack];
-
-    }
+    GTrack *draggedTrack;
+	BOOL isDirectory;
+	for (NSString *currentFile in files) {
+		[[NSFileManager defaultManager] fileExistsAtPath:currentFile isDirectory:&isDirectory];
+        
+		if (isDirectory == NO) {
+			draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
+        	[playlist addObject:draggedTrack];
+		} else
+			[self addTracksFromDirectory:currentFile];
+	}
 
     [playlistView reloadData];
     return YES;

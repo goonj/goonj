@@ -38,7 +38,7 @@
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
         [properties setValue:[aPath path] forKey:@"location"];
-
+		[properties setValue:[aPath lastPathComponent] forKey:@"name"];
 	}
 
 	return self;
