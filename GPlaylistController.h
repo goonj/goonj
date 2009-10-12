@@ -35,10 +35,10 @@
 	IBOutlet NSTableView *playlistView;
 }
 
-- (void) addTrack:(GTrack *)track;
+- (void) addTrack:(GTrack *)aTrack;
 - (void) newPlaylist;
-- (BOOL) savePlaylist:(NSURL *)url;
-- (BOOL) loadPlaylist:(NSURL *)url;
+- (BOOL) savePlaylist:(NSURL *)aUrl;
+- (BOOL) loadPlaylist:(NSURL *)aUrl;
 
 // NSTableView delegate methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;

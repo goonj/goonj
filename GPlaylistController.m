@@ -37,9 +37,9 @@
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 
-- (void) addTrack:(GTrack *)track
+- (void) addTrack:(GTrack *)aTrack
 {
-	[playlist addObject:track];
+	[playlist addObject:aTrack];
 	playlistDirty = YES;
 	[mainWindow setDocumentEdited:YES];
 	[playlistView reloadData];
@@ -53,7 +53,7 @@
 	[playlistView reloadData];
 }
 
-- (BOOL) savePlaylist:(NSURL *)url
+- (BOOL) savePlaylist:(NSURL *)aUrl
 {
 	// TODO: Move this code out of the playlist controller and into its
 	// own class.
@@ -99,7 +99,7 @@
 
 	// Write data to file. TODO: replace existing file when saving.
 	NSData *XMLData = [XSPFDoc XMLDataWithOptions:NSXMLNodePrettyPrint];
-	if ([XMLData writeToFile:[url absoluteString] atomically:NO]) {
+	if ([XMLData writeToFile:[aUrl absoluteString] atomically:NO]) {
 		[mainWindow setDocumentEdited:NO];
 		return YES;
 	}
@@ -107,7 +107,7 @@
 	return NO;
 }
 
-- (BOOL) loadPlaylist:(NSURL *)url
+- (BOOL) loadPlaylist:(NSURL *)aUrl
 {
 	// TODO: Move this code out of the playlist controller and into its
 	// own class.
@@ -115,7 +115,7 @@
 	[self newPlaylist];
 
 	NSError *err = nil;
-	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:url
+	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:aUrl
 		options:(NSXMLNodePreserveWhitespace|NSXMLNodePreserveCDATA)
 		error:&err];
 
@@ -180,6 +180,7 @@
     NSPasteboard *pboard = [info draggingPasteboard];
     NSString *currentFile;
     NSArray *files;
+    GTrack *draggedTrack;
     int numberOfFiles;
 
     if ([[pboard types] containsObject:NSFilenamesPboardType]) {
@@ -188,12 +189,12 @@
     }
 
     for (currentFile in files) {
-        id draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
+        draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
         [playlist addObject:draggedTrack];
+
     }
 
     [playlistView reloadData];
-
     return YES;
 }
 
