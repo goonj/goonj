@@ -36,6 +36,7 @@
 }
 
 - (void) addTrack:(GTrack *)aTrack;
+- (void) addTracksFromDirectory:(NSString *)aURL;
 - (void) newPlaylist;
 - (BOOL) savePlaylist:(NSURL *)aURL;
 - (BOOL) loadPlaylist:(NSURL *)aURL;
