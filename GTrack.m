@@ -31,24 +31,22 @@
 
 @synthesize path;
 
-- (id) initWithFile:(NSURL *)path
+- (id) initWithFile:(NSURL *)aPath
 {
 	self = [super init];
-    NSString *location;
-    location = [path absoluteString];
     
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
-        [properties setValue:location forKey:@"location"];
+        [properties setValue:[aPath path] forKey:@"location"];
 
 	}
 
 	return self;
 }
 
-- (NSString *) valueForKey:(NSString *)key
+- (NSString *) valueForKey:(NSString *)aKey
 {
-	return [properties objectForKey:key];
+	return [properties objectForKey:aKey];
 }
 
 - (void) readPropertiesFromID3Tags

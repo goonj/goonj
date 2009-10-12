@@ -57,9 +57,9 @@
 	[goonjWindowMenuItem setAction:@selector(closeMainWindow)];
 }
 
-- (BOOL) validateMenuItem:(NSMenuItem *)menuItem
+- (BOOL) validateMenuItem:(NSMenuItem *)aMenuItem
 {
-	if (menuItem == closeWindowMenuItem)
+	if (aMenuItem == closeWindowMenuItem)
 		return [mainWindow isVisible] ? YES : NO ;
 
 	return YES;

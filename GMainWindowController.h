@@ -36,7 +36,7 @@
 }
 
 - (void) setupUI;
-- (BOOL) validateMenuItem:(NSMenuItem *)menuItem;
+- (BOOL) validateMenuItem:(NSMenuItem *)aMenuItem;
 
 // NSWindow delegate methods.
 - (void) windowWillClose:(NSNotification *)notification;
