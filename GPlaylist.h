@@ -24,9 +24,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+enum GPlaylistType {
+	GXSPFType,
+	GM3UType,
+	GPLSType
+};
 
 @interface GPlaylist : NSObject {
 
 }
+
++ (GPlaylist *) initWithFile:(NSURL *)aURL;
 
 @end

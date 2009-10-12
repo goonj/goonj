@@ -27,4 +27,18 @@
 
 @implementation GPlaylist
 
++ (GPlaylist *) initWithFile:(NSURL *)aURL
+{
+	NSString *ext = [aURL pathExtension];
+
+	if ([ext caseInsensitiveCompare:@"xspf"] == NSOrderedSame)
+		NSLog(@"initialize XSPF playlist");
+	else if ([ext caseInsensitiveCompare:@"m3u"] == NSOrderedSame)
+		NSLog(@"initialize M3U playlist");
+	else if ([ext caseInsensitiveCompare:@"pls"] == NSOrderedSame)
+		NSLog(@"initialize PLS playlist");
+	
+	return nil;
+}
+
 @end
