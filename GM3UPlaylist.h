@@ -1,7 +1,6 @@
 /*
-	File: GPlaylist.m
-	Description: A Goonj playlist. Only contains a factory method which
-	returns the appropriate subclass of GPlaylist (implementation).
+	File: GM3UPlaylist.h
+	Description: M3U playlist support for Goonj (interface).
 
 	This file is part of Goonj.
 
@@ -22,24 +21,12 @@
     Copyright 2009 Ankur Sethi.
 */
 
+#import <Cocoa/Cocoa.h>
 #import "GPlaylist.h"
-#import "GXSPFPlaylist.h"
 
 
-@implementation GPlaylist
+@interface GM3UPlaylist : GPlaylist {
 
-+ (GPlaylist *) initWithFile:(NSString *)aURL
-{
-	NSString *ext = [aURL pathExtension];
-
-	if ([ext caseInsensitiveCompare:@"xspf"] == NSOrderedSame)
-		return [[GXSPFPlaylist alloc] initWithFile:aURL];
-	else if ([ext caseInsensitiveCompare:@"m3u"] == NSOrderedSame)
-		NSLog(@"initialize M3U playlist");
-	else if ([ext caseInsensitiveCompare:@"pls"] == NSOrderedSame)
-		NSLog(@"initialize PLS playlist");
-	
-	return nil;
 }
 
 @end

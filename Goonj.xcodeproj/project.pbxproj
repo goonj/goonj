@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
+		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
+		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
 		638390811058B30000DCE47D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6383907F1058B30000DCE47D /* LICENSE */; };
 		638390821058B30000DCE47D /* README in Resources */ = {isa = PBXBuildFile; fileRef = 638390801058B30000DCE47D /* README */; };
 		638392261058D34C00DCE47D /* GAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638392251058D34C00DCE47D /* GAppController.m */; };
@@ -32,6 +34,10 @@
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
+		63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSPFPlaylist.h; sourceTree = "<group>"; };
+		63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXSPFPlaylist.m; sourceTree = "<group>"; };
+		63668AE71084CD0A00CC02E5 /* GM3UPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GM3UPlaylist.h; sourceTree = "<group>"; };
+		63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GM3UPlaylist.m; sourceTree = "<group>"; };
 		6383907F1058B30000DCE47D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		638390801058B30000DCE47D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		6383914A1058BE6C00DCE47D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -63,8 +69,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				63FFF6C21083797300E0AE44 /* GPlaylist.h */,
-				63FFF6C31083797300E0AE44 /* GPlaylist.m */,
+				63668AE31084CC7600CC02E5 /* Playlist */,
 				638392241058D34C00DCE47D /* GAppController.h */,
 				638392251058D34C00DCE47D /* GAppController.m */,
 				63274DF4105A0DDD005AC3BA /* GMainWindowController.h */,
@@ -146,6 +151,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		63668AE31084CC7600CC02E5 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				63FFF6C21083797300E0AE44 /* GPlaylist.h */,
+				63FFF6C31083797300E0AE44 /* GPlaylist.m */,
+				63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */,
+				63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */,
+				63668AE71084CD0A00CC02E5 /* GM3UPlaylist.h */,
+				63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */,
+			);
+			name = Playlist;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +232,8 @@
 				63ECAFC5105B59A000E635C7 /* GPlaylistController.m in Sources */,
 				63917FB41062871C00DDF469 /* GTrack.m in Sources */,
 				63FFF6C41083797300E0AE44 /* GPlaylist.m in Sources */,
+				63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */,
+				63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

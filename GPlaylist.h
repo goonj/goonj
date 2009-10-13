@@ -23,17 +23,32 @@
 */
 
 #import <Cocoa/Cocoa.h>
+#import "GTrack.h"
 
-enum GPlaylistType {
-	GXSPFType,
-	GM3UType,
-	GPLSType
-};
+typedef enum _GPlaylistType {
+    kXSPFType,
+    kM3UType,
+    kPLSType
+} GPlaylistType;
 
 @interface GPlaylist : NSObject {
-
+    NSMutableArray *tracks;
+    NSMutableDictionary *properties;
 }
 
-+ (GPlaylist *) initWithFile:(NSURL *)aURL;
++ (GPlaylist *) initWithFile:(NSString *)aURL;
+
+@end
+
+////
+#pragma mark methods to be defined by subclasses
+////
+
+@interface GPlaylist (PlaylistInterface)
+
+- (GPlaylist *) initWithFile:(NSString *)aURL;
+- (GPlaylistType) playlistType;
+- (BOOL) savePlaylistAs:(NSString *)aURL withTracks:(NSArray *)tracks;
+- (BOOL) loadPlaylist:(NSString *)aURL;
 
 @end

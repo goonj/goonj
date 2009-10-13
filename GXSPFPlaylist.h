@@ -1,7 +1,6 @@
 /*
-	File: GPlaylist.m
-	Description: A Goonj playlist. Only contains a factory method which
-	returns the appropriate subclass of GPlaylist (implementation).
+	File: GXSPFPlaylist.h
+	Description: XSPF playlist support (interface).
 
 	This file is part of Goonj.
 
@@ -19,27 +18,15 @@
 	along with Goonj. If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2009 Pratul Kalia.
-    Copyright 2009 Ankur Sethi.
+	Copyright 2009 Ankur Sethi.
 */
 
+#import <Cocoa/Cocoa.h>
 #import "GPlaylist.h"
-#import "GXSPFPlaylist.h"
 
 
-@implementation GPlaylist
+@interface GXSPFPlaylist : GPlaylist {
 
-+ (GPlaylist *) initWithFile:(NSString *)aURL
-{
-	NSString *ext = [aURL pathExtension];
-
-	if ([ext caseInsensitiveCompare:@"xspf"] == NSOrderedSame)
-		return [[GXSPFPlaylist alloc] initWithFile:aURL];
-	else if ([ext caseInsensitiveCompare:@"m3u"] == NSOrderedSame)
-		NSLog(@"initialize M3U playlist");
-	else if ([ext caseInsensitiveCompare:@"pls"] == NSOrderedSame)
-		NSLog(@"initialize PLS playlist");
-	
-	return nil;
 }
 
 @end
