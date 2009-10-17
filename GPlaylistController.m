@@ -28,19 +28,16 @@
 
 @implementation GPlaylistController
 
-@synthesize playlistDirty;
-
 - (void) awakeFromNib
 {
-	playlist = [[NSMutableArray alloc] initWithCapacity:0];
-	playlistDirty = NO;
+    // Note that GPlaylist's initWithFile is a class method.
+	playlist = [GPlaylist initWithFile:@"/Users/General/Desktop/Test.xspf"];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 
 - (void) addTrack:(GTrack *)aTrack
 {
-	[playlist addObject:aTrack];
-	playlistDirty = YES;
+	[playlist addTrack:aTrack];
 	[mainWindow setDocumentEdited:YES];
 	[playlistView reloadData];
 }
@@ -61,116 +58,42 @@
 			[self addTracksFromDirectory:filePath];
 		else {
 			track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:filePath]];
-			[playlist addObject:track];
+			[playlist addTrack:track];
 		}
 	}
 }
 
-- (void) newPlaylist
+- (void) clearPlaylist
 {
-	[playlist removeAllObjects];
-	playlistDirty = NO;
+	[playlist clearPlaylist];
 	[mainWindow setDocumentEdited:NO];
 	[playlistView reloadData];
 }
 
 - (BOOL) savePlaylist:(NSURL *)aURL
 {
-	// TODO: Move this code out of the playlist controller and into its
-	// own class.
-
-	// Set up the namespace.
-	NSXMLNode *XSPFNamespace = [[NSXMLNode alloc] initWithKind:NSXMLNamespaceKind];
-	[XSPFNamespace setName:@""];
-	[XSPFNamespace setStringValue:@"http://xspf.org/ns/0/"];
-
-	// Why do I have to create a separate NSXMLNode for every single
-	// attribute? Meh.
-	NSXMLNode *XSPFVersion = [[NSXMLNode alloc] initWithKind:NSXMLAttributeKind];
-	[XSPFVersion setName:@"version"];
-	[XSPFVersion setStringValue:@"1.0"];
-
-	// Create root element.
-	NSXMLElement *XSPFRoot = [[NSXMLElement alloc] initWithName:@"playlist"];
-	[XSPFRoot addNamespace:XSPFNamespace];
-	[XSPFRoot addAttribute:XSPFVersion];
-
-	// Create the actual document.
-	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithRootElement:XSPFRoot];
-	[XSPFDoc setVersion:@"1.0"];
-	[XSPFDoc setCharacterEncoding:@"UTF-8"];
-
-	NSXMLElement *XSPFTrackList = [[NSXMLElement alloc] initWithName:@"trackList"];
-	[XSPFRoot addChild:XSPFTrackList];
-
-	NSXMLElement *XSPFTrack;
-	NSXMLElement *XSPFLocation;
-
-	// It might be a good idea to check if the playlist is being saved in the
-	// same directory as the music files. If yes, then we can use relative
-	// paths instead of absolute paths.
-	for (GTrack *track in playlist) {
-		XSPFTrack = [[NSXMLElement alloc] initWithName:@"track"];
-		[XSPFTrackList addChild:XSPFTrack];
-
-		XSPFLocation = [[NSXMLElement alloc] initWithName:@"location"];
-		[XSPFLocation setStringValue:[[track path] absoluteString]];
-		[XSPFTrack addChild:XSPFLocation];
-	}
-
-	// Write data to file. TODO: replace existing file when saving.
-	NSData *XMLData = [XSPFDoc XMLDataWithOptions:NSXMLNodePrettyPrint];
-	if ([XMLData writeToFile:[aURL absoluteString] atomically:NO]) {
-		[mainWindow setDocumentEdited:NO];
-		return YES;
-	}
-
-	return NO;
+    return [playlist savePlaylistAs:aURL];
 }
 
 - (BOOL) loadPlaylist:(NSURL *)aURL
 {
-	// TODO: Move this code out of the playlist controller and into its
-	// own class.
-
-	[self newPlaylist];
-
-	NSError *err = nil;
-	NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:aURL
-		options:(NSXMLNodePreserveWhitespace|NSXMLNodePreserveCDATA)
-		error:&err];
-
-	if (XSPFDoc == nil)
-		return NO;
-
-	NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
-
-	// There should be only ONE tracklist in a playlist, anyway.
-	NSXMLElement *XSPFTrackList = [[XSPFRoot elementsForName:@"trackList"] objectAtIndex:0];
-	NSArray *XSPFTracks = [XSPFTrackList elementsForName:@"track"];
-
-	GTrack *track;
-	for (NSXMLElement *XSPFTrack in XSPFTracks) {
-		NSXMLElement *XSPFLocation = [[XSPFTrack elementsForName:@"location"] objectAtIndex:0];
-		track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:[XSPFLocation stringValue]]];
-		[self addTrack:track];
-	}
-
-	return YES;
+	[self clearPlaylist];
+    return YES;
 }
 
 ////
-#pragma mark TableView delegate methods
+#pragma mark NSTableView delegate methods
 ////
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
 {
+    NSLog(@"count = %d", [playlist count]);
 	return [playlist count];
 }
 
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
 {
-	GTrack *track = [playlist objectAtIndex:row];
+	GTrack *track = [playlist trackAtIndex:row];
 	NSString *identifier = [column identifier];
 	NSString *objectValue = [track valueForKey:identifier];
 
@@ -180,9 +103,9 @@
 - (void) tableView:(NSTableView *)tableView setObjectValue:(id)object
   forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    id aRecord;
-    aRecord = [playlist objectAtIndex:row];
-    [aRecord setObject:object forKey:[tableColumn identifier]];
+    GTrack *track;
+    track = [playlist trackAtIndex:row];
+    [track setValue:object forKey:[tableColumn identifier]];
 }
 
 ////
@@ -211,7 +134,7 @@
         
 		if (isDirectory == NO) {
 			draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
-        	[playlist addObject:draggedTrack];
+        	[playlist addTrack:draggedTrack];
 		} else
 			[self addTracksFromDirectory:currentFile];
 	}

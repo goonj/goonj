@@ -28,8 +28,11 @@
 
 - (GPlaylist *) initWithFile:(NSString *)aURL
 {
-    if (self = [super init])
+    if (self = [super init]) {
+        [self loadPlaylist:aURL];
+        trackList = [[NSMutableArray alloc] initWithCapacity:0];
         return self;
+    }
 
     return nil;
 }
@@ -39,9 +42,36 @@
     return kXSPFType;
 }
 
+- (void) addTrack:(GTrack *)track
+{
+    NSLog(@"adding track");
+    NSLog(@"track is %@", track);
+    [trackList addObject:track];
+}
+
+- (void) removeTrackAtIndex:(NSUInteger)index
+{
+    [trackList removeObjectAtIndex:index];
+}
+
+- (void) clearPlaylist
+{
+    [trackList removeAllObjects];
+}
+
+- (NSUInteger) count
+{
+    return [trackList count];
+}
+
+- (GTrack *) trackAtIndex:(NSUInteger)index
+{
+    return [trackList objectAtIndex:index];
+}
+
 - (BOOL) savePlaylistAs:(NSString *)aURL
 {
-    // TODO: save more metadara.
+    // TODO: save more metadata.
 
 	// Set up the namespace.
 	NSXMLNode *XSPFNamespace = [[NSXMLNode alloc] initWithKind:NSXMLNamespaceKind];
@@ -73,7 +103,7 @@
 	// It might be a good idea to check if the playlist is being saved in the
 	// same directory as the music files. If yes, then we can use relative
 	// paths instead of absolute paths.
-	for (GTrack *track in tracks) {
+	for (GTrack *track in trackList) {
 		XSPFTrack = [[NSXMLElement alloc] initWithName:@"track"];
 		[XSPFTrackList addChild:XSPFTrack];
 
@@ -89,6 +119,32 @@
 
 - (BOOL) loadPlaylist:(NSString *)aURL
 {
+    // First, clear the current playlist.
+    [trackList removeAllObjects];
+
+    NSError *err = nil;
+    NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL URLWithString:aURL]
+        options:(NSXMLNodePreserveWhitespace|NSXMLNodePreserveCDATA)
+        error:&err];
+
+	if (XSPFDoc == nil)
+		return NO;
+
+	NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
+
+	// There should be only ONE tracklist in a playlist, anyway.
+    // If there are more than one tracklists, the remaining lists are ignored.
+	NSXMLElement *XSPFTrackList = [[XSPFRoot elementsForName:@"trackList"] objectAtIndex:0];
+	NSArray *XSPFTracks = [XSPFTrackList elementsForName:@"track"];
+
+	GTrack *track;
+	for (NSXMLElement *XSPFTrack in XSPFTracks) {
+		NSXMLElement *XSPFLocation = [[XSPFTrack elementsForName:@"location"] objectAtIndex:0];
+		track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:[XSPFLocation stringValue]]];
+		[self addTrack:track];
+	}
+
+	return YES;
 }
 
 @end

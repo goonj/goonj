@@ -37,7 +37,7 @@
     
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
-        [properties setValue:[aPath path] forKey:@"location"];
+        [self setValue:[aPath path] forKey:@"location"];
         // Can't use lastPathComponent on NSURL because we need Leopard compatibility.
 		[properties setValue:[[aPath path] lastPathComponent] forKey:@"name"];
 	}
@@ -48,6 +48,11 @@
 - (NSString *) valueForKey:(NSString *)aKey
 {
 	return [properties objectForKey:aKey];
+}
+
+- (void) setValue:(NSString *)value forKey:(NSString *)key
+{
+    [properties setValue:value forKey:key];
 }
 
 - (void) readPropertiesFromID3Tags
