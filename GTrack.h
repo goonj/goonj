@@ -35,6 +35,7 @@
 
 - (id) initWithFile:(NSURL *)aPath;
 - (NSString *) valueForKey:(NSString *)aKey;
+- (void) setValue:(NSString *)value forKey:(NSString *)key;
 - (void) readPropertiesFromID3Tags;
 
 @property (readwrite, assign) NSURL *path;

@@ -24,12 +24,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "GTrack.h"
+#import "GPlaylist.h"
 
 
 @interface GPlaylistController : NSObject {
 	// playlist is an array of GTrack instances.
-	NSMutableArray *playlist;
-	BOOL playlistDirty;
+	GPlaylist *playlist;
 	
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTableView *playlistView;
@@ -37,7 +37,7 @@
 
 - (void) addTrack:(GTrack *)aTrack;
 - (void) addTracksFromDirectory:(NSString *)aURL;
-- (void) newPlaylist;
+- (void) clearPlaylist;
 - (BOOL) savePlaylist:(NSURL *)aURL;
 - (BOOL) loadPlaylist:(NSURL *)aURL;
 
@@ -45,7 +45,5 @@
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row;
 - (void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
-
-@property (readonly) BOOL playlistDirty;
 
 @end

@@ -77,7 +77,7 @@
 
 - (IBAction) newPlaylist:(id)sender
 {
-	[playlistController newPlaylist];
+	[playlistController clearPlaylist];
 }
 
 - (IBAction) loadPlaylist:(id)sender

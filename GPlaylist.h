@@ -32,7 +32,7 @@ typedef enum _GPlaylistType {
 } GPlaylistType;
 
 @interface GPlaylist : NSObject {
-    NSMutableArray *tracks;
+    NSMutableArray *trackList;
     NSMutableDictionary *properties;
 }
 
@@ -48,7 +48,12 @@ typedef enum _GPlaylistType {
 
 - (GPlaylist *) initWithFile:(NSString *)aURL;
 - (GPlaylistType) playlistType;
-- (BOOL) savePlaylistAs:(NSString *)aURL withTracks:(NSArray *)tracks;
+- (void) addTrack:(GTrack *)track;
+- (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) clearPlaylist;
+- (NSUInteger) count;
+- (GTrack *) trackAtIndex:(NSUInteger)index;
+- (BOOL) savePlaylistAs:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;
 
 @end
