@@ -31,7 +31,7 @@
 - (void) awakeFromNib
 {
     // Note that GPlaylist's initWithFile is a class method.
-	playlist = [GPlaylist initWithFile:@"/Users/General/Desktop/Test.xspf"];
+	playlist = [GPlaylist initWithFile:@"Test.xspf"];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 
