@@ -83,5 +83,8 @@ Methods
 - Method names should have one space after the -/+. There should also be one
   space between the closing ")" of the return type and the method name.
   
-- Both, the opening and closing parethesis, of all the methods should be on
+- Both, the opening and closing parenthesis, of all the methods should be on
   their own lines.
+
+- Many times, method names exceed the 80-character guide. In such a case, you may
+  line break parameters into the next line.
