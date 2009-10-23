@@ -52,7 +52,11 @@
 	BOOL isDirectory;
 	while (fileName = [dirEnum nextObject]) {
 		filePath = [aDirectory stringByAppendingPathComponent:fileName];
-		[[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
+        
+        if ([filePath isHidden] == YES)
+            continue;
+		
+        [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
 
 		if (isDirectory == YES)
 			[self addTracksFromDirectory:filePath];
