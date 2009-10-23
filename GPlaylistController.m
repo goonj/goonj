@@ -86,7 +86,10 @@
 
 - (BOOL) loadPlaylist:(NSString *)aURL
 {
-	[self clearPlaylist];
+    // No need to clear the playlist before loading it, since
+    // the GPlaylist will clear itself on successful load.
+    [playlist loadPlaylist:aURL];
+    [playlistView reloadData];
     return YES;
 }
 

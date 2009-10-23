@@ -82,12 +82,22 @@
 
 - (IBAction) loadPlaylist:(id)sender
 {
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+   [openPanel setCanChooseDirectories:NO];
+   [openPanel setAllowsMultipleSelection:NO];
+   [openPanel runModal];
 
+   NSString *URL = [[[openPanel URLs] objectAtIndex:0] path];
+   [playlistController loadPlaylist:URL];
 }
 
 - (IBAction) savePlaylist:(id)sender
 {
-
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel setTitle:@"Save Playlist"];
+    [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"xspf", @"m3u", nil]];
+    [savePanel runModal];
+    [playlistController savePlaylist:[[savePanel URL] path]];
 }
 
 - (IBAction) savePlaylistAs:(id)sender
