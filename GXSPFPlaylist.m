@@ -106,7 +106,7 @@
 		[XSPFTrackList addChild:XSPFTrack];
 
 		XSPFLocation = [[NSXMLElement alloc] initWithName:@"location"];
-		[XSPFLocation setStringValue:[[[track path] absoluteString]
+		[XSPFLocation setStringValue:[[track path]
             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 		[XSPFTrack addChild:XSPFLocation];
 	}
@@ -139,8 +139,8 @@
 	GTrack *track;
 	for (NSXMLElement *XSPFTrack in XSPFTracks) {
 		NSXMLElement *XSPFLocation = [[XSPFTrack elementsForName:@"location"] objectAtIndex:0];
-		track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:[[XSPFLocation stringValue]
-            stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+		track = [[GTrack alloc] initWithFile:[[XSPFLocation stringValue]
+            stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 		[self addTrack:track];
 	}
 

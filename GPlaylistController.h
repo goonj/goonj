@@ -28,7 +28,6 @@
 
 
 @interface GPlaylistController : NSObject {
-	// playlist is an array of GTrack instances.
 	GPlaylist *playlist;
 	
 	IBOutlet NSWindow *mainWindow;

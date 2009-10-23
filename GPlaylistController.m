@@ -57,7 +57,7 @@
 		if (isDirectory == YES)
 			[self addTracksFromDirectory:filePath];
 		else {
-			track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:filePath]];
+			track = [[GTrack alloc] initWithFile:filePath];
 			[playlist addTrack:track];
 		}
 	}
@@ -70,12 +70,12 @@
 	[playlistView reloadData];
 }
 
-- (BOOL) savePlaylist:(NSURL *)aURL
+- (BOOL) savePlaylist:(NSString *)aURL
 {
     return [playlist savePlaylistAs:aURL];
 }
 
-- (BOOL) loadPlaylist:(NSURL *)aURL
+- (BOOL) loadPlaylist:(NSString *)aURL
 {
 	[self clearPlaylist];
     return YES;
@@ -132,7 +132,7 @@
 		[[NSFileManager defaultManager] fileExistsAtPath:currentFile isDirectory:&isDirectory];
         
 		if (isDirectory == NO) {
-			draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
+			draggedTrack = [[GTrack alloc] initWithFile:currentFile];
         	[playlist addTrack:draggedTrack];
 		} else
 			[self addTracksFromDirectory:currentFile];
