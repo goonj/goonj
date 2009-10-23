@@ -87,7 +87,6 @@
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
 {
-    NSLog(@"count = %d", [playlist count]);
 	return [playlist count];
 }
 
