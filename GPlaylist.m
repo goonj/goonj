@@ -23,8 +23,8 @@
 */
 
 #import "GPlaylist.h"
-#import "GXSPFPlaylist.h"
 
+@class GXSPFPlaylist, GM3UPlaylist;
 
 @implementation GPlaylist
 
@@ -36,10 +36,18 @@
 		return [[GXSPFPlaylist alloc] initWithFile:aURL];
 	else if ([ext caseInsensitiveCompare:@"m3u"] == NSOrderedSame)
 		NSLog(@"initialize M3U playlist");
-	else if ([ext caseInsensitiveCompare:@"pls"] == NSOrderedSame)
-		NSLog(@"initialize PLS playlist");
 	
 	return nil;
+}
+
++ (GPlaylist *) initWithKind:(GPlaylistType)kind
+{
+    if (kind == kXSPFType)
+        return [[GXSPFPlaylist alloc] init];
+    else if (kind == kM3UType)
+        return [[GM3UPlaylist alloc] init];
+
+    return nil;
 }
 
 @end

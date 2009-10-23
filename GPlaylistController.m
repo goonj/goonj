@@ -30,8 +30,13 @@
 
 - (void) awakeFromNib
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:@"~/Music/Now Playing.xspf"
+        forKey:@"NowPlayingPath"];
+    [defaults registerDefaults:appDefaults];
+    
     // Note that GPlaylist's initWithFile is a class method.
-	playlist = [GPlaylist initWithFile:@"Test.xspf"];
+	playlist = [GPlaylist initWithFile:[defaults stringForKey:@"NowPlayingPath"]];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 

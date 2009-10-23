@@ -29,8 +29,12 @@
 - (GPlaylist *) initWithFile:(NSString *)aURL
 {
     if (self = [super init]) {
-        [self loadPlaylist:aURL];
         trackList = [[NSMutableArray alloc] initWithCapacity:0];
+        aURL = [aURL stringByExpandingTildeInPath];
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
+            [self loadPlaylist:[aURL stringByExpandingTildeInPath]];
+        
         return self;
     }
 
