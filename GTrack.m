@@ -31,15 +31,15 @@
 
 @synthesize path;
 
-- (id) initWithFile:(NSURL *)aPath
+- (id) initWithFile:(NSString *)aPath
 {
 	self = [super init];
     
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
-        [self setValue:[aPath path] forKey:@"location"];
+        [self setValue:aPath forKey:@"location"];
         // Can't use lastPathComponent on NSURL because we need Leopard compatibility.
-		[properties setValue:[[aPath path] lastPathComponent] forKey:@"name"];
+		[properties setValue:[aPath lastPathComponent] forKey:@"name"];
 	}
 
 	return self;

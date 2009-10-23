@@ -52,12 +52,16 @@
 	BOOL isDirectory;
 	while (fileName = [dirEnum nextObject]) {
 		filePath = [aDirectory stringByAppendingPathComponent:fileName];
-		[[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
+        
+        if ([filePath isHidden] == YES)
+            continue;
+		
+        [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
 
 		if (isDirectory == YES)
 			[self addTracksFromDirectory:filePath];
 		else {
-			track = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:filePath]];
+			track = [[GTrack alloc] initWithFile:filePath];
 			[playlist addTrack:track];
 		}
 	}
@@ -70,12 +74,12 @@
 	[playlistView reloadData];
 }
 
-- (BOOL) savePlaylist:(NSURL *)aURL
+- (BOOL) savePlaylist:(NSString *)aURL
 {
     return [playlist savePlaylistAs:aURL];
 }
 
-- (BOOL) loadPlaylist:(NSURL *)aURL
+- (BOOL) loadPlaylist:(NSString *)aURL
 {
 	[self clearPlaylist];
     return YES;
@@ -87,7 +91,6 @@
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
 {
-    NSLog(@"count = %d", [playlist count]);
 	return [playlist count];
 }
 
@@ -133,7 +136,7 @@
 		[[NSFileManager defaultManager] fileExistsAtPath:currentFile isDirectory:&isDirectory];
         
 		if (isDirectory == NO) {
-			draggedTrack = [[GTrack alloc] initWithFile:[NSURL fileURLWithPath:currentFile]];
+			draggedTrack = [[GTrack alloc] initWithFile:currentFile];
         	[playlist addTrack:draggedTrack];
 		} else
 			[self addTracksFromDirectory:currentFile];

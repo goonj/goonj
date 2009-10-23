@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		630ACBD910916B9100ADB444 /* NSString+GoonjUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 630ACBD810916B9100ADB444 /* NSString+GoonjUtils.m */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
 		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
 		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
@@ -32,6 +33,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
+		630ACBD710916B9100ADB444 /* NSString+GoonjUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GoonjUtils.h"; sourceTree = "<group>"; };
+		630ACBD810916B9100ADB444 /* NSString+GoonjUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GoonjUtils.m"; sourceTree = "<group>"; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
 		63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSPFPlaylist.h; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				63ECAFC4105B59A000E635C7 /* GPlaylistController.m */,
 				63917FB21062871C00DDF469 /* GTrack.h */,
 				63917FB31062871C00DDF469 /* GTrack.m */,
+				630ACBD710916B9100ADB444 /* NSString+GoonjUtils.h */,
+				630ACBD810916B9100ADB444 /* NSString+GoonjUtils.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				63FFF6C41083797300E0AE44 /* GPlaylist.m in Sources */,
 				63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */,
 				63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */,
+				630ACBD910916B9100ADB444 /* NSString+GoonjUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
