@@ -9,8 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface NSString_Utilities : NSObject {
+@interface NSString (GoonjUtils)
 
-}
+- (BOOL) isHidden;
 
 @end
