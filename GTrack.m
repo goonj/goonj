@@ -29,8 +29,6 @@
 
 @implementation GTrack
 
-@synthesize path;
-
 - (id) initWithFile:(NSString *)aPath
 {
 	self = [super init];
@@ -58,6 +56,11 @@
 - (void) readPropertiesFromID3Tags
 {
     
+}
+
+- (NSString *)path
+{
+    return [self valueForKey:@"location"];
 }
 
 @end

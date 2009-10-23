@@ -37,6 +37,7 @@ typedef enum _GPlaylistType {
 }
 
 + (GPlaylist *) initWithFile:(NSString *)aURL;
++ (GPlaylist *) initWithKind:(GPlaylistType)kind;
 
 @end
 

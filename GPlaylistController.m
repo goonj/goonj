@@ -30,8 +30,13 @@
 
 - (void) awakeFromNib
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:@"~/Music/Now Playing.xspf"
+        forKey:@"NowPlayingPath"];
+    [defaults registerDefaults:appDefaults];
+    
     // Note that GPlaylist's initWithFile is a class method.
-	playlist = [GPlaylist initWithFile:@"Test.xspf"];
+	playlist = [GPlaylist initWithFile:[defaults stringForKey:@"NowPlayingPath"]];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 
@@ -81,7 +86,10 @@
 
 - (BOOL) loadPlaylist:(NSString *)aURL
 {
-	[self clearPlaylist];
+    // No need to clear the playlist before loading it, since
+    // the GPlaylist will clear itself on successful load.
+    [playlist loadPlaylist:aURL];
+    [playlistView reloadData];
     return YES;
 }
 

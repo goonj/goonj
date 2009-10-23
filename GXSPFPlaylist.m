@@ -29,8 +29,12 @@
 - (GPlaylist *) initWithFile:(NSString *)aURL
 {
     if (self = [super init]) {
-        [self loadPlaylist:aURL];
         trackList = [[NSMutableArray alloc] initWithCapacity:0];
+        aURL = [aURL stringByExpandingTildeInPath];
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
+            [self loadPlaylist:[aURL stringByExpandingTildeInPath]];
+        
         return self;
     }
 
@@ -118,18 +122,18 @@
 
 - (BOOL) loadPlaylist:(NSString *)aURL
 {
-    // First, clear the current playlist.
-    [trackList removeAllObjects];
-
     NSError *err = nil;
-    NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL URLWithString:aURL]
+    NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL fileURLWithPath:aURL]
         options:(NSXMLNodePreserveWhitespace|NSXMLNodePreserveCDATA)
         error:&err];
 
 	if (XSPFDoc == nil)
 		return NO;
 
-	NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
+    // Loading the playlist was a success, so clear the old playlist.
+    [trackList removeAllObjects];
+	
+    NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
 
 	// There should be only ONE tracklist in a playlist, anyway.
     // If there are more than one tracklists, the remaining lists are ignored.

@@ -30,13 +30,13 @@
 	// In the future, properties will be populated by reading the ID3
 	// tags of whatever file is passed to initWithFile:
 	NSMutableDictionary *properties;
-	NSString *path;
 }
 
 - (id) initWithFile:(NSString *)aPath;
 - (NSString *) valueForKey:(NSString *)aKey;
 - (void) setValue:(NSString *)value forKey:(NSString *)key;
 - (void) readPropertiesFromID3Tags;
+- (NSString *)path;
 
 @property (readwrite, assign) NSString *path;
 
