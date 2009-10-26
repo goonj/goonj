@@ -56,5 +56,6 @@ typedef enum _GPlaylistType {
 - (GTrack *) trackAtIndex:(NSUInteger)index;
 - (BOOL) savePlaylistAs:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;
+- (BOOL) hasMetadataField:(NSString *)field;
 
 @end
