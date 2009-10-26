@@ -101,6 +101,7 @@
 
 	NSXMLElement *XSPFTrack;
 	NSXMLElement *XSPFLocation;
+    NSURL *fileURL;
 
 	// It might be a good idea to check if the playlist is being saved in the
 	// same directory as the music files. If yes, then we can use relative
@@ -110,7 +111,8 @@
 		[XSPFTrackList addChild:XSPFTrack];
 
 		XSPFLocation = [[NSXMLElement alloc] initWithName:@"location"];
-		[XSPFLocation setStringValue:[[track path]
+        fileURL = [[NSURL alloc] initWithScheme:NSURLFileScheme host:@"" path:[track path]];
+		[XSPFLocation setStringValue:[[fileURL absoluteString]
             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 		[XSPFTrack addChild:XSPFLocation];
 	}
