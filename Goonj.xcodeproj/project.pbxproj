@@ -17,6 +17,7 @@
 		638392261058D34C00DCE47D /* GAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638392251058D34C00DCE47D /* GAppController.m */; };
 		638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638392BD1058D9CA00DCE47D /* MainWindow.xib */; };
 		63917FB41062871C00DDF469 /* GTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63917FB31062871C00DDF469 /* GTrack.m */; };
+		63AA10261095EAF2002EE51B /* PlaylistInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AA10251095EAF2002EE51B /* PlaylistInfo.xib */; };
 		63ECAFC5105B59A000E635C7 /* GPlaylistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECAFC4105B59A000E635C7 /* GPlaylistController.m */; };
 		63FFF6C41083797300E0AE44 /* GPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFF6C31083797300E0AE44 /* GPlaylist.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -48,6 +49,7 @@
 		638392251058D34C00DCE47D /* GAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAppController.m; sourceTree = "<group>"; };
 		63917FB21062871C00DDF469 /* GTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTrack.h; sourceTree = "<group>"; };
 		63917FB31062871C00DDF469 /* GTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTrack.m; sourceTree = "<group>"; };
+		63AA10231095EAEE002EE51B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PlaylistInfo.xib; sourceTree = "<group>"; };
 		63ECAFC3105B59A000E635C7 /* GPlaylistController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylistController.h; sourceTree = "<group>"; };
 		63ECAFC4105B59A000E635C7 /* GPlaylistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistController.m; sourceTree = "<group>"; };
 		63FFF6C21083797300E0AE44 /* GPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylist.h; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				63AA10251095EAF2002EE51B /* PlaylistInfo.xib */,
 			);
 			name = Goonj;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				638390821058B30000DCE47D /* README in Resources */,
 				638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */,
 				C566A013107B1A7F000D322E /* HACKING in Resources */,
+				63AA10261095EAF2002EE51B /* PlaylistInfo.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +272,14 @@
 				6383914A1058BE6C00DCE47D /* English */,
 			);
 			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		63AA10251095EAF2002EE51B /* PlaylistInfo.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63AA10231095EAEE002EE51B /* English */,
+			);
+			name = PlaylistInfo.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
