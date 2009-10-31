@@ -42,6 +42,8 @@ General formatting
     #import <CoreData/CoreData.h>
     #import "GAppController.h"
     #import "GTrack.h"
+   
+   Headers must be sorted alphabetically.
 
 - Give a gap of 2 lines between the license header and the file imports. Also, 
   a gap of 2 lines between the file imports, and the code.
