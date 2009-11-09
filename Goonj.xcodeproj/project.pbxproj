@@ -122,7 +122,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				63AA10251095EAF2002EE51B /* PlaylistInfo.xib */,
 			);
 			name = Goonj;
 			sourceTree = "<group>";
@@ -139,6 +138,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63AA10251095EAF2002EE51B /* PlaylistInfo.xib */,
 				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
 				6383907F1058B30000DCE47D /* LICENSE */,
 				638390801058B30000DCE47D /* README */,
