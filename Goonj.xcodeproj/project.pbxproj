@@ -23,6 +23,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C551B84F10AFE4CC00174867 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = C551B84E10AFE4CC00174867 /* Preferences.xib */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		63FFF6C31083797300E0AE44 /* GPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylist.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C551B84E10AFE4CC00174867 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C551B84E10AFE4CC00174867 /* Preferences.xib */,
 				63AA10251095EAF2002EE51B /* PlaylistInfo.xib */,
 				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
 				6383907F1058B30000DCE47D /* LICENSE */,
@@ -225,6 +228,7 @@
 				638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */,
 				C566A013107B1A7F000D322E /* HACKING in Resources */,
 				63AA10261095EAF2002EE51B /* PlaylistInfo.xib in Resources */,
+				C551B84F10AFE4CC00174867 /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
