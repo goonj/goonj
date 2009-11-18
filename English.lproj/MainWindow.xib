@@ -51,7 +51,7 @@
 					</object>
 					<nil key="NSToolbarDelegate"/>
 					<bool key="NSToolbarPrefersToBeShown">YES</bool>
-					<bool key="NSToolbarShowsBaselineSeparator">NO</bool>
+					<bool key="NSToolbarShowsBaselineSeparator">YES</bool>
 					<bool key="NSToolbarAllowsUserCustomization">NO</bool>
 					<bool key="NSToolbarAutosavesConfiguration">NO</bool>
 					<int key="NSToolbarDisplayMode">2</int>
@@ -74,9 +74,11 @@
 								<string key="NSToolbarItemPaletteLabel">Play</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSButton" key="NSToolbarItemView" id="251074129">
-									<nil key="NSNextResponder"/>
+									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {30, 25}}</string>
+									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="679020349">
 										<int key="NSCellFlags">-2080244224</int>
@@ -119,9 +121,11 @@
 								<string key="NSToolbarItemPaletteLabel">Previous</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSButton" key="NSToolbarItemView" id="946395932">
-									<nil key="NSNextResponder"/>
+									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{9, 14}, {35, 25}}</string>
+									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="313241721">
 										<int key="NSCellFlags">-2080244224</int>
@@ -156,9 +160,11 @@
 								<string key="NSToolbarItemPaletteLabel">Next</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSButton" key="NSToolbarItemView" id="400106779">
-									<nil key="NSNextResponder"/>
+									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {35, 25}}</string>
+									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="188447646">
 										<int key="NSCellFlags">-2080244224</int>
@@ -276,9 +282,9 @@
 													</object>
 													<object class="NSTextFieldCell" key="NSDataCell" id="989428587">
 														<int key="NSCellFlags">337772096</int>
-														<int key="NSCellFlags2">2048</int>
+														<int key="NSCellFlags2">133120</int>
 														<string key="NSContents">Status</string>
-														<reference key="NSSupport" ref="473853037"/>
+														<reference key="NSSupport" ref="26"/>
 														<reference key="NSControlView" ref="735805376"/>
 														<object class="NSColor" key="NSBackgroundColor" id="836371808">
 															<int key="NSColorSpace">6</int>
@@ -319,9 +325,9 @@
 													</object>
 													<object class="NSTextFieldCell" key="NSDataCell" id="862082692">
 														<int key="NSCellFlags">337772096</int>
-														<int key="NSCellFlags2">2048</int>
+														<int key="NSCellFlags2">133120</int>
 														<string key="NSContents">Song Title</string>
-														<reference key="NSSupport" ref="473853037"/>
+														<reference key="NSSupport" ref="26"/>
 														<reference key="NSControlView" ref="735805376"/>
 														<reference key="NSBackgroundColor" ref="836371808"/>
 														<reference key="NSTextColor" ref="82196072"/>
@@ -346,9 +352,9 @@
 													</object>
 													<object class="NSTextFieldCell" key="NSDataCell" id="945730678">
 														<int key="NSCellFlags">337772096</int>
-														<int key="NSCellFlags2">2048</int>
+														<int key="NSCellFlags2">133120</int>
 														<string key="NSContents">Text Cell</string>
-														<reference key="NSSupport" ref="473853037"/>
+														<reference key="NSSupport" ref="26"/>
 														<reference key="NSControlView" ref="735805376"/>
 														<reference key="NSBackgroundColor" ref="836371808"/>
 														<reference key="NSTextColor" ref="82196072"/>
@@ -373,9 +379,9 @@
 													</object>
 													<object class="NSTextFieldCell" key="NSDataCell" id="533838750">
 														<int key="NSCellFlags">337772096</int>
-														<int key="NSCellFlags2">2048</int>
+														<int key="NSCellFlags2">133120</int>
 														<string key="NSContents">Text Cell</string>
-														<reference key="NSSupport" ref="473853037"/>
+														<reference key="NSSupport" ref="26"/>
 														<reference key="NSControlView" ref="735805376"/>
 														<reference key="NSBackgroundColor" ref="836371808"/>
 														<reference key="NSTextColor" ref="82196072"/>
@@ -400,9 +406,9 @@
 													</object>
 													<object class="NSTextFieldCell" key="NSDataCell" id="131996522">
 														<int key="NSCellFlags">337772096</int>
-														<int key="NSCellFlags2">2048</int>
+														<int key="NSCellFlags2">133120</int>
 														<string key="NSContents">Text Cell</string>
-														<reference key="NSSupport" ref="473853037"/>
+														<reference key="NSSupport" ref="26"/>
 														<string key="NSPlaceholderString">3:22</string>
 														<reference key="NSControlView" ref="735805376"/>
 														<reference key="NSBackgroundColor" ref="836371808"/>
@@ -428,9 +434,9 @@
 													</object>
 													<object class="NSTextFieldCell" key="NSDataCell" id="874598546">
 														<int key="NSCellFlags">337772096</int>
-														<int key="NSCellFlags2">2048</int>
+														<int key="NSCellFlags2">133120</int>
 														<string key="NSContents">Text Cell</string>
-														<reference key="NSSupport" ref="473853037"/>
+														<reference key="NSSupport" ref="26"/>
 														<reference key="NSControlView" ref="735805376"/>
 														<reference key="NSBackgroundColor" ref="836371808"/>
 														<reference key="NSTextColor" ref="82196072"/>
@@ -453,7 +459,7 @@
 													<bytes key="NSWhite">MC41AA</bytes>
 												</object>
 											</object>
-											<double key="NSRowHeight">17</double>
+											<double key="NSRowHeight">14</double>
 											<int key="NSTvFlags">-541065216</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
@@ -516,14 +522,14 @@
 							<reference key="NSContentView" ref="476167589"/>
 							<reference key="NSHeaderClipView" ref="535682989"/>
 							<reference key="NSCornerView" ref="1053779339"/>
-							<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
+							<bytes key="NSScrollAmts">QSAAAEEgAABBgAAAQYAAAA</bytes>
 						</object>
 					</object>
 					<string key="NSFrameSize">{799, 617}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
-				<string key="NSMinSize">{612, 583}</string>
+				<string key="NSMinSize">{612, 584}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
 			<object class="NSCustomObject" id="826352085">
@@ -900,9 +906,9 @@
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{34, 126}, {799, 617}}</string>
+					<string>{{34, 125}, {799, 617}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{34, 126}, {799, 617}}</string>
+					<string>{{34, 125}, {799, 617}}</string>
 					<integer value="1"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
@@ -915,7 +921,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{254, 684}, {617, 0}}</string>
+					<string>{{125, 742}, {617, 0}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
