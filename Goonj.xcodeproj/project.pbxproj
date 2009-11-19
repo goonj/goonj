@@ -10,6 +10,7 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		630ACBD910916B9100ADB444 /* NSString+GoonjUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 630ACBD810916B9100ADB444 /* NSString+GoonjUtils.m */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
+		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
 		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
 		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
 		638390811058B30000DCE47D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6383907F1058B30000DCE47D /* LICENSE */; };
@@ -23,7 +24,6 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		C551B84F10AFE4CC00174867 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = C551B84E10AFE4CC00174867 /* Preferences.xib */; };
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,7 @@
 		63FFF6C31083797300E0AE44 /* GPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylist.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C551B84E10AFE4CC00174867 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		C551B84E10AFE4CC00174867 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		C551BA7A10B54F2E00174867 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C551BA7A10B54F2E00174867 /* Credits.html */,
-				C551B84E10AFE4CC00174867 /* Preferences.xib */,
+				63349B0F10B596F4000155E2 /* Preferences.xib */,
 				63AA10251095EAF2002EE51B /* PlaylistInfo.xib */,
 				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
 				6383907F1058B30000DCE47D /* LICENSE */,
@@ -231,7 +231,7 @@
 				638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */,
 				C566A013107B1A7F000D322E /* HACKING in Resources */,
 				63AA10261095EAF2002EE51B /* PlaylistInfo.xib in Resources */,
-				C551B84F10AFE4CC00174867 /* Preferences.xib in Resources */,
+				63349B1010B596F4000155E2 /* Preferences.xib in Resources */,
 				C551BA7B10B54F2E00174867 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +272,14 @@
 				1DDD58150DA1D0A300B32029 /* English */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		63349B0F10B596F4000155E2 /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C551B84E10AFE4CC00174867 /* English */,
+			);
+			name = Preferences.xib;
 			sourceTree = "<group>";
 		};
 		638392BD1058D9CA00DCE47D /* MainWindow.xib */ = {
