@@ -24,6 +24,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C551B84F10AFE4CC00174867 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = C551B84E10AFE4CC00174867 /* Preferences.xib */; };
+		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551B84E10AFE4CC00174867 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		C551BA7A10B54F2E00174867 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C551BA7A10B54F2E00174867 /* Credits.html */,
 				C551B84E10AFE4CC00174867 /* Preferences.xib */,
 				63AA10251095EAF2002EE51B /* PlaylistInfo.xib */,
 				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
@@ -229,6 +232,7 @@
 				C566A013107B1A7F000D322E /* HACKING in Resources */,
 				63AA10261095EAF2002EE51B /* PlaylistInfo.xib in Resources */,
 				C551B84F10AFE4CC00174867 /* Preferences.xib in Resources */,
+				C551BA7B10B54F2E00174867 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
