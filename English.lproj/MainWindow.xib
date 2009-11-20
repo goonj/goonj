@@ -358,7 +358,8 @@
 													<bool key="NSIsEditable">YES</bool>
 													<reference key="NSTableView" ref="735805376"/>
 												</object>
-												<object class="NSTableColumn" id="987134812">
+												<object class="NSTableColumn" id="1028169708">
+													<string key="NSIdentifier">genre</string>
 													<double key="NSWidth">94</double>
 													<double key="NSMinWidth">10</double>
 													<double key="NSMaxWidth">3.4028234663852886e+38</double>
@@ -370,7 +371,7 @@
 														<reference key="NSBackgroundColor" ref="983525241"/>
 														<reference key="NSTextColor" ref="902424584"/>
 													</object>
-													<object class="NSTextFieldCell" key="NSDataCell" id="440214256">
+													<object class="NSTextFieldCell" key="NSDataCell" id="768500986">
 														<int key="NSCellFlags">337772096</int>
 														<int key="NSCellFlags2">133120</int>
 														<string key="NSContents">Text Cell</string>
@@ -681,7 +682,7 @@
 							<reference ref="436676746"/>
 							<reference ref="190920253"/>
 							<reference ref="964139256"/>
-							<reference ref="987134812"/>
+							<reference ref="1028169708"/>
 						</object>
 						<reference key="parent" ref="554181196"/>
 					</object>
@@ -842,17 +843,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">97</int>
-						<reference key="object" ref="987134812"/>
+						<reference key="object" ref="1028169708"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="440214256"/>
+							<reference ref="768500986"/>
 						</object>
 						<reference key="parent" ref="735805376"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">98</int>
-						<reference key="object" ref="440214256"/>
-						<reference key="parent" ref="987134812"/>
+						<reference key="object" ref="768500986"/>
+						<reference key="parent" ref="1028169708"/>
 					</object>
 				</object>
 			</object>

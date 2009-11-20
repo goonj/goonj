@@ -31,14 +31,74 @@
 
 - (void) awakeFromNib
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *appDefaults = [NSDictionary dictionaryWithObject:@"~/Music/Now Playing.xspf"
-        forKey:@"NowPlayingPath"];
-    [defaults registerDefaults:appDefaults];
+    NSArray *columnStore = [[NSUserDefaults standardUserDefaults] arrayForKey:@"ColumnsUserDefault"];
+    NSMenu *tableHeaderContextMenu = [[NSMenu alloc] initWithTitle:@""];
+    [[playlistView headerView] setMenu:tableHeaderContextMenu];
     
+    NSArray *tableColumns = [NSArray arrayWithArray:[playlistView tableColumns]];
+    NSEnumerator *enumerator = [tableColumns objectEnumerator];
+    NSTableColumn *column;
+    while (column = [enumerator nextObject])
+    {
+        NSString *title = [[column headerCell] title];
+        NSMenuItem *item = [tableHeaderContextMenu addItemWithTitle:title action:@selector(contextMenuSelected:) keyEquivalent:@""];
+        [item setTarget:self];
+        [item setRepresentedObject:column];
+        [item setState:columnStore ? NSOffState : NSOnState];
+        if (columnStore) [playlistView removeTableColumn:column];
+    }
+    
+    enumerator = [columnStore objectEnumerator];
+    NSDictionary *colinfo;
+    while (colinfo = [enumerator nextObject])
+    {
+        NSMenuItem *item = [tableHeaderContextMenu itemWithTitle:[colinfo objectForKey:@"title"]];
+        if (!item) continue;
+        [item setState:NSOnState];
+        column = [item representedObject];
+        [column setWidth:[[colinfo objectForKey:@"width"] floatValue]];
+        [playlistView addTableColumn:column];
+    }
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTableColumns) name:NSTableViewColumnDidMoveNotification object:playlistView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTableColumns) name:NSTableViewColumnDidResizeNotification object:playlistView];
+
     // Note that GPlaylist's initWithFile is a class method.
-	playlist = [GPlaylist initWithFile:[defaults stringForKey:@"NowPlayingPath"]];
+	playlist = [GPlaylist initWithFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"/tmp/goonj/nowplaying.xspf"]];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
+}
+
+- (void) contextMenuSelected:(id)sender
+{
+    BOOL on = ([sender state] == NSOnState);
+    [sender setState:on ? NSOffState : NSOnState];
+    NSTableColumn *column = [sender representedObject];
+    
+    if (on)
+    {		
+        [playlistView removeTableColumn:column];
+        [playlistView sizeLastColumnToFit];
+    } else {
+        [playlistView addTableColumn:column];
+        [playlistView sizeToFit];
+    }
+    
+    [playlistView setNeedsDisplay:YES];
+}
+
+- (void) saveTableColumns
+{
+    NSMutableArray *cols = [NSMutableArray array];
+    NSEnumerator *enumerator = [[playlistView tableColumns] objectEnumerator];
+    NSTableColumn *column;
+    while (column = [enumerator nextObject])
+    {
+        [cols addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                         [[column headerCell] title], @"title",
+                         [NSNumber numberWithFloat:[column width]], @"width",
+                         nil]];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:cols forKey:@"ColumnsUserDefault"];
 }
 
 - (void) addTrack:(GTrack *)aTrack
@@ -154,5 +214,6 @@
     [playlistView reloadData];
     return YES;
 }
+
 
 @end
