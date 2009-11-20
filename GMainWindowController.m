@@ -28,6 +28,18 @@
 
 @implementation GMainWindowController
 
+- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem
+{
+	if ([anItem action] == @selector(closeWindow:))
+		if ([[self window] isVisible] == YES)
+			return YES;
+		else
+			return NO;
+	
+	// Return YES by default.
+	return YES;
+}
+
 - (IBAction) newPlaylist:(id)sender
 {
 	[playlistController clearPlaylist];
@@ -51,6 +63,21 @@
     [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"xspf", @"m3u", nil]];
     [savePanel runModal];
     [playlistController savePlaylist:[[savePanel URL] path]];
+}
+
+- (IBAction) toggleWindow:(id)sender
+{
+	if ([[self window] isVisible] == NO)
+		[[self window] makeKeyAndOrderFront:self];
+	else
+		[[self window] close];
+}
+
+- (IBAction) closeWindow:(id)sender
+{
+	// Why do I even need to implement this? Isn't NSWindowController supposed
+	// to implement an IBAction for this? Meh.
+	[[self window] close];
 }
 
 @end

@@ -477,22 +477,6 @@
 					<int key="connectionID">460</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">goonjWindowMenuItem</string>
-						<reference key="source" ref="733273718"/>
-						<reference key="destination" ref="687387824"/>
-					</object>
-					<int key="connectionID">462</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">closeWindowMenuItem</string>
-						<reference key="source" ref="733273718"/>
-						<reference key="destination" ref="511615098"/>
-					</object>
-					<int key="connectionID">468</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">loadPlaylist:</string>
 						<reference key="source" ref="733273718"/>
@@ -515,6 +499,22 @@
 						<reference key="destination" ref="117038363"/>
 					</object>
 					<int key="connectionID">479</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleWindow:</string>
+						<reference key="source" ref="733273718"/>
+						<reference key="destination" ref="687387824"/>
+					</object>
+					<int key="connectionID">480</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">closeWindow:</string>
+						<reference key="source" ref="733273718"/>
+						<reference key="destination" ref="511615098"/>
+					</object>
+					<int key="connectionID">482</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1005,7 +1005,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">479</int>
+			<int key="maxID">482</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1029,12 +1029,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>closeWindow:</string>
 							<string>loadPlaylist:</string>
 							<string>newPlaylist:</string>
 							<string>savePlaylist:</string>
+							<string>toggleWindow:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1044,17 +1048,11 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>closeWindowMenuItem</string>
-							<string>goonjWindowMenuItem</string>
-							<string>mainWindow</string>
 							<string>playlistController</string>
 							<string>playlistView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSMenuItem</string>
-							<string>NSMenuItem</string>
-							<string>NSWindow</string>
 							<string>GPlaylistController</string>
 							<string>NSTableView</string>
 						</object>

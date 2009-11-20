@@ -31,6 +31,7 @@
 	NSLog(@"Application finished launching.");
 	[mainWindowController initWithWindowNibName:@"MainWindow" owner:mainWindowController];
 	[mainWindowController loadWindow];
+	[[mainWindowController window] setExcludedFromWindowsMenu:YES];
 }
 
 @end

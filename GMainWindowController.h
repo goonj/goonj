@@ -32,9 +32,13 @@
 	IBOutlet GPlaylistController *playlistController;
 }
 
+- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
+
 // Actions.
 - (IBAction) newPlaylist:(id)sender;
 - (IBAction) loadPlaylist:(id)sender;
 - (IBAction) savePlaylist:(id)sender;
+- (IBAction) toggleWindow:(id)sender;
+- (IBAction) closeWindow:(id)sender;
 
 @end
