@@ -28,14 +28,6 @@
 
 @implementation GMainWindowController
 
-- (BOOL) validateMenuItem:(NSMenuItem *)aMenuItem
-{
-	if (aMenuItem == closeWindowMenuItem)
-		return [mainWindow isVisible] ? YES : NO ;
-
-	return YES;
-}
-
 - (IBAction) newPlaylist:(id)sender
 {
 	[playlistController clearPlaylist];

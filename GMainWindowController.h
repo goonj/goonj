@@ -28,14 +28,9 @@
 
 
 @interface GMainWindowController : NSWindowController {
-	IBOutlet NSWindow *mainWindow;
-	IBOutlet NSMenuItem *goonjWindowMenuItem;
-	IBOutlet NSMenuItem *closeWindowMenuItem;
 	IBOutlet NSTableView *playlistView;
 	IBOutlet GPlaylistController *playlistController;
 }
-
-- (BOOL) validateMenuItem:(NSMenuItem *)aMenuItem;
 
 // Actions.
 - (IBAction) newPlaylist:(id)sender;
