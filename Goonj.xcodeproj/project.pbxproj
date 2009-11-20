@@ -140,15 +140,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				635CBAEF10B67AA200D82472 /* Interface */,
 				C551BA7A10B54F2E00174867 /* Credits.html */,
-				63349B0F10B596F4000155E2 /* Preferences.xib */,
-				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
 				6383907F1058B30000DCE47D /* LICENSE */,
 				638390801058B30000DCE47D /* README */,
 				C566A012107B1A7F000D322E /* HACKING */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -160,6 +158,16 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		635CBAEF10B67AA200D82472 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				63349B0F10B596F4000155E2 /* Preferences.xib */,
+				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = Interface;
 			sourceTree = "<group>";
 		};
 		63668AE31084CC7600CC02E5 /* Playlist */ = {
