@@ -35,9 +35,8 @@
 
 - (BOOL) loadMainWindow
 {
-	if (![NSBundle loadNibNamed:@"MainWindow" owner:mainWindowController])
-		return NO;
-
+	[mainWindowController initWithWindowNibName:@"MainWindow" owner:self];
+	[mainWindowController loadWindow];
 	[mainWindowController setupUI];
 	return YES;
 }

@@ -27,7 +27,7 @@
 #import "GPlaylistController.h"
 
 
-@interface GMainWindowController : NSObject {
+@interface GMainWindowController : NSWindowController {
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSMenuItem *goonjWindowMenuItem;
 	IBOutlet NSMenuItem *closeWindowMenuItem;
