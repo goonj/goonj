@@ -28,51 +28,12 @@
 
 @implementation GMainWindowController
 
-- (void) setupUI
-{
-	[closeWindowMenuItem setTarget:self];
-	[closeWindowMenuItem setAction:@selector(closeMainWindow)];
-
-	[goonjWindowMenuItem setTarget:self];
-	[goonjWindowMenuItem setAction:@selector(showMainWindow)];
-
-	[mainWindow setExcludedFromWindowsMenu:YES];
-	[mainWindow makeMainWindow];
-	[mainWindow setReleasedWhenClosed:NO];
-
-	[playlistView registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
-	
-	[self showMainWindow];
-}
-
-- (void) windowWillClose:(NSNotification *)notification
-{
-	[goonjWindowMenuItem setState:NSOffState];
-	[goonjWindowMenuItem setAction:@selector(showMainWindow)];
-}
-
-- (void) windowDidBecomeKey:(NSNotification *)notification
-{
-	[goonjWindowMenuItem setState:NSOnState];
-	[goonjWindowMenuItem setAction:@selector(closeMainWindow)];
-}
-
 - (BOOL) validateMenuItem:(NSMenuItem *)aMenuItem
 {
 	if (aMenuItem == closeWindowMenuItem)
 		return [mainWindow isVisible] ? YES : NO ;
 
 	return YES;
-}
-
-- (void) closeMainWindow
-{
-	[mainWindow performClose:self];
-}
-
-- (void) showMainWindow
-{
-	[mainWindow makeKeyAndOrderFront:self];
 }
 
 - (IBAction) newPlaylist:(id)sender
@@ -98,11 +59,6 @@
     [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"xspf", @"m3u", nil]];
     [savePanel runModal];
     [playlistController savePlaylist:[[savePanel URL] path]];
-}
-
-- (IBAction) savePlaylistAs:(id)sender
-{
-
 }
 
 @end

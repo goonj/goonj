@@ -30,6 +30,5 @@
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification;
-- (BOOL) loadMainWindow;
 
 @end

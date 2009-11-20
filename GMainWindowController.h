@@ -35,19 +35,11 @@
 	IBOutlet GPlaylistController *playlistController;
 }
 
-- (void) setupUI;
 - (BOOL) validateMenuItem:(NSMenuItem *)aMenuItem;
 
-// NSWindow delegate methods.
-- (void) windowWillClose:(NSNotification *)notification;
-- (void) windowDidBecomeKey:(NSNotification *)notification;
-
 // Actions.
-- (void) closeMainWindow;
-- (void) showMainWindow;
 - (IBAction) newPlaylist:(id)sender;
 - (IBAction) loadPlaylist:(id)sender;
 - (IBAction) savePlaylist:(id)sender;
-- (IBAction) savePlaylistAs:(id)sender;
 
 @end

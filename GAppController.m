@@ -29,16 +29,8 @@
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	NSLog(@"Application finished launching.");
-	if (![self loadMainWindow])
-		[NSApp terminate:self];
-}
-
-- (BOOL) loadMainWindow
-{
 	[mainWindowController initWithWindowNibName:@"MainWindow" owner:self];
 	[mainWindowController loadWindow];
-	[mainWindowController setupUI];
-	return YES;
 }
 
 @end
