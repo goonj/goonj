@@ -32,7 +32,7 @@
 	IBOutlet GPlaylistController *playlistController;
 }
 
-- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
+- (BOOL) validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
 
 // Actions.
 - (IBAction) newPlaylist:(id)sender;

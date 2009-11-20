@@ -28,7 +28,7 @@
 
 @implementation GMainWindowController
 
-- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem
+- (BOOL) validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem
 {
 	if ([anItem action] == @selector(closeWindow:))
 		if ([[self window] isVisible] == YES)
