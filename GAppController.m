@@ -31,17 +31,14 @@
 	[mainWindowController initWithWindowNibName:@"MainWindow" owner:mainWindowController];
 	[mainWindowController loadWindow];
 	[[mainWindowController window] setExcludedFromWindowsMenu:YES];
+	[prefController initWithWindowNibName:@"Preferences"];
 }
 
 - (IBAction) showPreferencesWindow:(id)sender
 {
-    NSLog(@"Prefs clicked!");
-    if (!prefController) {
-        prefController = [[GPreferenceController alloc] init];
-    }
-    
-    [[prefController window] makeKeyAndOrderFront:self];
-
+	[prefController loadWindow];
+	[[prefController window] makeKeyAndOrderFront:self];
+	NSLog(@"%@", [prefController window]);
 }
 
 

@@ -25,7 +25,6 @@
 
 
 @interface GPreferenceController : NSWindowController {
-    IBOutlet NSWindow *preferenceWindow;
 }
 
 

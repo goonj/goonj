@@ -28,7 +28,7 @@
 
 @interface GAppController : NSObject {
 	IBOutlet GMainWindowController *mainWindowController;
-    GPreferenceController *prefController;
+    IBOutlet GPreferenceController *prefController;
     
 }
 
