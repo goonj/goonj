@@ -36,9 +36,7 @@
     [[playlistView headerView] setMenu:tableHeaderContextMenu];
     
     NSArray *tableColumns = [NSArray arrayWithArray:[playlistView tableColumns]];
-    NSEnumerator *enumerator = [tableColumns objectEnumerator];
-    NSTableColumn *column;
-    while (column = [enumerator nextObject])
+    for (NSTableColumn *column in tableColumns)
     {
         NSString *title = [[column headerCell] title];
         NSMenuItem *item = [tableHeaderContextMenu addItemWithTitle:title action:@selector(contextMenuSelected:) keyEquivalent:@""];
@@ -48,9 +46,8 @@
         if (columnStore) [playlistView removeTableColumn:column];
     }
     
-    enumerator = [columnStore objectEnumerator];
-    NSDictionary *colinfo;
-    while (colinfo = [enumerator nextObject])
+    NSTableColumn *column;
+	for (NSDictionary *colinfo in columnStore)
     {
         NSMenuItem *item = [tableHeaderContextMenu itemWithTitle:[colinfo objectForKey:@"title"]];
         if (!item) continue;
@@ -89,9 +86,7 @@
 - (void) saveTableColumns
 {
     NSMutableArray *cols = [NSMutableArray array];
-    NSEnumerator *enumerator = [[playlistView tableColumns] objectEnumerator];
-    NSTableColumn *column;
-    while (column = [enumerator nextObject])
+    for (NSTableColumn *column in [playlistView tableColumns])
     {
         [cols addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                          [[column headerCell] title], @"title",
