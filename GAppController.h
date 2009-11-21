@@ -23,12 +23,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import "GMainWindowController.h"
+#import "GPreferenceController.h"
 
 
 @interface GAppController : NSObject {
 	IBOutlet GMainWindowController *mainWindowController;
+    GPreferenceController *prefController;
+    
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification;
+- (IBAction) showPreferencesWindow:(id) sender;
 
 @end

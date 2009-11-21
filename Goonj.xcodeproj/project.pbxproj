@@ -25,6 +25,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
+		C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,8 @@
 		C551B84E10AFE4CC00174867 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		C551BA7A10B54F2E00174867 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
+		C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPreferenceController.h; sourceTree = "<group>"; };
+		C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPreferenceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				63668AE31084CC7600CC02E5 /* Playlist */,
+				C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */,
+				C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */,
 				638392241058D34C00DCE47D /* GAppController.h */,
 				638392251058D34C00DCE47D /* GAppController.m */,
 				63274DF4105A0DDD005AC3BA /* GMainWindowController.h */,
@@ -256,6 +261,7 @@
 				63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */,
 				63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */,
 				635CBAB510B675F800D82472 /* Utilities.m in Sources */,
+				C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
