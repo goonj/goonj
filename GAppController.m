@@ -38,7 +38,7 @@
 {
 	[prefController loadWindow];
 	[[prefController window] makeKeyAndOrderFront:self];
-	NSLog(@"%@", [prefController window]);
+
 }
 
 
