@@ -90,3 +90,13 @@ Methods
 
 - Many times, method names exceed the 80-character guide. In such a case, you may
   line break parameters into the next line.
+
+////
+Variables
+////
+- Method parameters are named with a prefix of 'a' or 'an'. For example, aTableView and anEvent.
+- Local variables are named with a prefix of 'the'. For example, theTableView and theEvent.
+- Loop variables don't need a prefix. For example:
+    for (NSTableColumn *column in [theTable columns])
+        // some code.
+- Instance variables don't need a prefix.
