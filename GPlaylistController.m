@@ -61,7 +61,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTableColumns) name:NSTableViewColumnDidResizeNotification object:playlistView];
 
     // Note that GPlaylist's initWithFile is a class method.
-	playlist = [GPlaylist initWithFile:[[NSUserDefaults standardUserDefaults] stringForKey:@"/tmp/goonj/nowplaying.xspf"]];
+	playlist = [GPlaylist initWithFile:@"~/Library/Application Support/Goonj/nowplaying.xspf"];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 
@@ -182,7 +182,7 @@
 - (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info
                   proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
 {
-    return NSDragOperationGeneric;
+    return NSDragOperationCopy;
 }
 
 - (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row
@@ -206,6 +206,12 @@
 			[self addTracksFromDirectory:currentFile];
 	}
 
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
+    NSString *aSDirectory = [paths objectAtIndex:0];
+    NSString *goonjSupportDirectory = [aSDirectory stringByAppendingString:@"/Goonj"];
+    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingString:@"/nowplaying.xspf"];
+    
+    [playlist savePlaylistAs:nowPlayingList];
     [playlistView reloadData];
     return YES;
 }
