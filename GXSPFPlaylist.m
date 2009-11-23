@@ -28,7 +28,7 @@
 
 - (GPlaylist *) initWithFile:(NSString *)aURL
 {
-    if (self = [super init]) {
+	if (self = [super init]) {
         trackList = [[NSMutableArray alloc] initWithCapacity:0];
         aURL = [aURL stringByExpandingTildeInPath];
         
@@ -119,7 +119,7 @@
 
 	// Write data to file. TODO: replace existing file when saving.
 	NSData *XMLData = [XSPFDoc XMLDataWithOptions:NSXMLNodePrettyPrint];
-	return [XMLData writeToFile:aURL atomically:NO];
+	return [XMLData writeToFile:[aURL stringByExpandingTildeInPath] atomically:NO];
 }
 
 - (BOOL) loadPlaylist:(NSString *)aURL

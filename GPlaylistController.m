@@ -62,6 +62,7 @@
 
     // Note that GPlaylist's initWithFile is a class method.
 	playlist = [GPlaylist initWithFile:@"~/Library/Application Support/Goonj/nowplaying.xspf"];
+	[playlistView reloadData];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
 }
 
@@ -211,7 +212,7 @@
     NSString *goonjSupportDirectory = [aSDirectory stringByAppendingString:@"/Goonj"];
     NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingString:@"/nowplaying.xspf"];
     
-    [playlist savePlaylistAs:nowPlayingList];
+	[playlist savePlaylistAs:nowPlayingList];
     [playlistView reloadData];
     return YES;
 }
