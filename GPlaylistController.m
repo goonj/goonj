@@ -236,9 +236,6 @@
              onerow <= [rowindexes lastIndex]; 
              onerow = [rowindexes indexGreaterThanIndex:onerow])
         {
-            NSLog(@"Going from %i", onerow);
-            NSLog(@"Going to %i", row);
-            NSLog(@"Loop!");
             [playlist addTrack:[playlist trackAtIndex:onerow] atIndex:row];
             [playlist removeTrackAtIndex:onerow];
         }
