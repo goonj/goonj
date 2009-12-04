@@ -236,10 +236,12 @@
              onerow <= [rowindexes lastIndex]; 
              onerow = [rowindexes indexGreaterThanIndex:onerow])
         {
-            NSLog(@"%i", onerow);
-            NSLog(@"%i", row);
+            NSLog(@"Going from %i", onerow);
+            NSLog(@"Going to %i", row);
+            NSLog(@"Loop!");
+            [playlist addTrack:[playlist trackAtIndex:onerow] atIndex:row];
+            [playlist removeTrackAtIndex:onerow];
         }
-        
     }
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
