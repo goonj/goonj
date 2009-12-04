@@ -51,6 +51,11 @@
     [trackList addObject:track];
 }
 
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index
+{
+    [trackList insertObject:track atIndex:index];
+}
+
 - (void) removeTrackAtIndex:(NSUInteger)index
 {
     [trackList removeObjectAtIndex:index];

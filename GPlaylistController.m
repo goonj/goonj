@@ -31,6 +31,7 @@
 
 - (void) awakeFromNib
 {
+    // Set up the context menu for the table headers.
     NSArray *columnStore = [[NSUserDefaults standardUserDefaults] arrayForKey:@"ColumnsUserDefault"];
     NSMenu *tableHeaderContextMenu = [[NSMenu alloc] initWithTitle:@""];
     [[playlistView headerView] setMenu:tableHeaderContextMenu];
@@ -61,9 +62,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTableColumns) name:NSTableViewColumnDidResizeNotification object:playlistView];
 
     // Note that GPlaylist's initWithFile is a class method.
-	playlist = [GPlaylist initWithFile:@"~/Library/Application Support/Goonj/nowplaying.xspf"];
+	playlist = [GPlaylist initWithFile:@"~/Library/Application Support/Goonj/Now Playing.xspf"];
 	[playlistView reloadData];
-    [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
+    [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];
 }
 
 - (void) contextMenuSelected:(id)sender
@@ -180,10 +181,26 @@
 #pragma mark Drag and drop operations
 ////
 
+- (BOOL) tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes 
+      toPasteboard:(NSPasteboard *)pboard
+{
+    // Copy the row numbers to the pasteboard.
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    [pboard declareTypes:[NSArray arrayWithObject:@"internalTableRows"] owner:self];
+    [pboard setData:data forType:@"internalTableRows"];
+    return YES;
+}
+
 - (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info
                   proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
 {
-    return NSDragOperationCopy;
+    if ([info draggingSource] == tableView) 
+    {
+        return NSDragOperationMove;
+    } else {
+        return NSDragOperationCopy;
+    }
+
 }
 
 - (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row
@@ -191,26 +208,44 @@
 {
     NSPasteboard *pboard = [info draggingPasteboard];
     NSArray *files;
-
-    if ([[pboard types] containsObject:NSFilenamesPboardType])
+    
+    if ([pboard availableTypeFromArray:[NSArray arrayWithObject:NSFilenamesPboardType]])
+    {
         files = [pboard propertyListForType:NSFilenamesPboardType];
-
-    GTrack *draggedTrack;
-	BOOL isDirectory;
-	for (NSString *currentFile in files) {
-		[[NSFileManager defaultManager] fileExistsAtPath:currentFile isDirectory:&isDirectory];
+    
+        GTrack *draggedTrack;
+        BOOL isDirectory;
+        for (NSString *currentFile in files)
+        {
+            [[NSFileManager defaultManager] fileExistsAtPath:currentFile isDirectory:&isDirectory];
         
-		if (isDirectory == NO) {
-			draggedTrack = [[GTrack alloc] initWithFile:currentFile];
-        	[playlist addTrack:draggedTrack];
-		} else
-			[self addTracksFromDirectory:currentFile];
-	}
-
+            if (isDirectory == NO) 
+            {
+                draggedTrack = [[GTrack alloc] initWithFile:currentFile];
+                [playlist addTrack:draggedTrack];
+            } else
+                [self addTracksFromDirectory:currentFile];
+        }
+    } 
+    else if ([pboard availableTypeFromArray:[NSArray arrayWithObject:@"internalTableRows"]]) 
+    {
+        NSData *rowdata = [pboard dataForType:@"internalTableRows"];
+        NSIndexSet *rowindexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowdata];
+        NSUInteger onerow;
+        for (onerow = [rowindexes firstIndex]; 
+             onerow <= [rowindexes lastIndex]; 
+             onerow = [rowindexes indexGreaterThanIndex:onerow])
+        {
+            NSLog(@"%i", onerow);
+            NSLog(@"%i", row);
+        }
+        
+    }
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
     NSString *aSDirectory = [paths objectAtIndex:0];
-    NSString *goonjSupportDirectory = [aSDirectory stringByAppendingString:@"/Goonj"];
-    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingString:@"/nowplaying.xspf"];
+    NSString *goonjSupportDirectory = [aSDirectory stringByAppendingPathComponent:@"Goonj"];
+    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.xspf"];
     
 	[playlist savePlaylistAs:nowPlayingList];
     [playlistView reloadData];

@@ -50,6 +50,7 @@ typedef enum _GPlaylistType {
 - (GPlaylist *) initWithFile:(NSString *)aURL;
 - (GPlaylistType) playlistType;
 - (void) addTrack:(GTrack *)track;
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
 - (void) removeTrackAtIndex:(NSUInteger)index;
 - (void) clearPlaylist;
 - (NSUInteger) count;
