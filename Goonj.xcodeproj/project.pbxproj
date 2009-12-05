@@ -10,7 +10,7 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
 		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
-		635CBAB510B675F800D82472 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 635CBAB410B675F800D82472 /* Utilities.m */; };
+		635CBAB510B675F800D82472 /* GUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 635CBAB410B675F800D82472 /* GUtilities.m */; };
 		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
 		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
 		638390811058B30000DCE47D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6383907F1058B30000DCE47D /* LICENSE */; };
@@ -38,8 +38,8 @@
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
-		635CBAB310B675F800D82472 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		635CBAB410B675F800D82472 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		635CBAB310B675F800D82472 /* GUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUtilities.h; sourceTree = "<group>"; };
+		635CBAB410B675F800D82472 /* GUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUtilities.m; sourceTree = "<group>"; };
 		63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSPFPlaylist.h; sourceTree = "<group>"; };
 		63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXSPFPlaylist.m; sourceTree = "<group>"; };
 		63668AE71084CD0A00CC02E5 /* GM3UPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GM3UPlaylist.h; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 				63ECAFC4105B59A000E635C7 /* GPlaylistController.m */,
 				63917FB21062871C00DDF469 /* GTrack.h */,
 				63917FB31062871C00DDF469 /* GTrack.m */,
-				635CBAB310B675F800D82472 /* Utilities.h */,
-				635CBAB410B675F800D82472 /* Utilities.m */,
+				635CBAB310B675F800D82472 /* GUtilities.h */,
+				635CBAB410B675F800D82472 /* GUtilities.m */,
 				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
 			);
 			name = Classes;
@@ -262,7 +262,7 @@
 				63FFF6C41083797300E0AE44 /* GPlaylist.m in Sources */,
 				63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */,
 				63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */,
-				635CBAB510B675F800D82472 /* Utilities.m in Sources */,
+				635CBAB510B675F800D82472 /* GUtilities.m in Sources */,
 				C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

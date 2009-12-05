@@ -18,14 +18,16 @@
 	You should have received a copy of the GNU General Public License
 	along with Goonj. If not, see <http://www.gnu.org/licenses/>.
  
-	Copyright 2009 Ankur Sethi.
+    Copyright 2009 Pratul Kalia.
+    Copyright 2009 Ankur Sethi.
 */
 
-#import "Utilities.h"
+#import "GUtilities.h"
 
+@implementation GUtilities
 
 // Use launch services to determine whether file is invisible.
-BOOL isHidden(NSString *aPath)
++ (BOOL) isHidden:(NSString *)aPath
 {
     NSURL *aURL = [NSURL fileURLWithPath:aPath];
     LSItemInfoRecord infoRecord;
@@ -37,3 +39,5 @@ BOOL isHidden(NSString *aPath)
 	
 	return NO;
 }
+
+@end

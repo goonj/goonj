@@ -24,7 +24,7 @@
 
 #import "GPlaylistController.h"
 #import "GTrack.h"
-#import "Utilities.h"
+#import "GUtilities.h"
 
 
 @implementation GPlaylistController
@@ -116,7 +116,7 @@
 	while (fileName = [dirEnum nextObject]) {
 		filePath = [aDirectory stringByAppendingPathComponent:fileName];
         
-        if (isHidden(filePath) == YES)
+        if ([GUtilities isHidden:filePath])
             continue;
 		
         [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];

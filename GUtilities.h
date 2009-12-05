@@ -18,10 +18,14 @@
 	You should have received a copy of the GNU General Public License
 	along with Goonj. If not, see <http://www.gnu.org/licenses/>.
  
-	Copyright 2009 Ankur Sethi.
+    Copyright 2009 Pratul Kalia.
+    Copyright 2009 Ankur Sethi.
 */
 
 #import <Cocoa/Cocoa.h>
 
+@interface GUtilities : NSObject
 
-BOOL isHidden(NSString *aPath);
++ (BOOL) isHidden:(NSString *)aPath;
+
+@end
