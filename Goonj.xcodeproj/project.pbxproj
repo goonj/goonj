@@ -62,7 +62,7 @@
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
 		C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPreferenceController.h; sourceTree = "<group>"; };
 		C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPreferenceController.m; sourceTree = "<group>"; };
-		C594BC1910C99EDB006AB16C /* GCollectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocol.h; sourceTree = "<group>"; };
+		C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocols.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 				63917FB31062871C00DDF469 /* GTrack.m */,
 				635CBAB310B675F800D82472 /* Utilities.h */,
 				635CBAB410B675F800D82472 /* Utilities.m */,
-				C594BC1910C99EDB006AB16C /* GCollectionProtocol.h */,
+				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

@@ -25,7 +25,21 @@
 #import <Cocoa/Cocoa.h>
 
 
-@protocol GCollectionProtocol
+@protocol GCollection
 
 
 @end
+
+@protocol GMutableCollection < GCollection >
+
+
+
+@end
+
+@protocol GOrderedCollection < GCollection >
+
+
+
+@end
+
+
