@@ -1,7 +1,6 @@
 /*
-	File: Utilities.m
-	Description: Some utility functions in C that don't fit into any class
-	(implementation).
+	File: GUtilities.m
+	Description: Some utility class methods. (implementation).
  
 	This file is part of Goonj.
  

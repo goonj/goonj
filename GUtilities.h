@@ -1,7 +1,6 @@
 /*
-	File: Utilities.h
-	Description: Some utility functions in C that don't fit into any class
-	(interface).
+	File: GUtilities.h
+	Description: Some utility class methods. (interface).
  
 	This file is part of Goonj.
  
