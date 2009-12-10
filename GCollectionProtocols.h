@@ -33,12 +33,17 @@
 
 @end
 
+// Mutable collections can be changed.
 @protocol GMutableCollection < GCollection >
 
-
+- (void) addTrack:(GTrack *)track;
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
+- (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) clearPlaylist;
 
 @end
 
+// Ordered collections have a specific order.
 @protocol GOrderedCollection < GCollection >
 
 

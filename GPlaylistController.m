@@ -240,12 +240,12 @@
             [playlist removeTrackAtIndex:onerow];
         }
     }
-    
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
     NSString *aSDirectory = [paths objectAtIndex:0];
     NSString *goonjSupportDirectory = [aSDirectory stringByAppendingPathComponent:@"Goonj"];
     NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.xspf"];
-    
+
 	[playlist savePlaylistAs:nowPlayingList];
     [playlistView reloadData];
     return YES;
