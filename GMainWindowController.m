@@ -73,11 +73,4 @@
 		[[self window] close];
 }
 
-- (IBAction) closeWindow:(id)sender
-{
-	// Why do I even need to implement this? Isn't NSWindowController supposed
-	// to implement an IBAction for this? Meh.
-	[[self window] close];
-}
-
 @end
