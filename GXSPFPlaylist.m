@@ -143,11 +143,14 @@
 	NSArray *XSPFTracks = [XSPFTrackList elementsForName:@"track"];
 
 	GTrack *track;
+	NSString *unescapedString;
 	for (NSXMLElement *XSPFTrack in XSPFTracks) {
 		NSXMLElement *XSPFLocation = [[XSPFTrack elementsForName:@"location"] objectAtIndex:0];
-		track = [[GTrack alloc] initWithFile:[[XSPFLocation stringValue]
-            stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-		NSLog(@"%@", [[XSPFLocation stringValue] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
+		
+		// Need to call stringByReplacingPercentEscapesUsingEncoding twice. Insane, I tell you.
+		unescapedString = [[XSPFLocation stringValue] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		unescapedString = [unescapedString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		track = [[GTrack alloc] initWithFile:unescapedString];
 		[self addTrack:track];
 	}
 
