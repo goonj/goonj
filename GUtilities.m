@@ -39,4 +39,16 @@
 	return NO;
 }
 
++ (id < GMutableCollection, GOrderedCollection >) getPlaylistObject:(NSString *)aURL
+{
+	NSString *ext = [aURL pathExtension];
+    
+	if ([ext caseInsensitiveCompare:@"xspf"] == NSOrderedSame)
+		return [[GXSPFPlaylist alloc] initWithFile:aURL];
+	else if ([ext caseInsensitiveCompare:@"m3u"] == NSOrderedSame)
+		return [[GM3UPlaylist alloc] initWithFile:aURL];
+	
+	return nil;
+}
+
 @end

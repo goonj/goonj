@@ -22,9 +22,14 @@
 */
 
 #import <Cocoa/Cocoa.h>
+#import "GCollectionProtocols.h"
+#import "GXSPFPlaylist.h"
+#import "GM3UPlaylist.h"
+
 
 @interface GUtilities : NSObject
 
 + (BOOL) isHidden:(NSString *)aPath;
++ (id < GMutableCollection, GOrderedCollection >) getPlaylistObject:(NSString *)aURL;
 
 @end

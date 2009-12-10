@@ -22,10 +22,10 @@
 */
 
 #import <Cocoa/Cocoa.h>
-#import "GPlaylist.h"
+#import "GCollectionProtocols.h"
 
 
-@interface GXSPFPlaylist : GPlaylist {
+@interface GXSPFPlaylist : NSObject < GMutableCollection, GOrderedCollection > {
 
 }
 

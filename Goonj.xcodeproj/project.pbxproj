@@ -19,7 +19,6 @@
 		638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638392BD1058D9CA00DCE47D /* MainWindow.xib */; };
 		63917FB41062871C00DDF469 /* GTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63917FB31062871C00DDF469 /* GTrack.m */; };
 		63ECAFC5105B59A000E635C7 /* GPlaylistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECAFC4105B59A000E635C7 /* GPlaylistController.m */; };
-		63FFF6C41083797300E0AE44 /* GPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFF6C31083797300E0AE44 /* GPlaylist.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -53,8 +52,6 @@
 		63917FB31062871C00DDF469 /* GTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTrack.m; sourceTree = "<group>"; };
 		63ECAFC3105B59A000E635C7 /* GPlaylistController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylistController.h; sourceTree = "<group>"; };
 		63ECAFC4105B59A000E635C7 /* GPlaylistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistController.m; sourceTree = "<group>"; };
-		63FFF6C21083797300E0AE44 /* GPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylist.h; sourceTree = "<group>"; };
-		63FFF6C31083797300E0AE44 /* GPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylist.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551B84E10AFE4CC00174867 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
@@ -180,8 +177,6 @@
 		63668AE31084CC7600CC02E5 /* Playlist */ = {
 			isa = PBXGroup;
 			children = (
-				63FFF6C21083797300E0AE44 /* GPlaylist.h */,
-				63FFF6C31083797300E0AE44 /* GPlaylist.m */,
 				63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */,
 				63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */,
 				63668AE71084CD0A00CC02E5 /* GM3UPlaylist.h */,
@@ -259,7 +254,6 @@
 				63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */,
 				63ECAFC5105B59A000E635C7 /* GPlaylistController.m in Sources */,
 				63917FB41062871C00DDF469 /* GTrack.m in Sources */,
-				63FFF6C41083797300E0AE44 /* GPlaylist.m in Sources */,
 				63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */,
 				63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */,
 				635CBAB510B675F800D82472 /* GUtilities.m in Sources */,

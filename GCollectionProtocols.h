@@ -27,6 +27,8 @@
 
 @protocol GCollection
 
+- (int) count;
+- (GTrack *) trackAtIndex:(int)index;
 
 @end
 

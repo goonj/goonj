@@ -22,10 +22,10 @@
 */
 
 #import <Cocoa/Cocoa.h>
-#import "GPlaylist.h"
+#import "GCollectionProtocols.h"
 
 
-@interface GM3UPlaylist : GPlaylist {
+@interface GM3UPlaylist : NSObject < GMutableCollection, GOrderedCollection > {
 
 }
 
