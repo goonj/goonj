@@ -62,7 +62,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTableColumns) name:NSTableViewColumnDidResizeNotification object:playlistView];
 
     // Note that GPlaylist's initWithFile is a class method.
-	playlist = [GPlaylist initWithFile:@"~/Library/Application Support/Goonj/Now Playing.xspf"];
+	playlist = [GUtilities initPlaylistWithFile:@"~/Library/Application Support/Goonj/Now Playing.xspf"];
 	[playlistView reloadData];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];
 }

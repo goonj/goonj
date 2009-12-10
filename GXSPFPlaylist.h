@@ -26,7 +26,9 @@
 
 
 @interface GXSPFPlaylist : NSObject < GMutableCollection, GOrderedCollection > {
-
+	NSMutableArray *trackList;
 }
+
+- (BOOL) loadPlaylist:(NSString *)aURL;
 
 @end

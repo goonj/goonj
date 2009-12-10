@@ -39,6 +39,5 @@
 - (IBAction) loadPlaylist:(id)sender;
 - (IBAction) savePlaylist:(id)sender;
 - (IBAction) toggleWindow:(id)sender;
-- (IBAction) closeWindow:(id)sender;
 
 @end

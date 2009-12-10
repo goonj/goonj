@@ -26,7 +26,7 @@
 
 @implementation GXSPFPlaylist
 
-- (GPlaylist *) initWithFile:(NSString *)aURL
+- (id) initWithFile:(NSString *)aURL
 {
 	if (self = [super init]) {
         trackList = [[NSMutableArray alloc] initWithCapacity:0];
@@ -39,11 +39,6 @@
     }
 
     return nil;
-}
-
-- (GPlaylistType) playlistType
-{
-    return kXSPFType;
 }
 
 - (void) addTrack:(GTrack *)track

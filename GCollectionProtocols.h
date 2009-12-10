@@ -23,6 +23,7 @@
 */
 
 #import <Cocoa/Cocoa.h>
+#import "GTrack.h"
 
 
 @protocol GCollection
