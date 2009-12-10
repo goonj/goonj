@@ -28,8 +28,8 @@
 
 @protocol GCollection
 
-- (int) count;
-- (GTrack *) trackAtIndex:(int)index;
+- (NSUInteger) count;
+- (GTrack *) trackAtIndex:(NSUInteger)index;
 
 @end
 

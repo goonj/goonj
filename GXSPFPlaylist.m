@@ -147,6 +147,7 @@
 		NSXMLElement *XSPFLocation = [[XSPFTrack elementsForName:@"location"] objectAtIndex:0];
 		track = [[GTrack alloc] initWithFile:[[XSPFLocation stringValue]
             stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+		NSLog(@"%@", [[XSPFLocation stringValue] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
 		[self addTrack:track];
 	}
 
