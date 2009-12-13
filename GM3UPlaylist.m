@@ -26,4 +26,70 @@
 
 @implementation GM3UPlaylist
 
+- (id) initWithFile:(NSString *)aURL
+{
+    if (self = [super init])
+    {
+        trackList = [[NSMutableArray alloc] initWithCapacity:0];
+        aURL = [aURL stringByExpandingTildeInPath];
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
+            [self loadPlaylist:aURL];
+        
+        return self;
+    }
+    return nil;
+}
+
+- (void) addTrack:(GTrack *)track
+{
+    [trackList addObject:track];
+}
+
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index
+{
+    [trackList insertObject:track atIndex:index];
+}
+
+- (void) removeTrackAtIndex:(NSUInteger)index
+{
+    [trackList removeObjectAtIndex:index];
+}
+
+- (void) clearPlaylist
+{
+    [trackList removeAllObjects];
+}
+
+- (NSUInteger) count
+{
+    return [trackList count];
+}
+
+- (GTrack *) trackAtIndex:(NSUInteger)index
+{
+    return [trackList objectAtIndex:index];
+}
+
+- (BOOL) savePlaylistAs:(NSString *)aURL
+{
+    
+    return NO;
+}
+
+- (BOOL) loadPlaylist:(NSString *)aURL
+{
+    NSError *err; NSStringEncoding encoding;
+    GTrack *track;
+    NSArray *lines = [[NSString stringWithContentsOfFile:aURL usedEncoding:&encoding error:&err] componentsSeparatedByString:@"\n"];
+
+    for (NSString *tmp in lines) {
+        if (!([tmp characterAtIndex:0] == '#')) {
+            track = [[GTrack alloc] initWithFile:tmp];
+            [self addTrack:track];
+        }
+    }
+    return YES;
+}
+
 @end

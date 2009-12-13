@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				63668AE31084CC7600CC02E5 /* Playlist */,
+				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
 				C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */,
 				C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */,
 				638392241058D34C00DCE47D /* GAppController.h */,
@@ -90,7 +91,6 @@
 				63917FB31062871C00DDF469 /* GTrack.m */,
 				635CBAB310B675F800D82472 /* GUtilities.h */,
 				635CBAB410B675F800D82472 /* GUtilities.m */,
-				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

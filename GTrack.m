@@ -29,6 +29,8 @@
 
 @implementation GTrack
 
+@dynamic path;
+
 - (id) initWithFile:(NSString *)aPath
 {
 	self = [super init];

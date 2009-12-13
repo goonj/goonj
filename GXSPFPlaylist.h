@@ -29,6 +29,14 @@
 	NSMutableArray *trackList;
 }
 
+- (id) initWithFile:(NSString *)aURL;
+- (void) addTrack:(GTrack *)track;
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
+- (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) clearPlaylist;
+- (NSUInteger) count;
+- (GTrack *) trackAtIndex:(NSUInteger)index;
+- (BOOL) savePlaylistAs:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;
 
 @end
