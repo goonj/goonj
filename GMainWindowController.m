@@ -60,7 +60,7 @@
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
     [savePanel setTitle:@"Save Playlist"];
-    [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"xspf", @"m3u", nil]];
+    [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
     [savePanel runModal];
     [playlistController savePlaylist:[[savePanel URL] path]];
 }

@@ -221,7 +221,7 @@
             if (isDirectory == NO) 
             {
                 draggedTrack = [[GTrack alloc] initWithFile:currentFile];
-                [playlist addTrack:draggedTrack];
+                [playlist addTrack:draggedTrack atIndex:row];
             } else
                 [self addTracksFromDirectory:currentFile];
         }
@@ -231,19 +231,22 @@
         NSData *rowdata = [pboard dataForType:@"internalTableRows"];
         NSIndexSet *rowindexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowdata];
         NSUInteger onerow;
-        for (onerow = [rowindexes firstIndex]; 
-             onerow <= [rowindexes lastIndex]; 
-             onerow = [rowindexes indexGreaterThanIndex:onerow])
-        {
-            [playlist addTrack:[playlist trackAtIndex:onerow] atIndex:row];
-            [playlist removeTrackAtIndex:onerow];
+        for (onerow = [rowindexes firstIndex]; onerow <= [rowindexes lastIndex]; onerow = [rowindexes indexGreaterThanIndex:onerow])
+        {   
+            if (row >= [playlist count]) {
+                // Allow people to drop beyond the range of the playlist and shift
+                // track to the last position.
+                [playlist moveTrackFromIndex:onerow toIndex:row - 1];
+            } else {
+                [playlist moveTrackFromIndex:onerow toIndex:row];
+            }
         }
     }
 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
     NSString *aSDirectory = [paths objectAtIndex:0];
     NSString *goonjSupportDirectory = [aSDirectory stringByAppendingPathComponent:@"Goonj"];
-    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.xspf"];
+    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.m3u"];
 
 	[playlist savePlaylistAs:nowPlayingList];
     [playlistView reloadData];

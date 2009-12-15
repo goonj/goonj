@@ -56,6 +56,13 @@
     [trackList removeObjectAtIndex:index];
 }
 
+- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex
+{
+    id something = [trackList objectAtIndex:initIndex];
+    [trackList removeObjectAtIndex:initIndex];
+    [trackList insertObject:something atIndex:endIndex];
+}
+
 - (void) clearPlaylist
 {
     [trackList removeAllObjects];
@@ -73,8 +80,20 @@
 
 - (BOOL) savePlaylistAs:(NSString *)aURL
 {
+    aURL = [aURL stringByExpandingTildeInPath];
+    NSError *err;
+    NSString *write = [NSString string];
     
-    return NO;
+    for (GTrack *track in trackList)
+    {
+        NSString *current = [track valueForKey:@"location"];
+        write = [write stringByAppendingString:current];
+        write = [write stringByAppendingString:@"\n"];
+    }
+
+    // Atomic writes are safer.
+    [write writeToFile:aURL atomically:YES encoding:4 error:&err];
+    return YES;
 }
 
 - (BOOL) loadPlaylist:(NSString *)aURL
@@ -83,11 +102,17 @@
     GTrack *track;
     NSArray *lines = [[NSString stringWithContentsOfFile:aURL usedEncoding:&encoding error:&err] componentsSeparatedByString:@"\n"];
 
-    for (NSString *tmp in lines) {
-        if (!([tmp characterAtIndex:0] == '#')) {
-            track = [[GTrack alloc] initWithFile:tmp];
+    for (NSString *temp in lines) 
+    {
+        temp = [temp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+        // Currently, we are ignoring any lines with comments.
+        // TODO write the extm3u parser.
+        if (([temp length] > 0) && [temp characterAtIndex:0] != '#') {
+            track = [[GTrack alloc] initWithFile:temp];
             [self addTrack:track];
         }
+        
     }
     return YES;
 }

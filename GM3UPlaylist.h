@@ -33,6 +33,7 @@
 - (void) addTrack:(GTrack *)track;
 - (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
 - (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
 - (void) clearPlaylist;
 - (NSUInteger) count;
 - (GTrack *) trackAtIndex:(NSUInteger)index;

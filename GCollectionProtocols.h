@@ -48,7 +48,7 @@
 // Ordered collections have a specific order.
 @protocol GOrderedCollection < GCollection >
 
-
+- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
 
 @end
 
