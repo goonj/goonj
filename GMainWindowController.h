@@ -24,12 +24,12 @@
 */
 
 #import <Cocoa/Cocoa.h>
-#import "GPlaylistController.h"
+#import "GPlaylistViewController.h"
 
 
 @interface GMainWindowController : NSWindowController {
 	IBOutlet NSTableView *playlistView;
-	IBOutlet GPlaylistController *playlistController;
+	IBOutlet GPlaylistViewController *playlistViewController;
 }
 
 - (BOOL) validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;

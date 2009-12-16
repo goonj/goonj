@@ -42,7 +42,7 @@
 
 - (IBAction) newPlaylist:(id)sender
 {
-	[playlistController clearPlaylist];
+	[playlistViewController clearPlaylist];
 }
 
 - (IBAction) loadPlaylist:(id)sender
@@ -53,7 +53,7 @@
    [openPanel runModal];
 
    NSString *URL = [[[openPanel URLs] objectAtIndex:0] path];
-   [playlistController loadPlaylist:URL];
+   [playlistViewController loadPlaylist:URL];
 }
 
 - (IBAction) savePlaylist:(id)sender
@@ -62,7 +62,7 @@
     [savePanel setTitle:@"Save Playlist"];
     [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
     [savePanel runModal];
-    [playlistController savePlaylist:[[savePanel URL] path]];
+    [playlistViewController savePlaylist:[[savePanel URL] path]];
 }
 
 - (IBAction) toggleWindow:(id)sender
