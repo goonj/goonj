@@ -30,6 +30,7 @@
 }
 
 - (id) initWithFile:(NSString *)aURL;
+- (id) initWithTrackList:(NSArray *)aTrackList;
 - (void) addTrack:(GTrack *)track;
 - (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
 - (void) removeTrackAtIndex:(NSUInteger)index;

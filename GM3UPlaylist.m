@@ -38,7 +38,19 @@
         
         return self;
     }
-    return nil;
+    
+	return nil;
+}
+
+- (id) initWithTrackList:(NSArray *)aTrackList
+{
+	if (self = [super init])
+	{
+		trackList = [[NSMutableArray alloc] initWithArray:aTrackList];
+		return self;
+	}
+	
+	return nil;
 }
 
 - (void) addTrack:(GTrack *)track
