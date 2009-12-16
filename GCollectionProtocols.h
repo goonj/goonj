@@ -32,6 +32,7 @@
 - (GTrack *) trackAtIndex:(NSUInteger)index;
 - (BOOL) savePlaylistAs:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;
+- (BOOL) isLocalCollection;
 
 @end
 
