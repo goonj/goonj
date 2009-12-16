@@ -26,7 +26,7 @@
 #import "GTrack.h"
 #import "GCollectionProtocols.h"
 
-@interface GPlaylistController : NSObject {
+@interface GPlaylistViewController : NSObject {
 	id < GMutableCollection, GOrderedCollection > playlist;
 	
 	IBOutlet NSWindow *mainWindow;

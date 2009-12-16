@@ -22,12 +22,12 @@
     Copyright 2009 Ankur Sethi.
 */
 
-#import "GPlaylistController.h"
+#import "GPlaylistViewController.h"
 #import "GTrack.h"
 #import "GUtilities.h"
 
 
-@implementation GPlaylistController
+@implementation GPlaylistViewController
 
 - (void) awakeFromNib
 {
