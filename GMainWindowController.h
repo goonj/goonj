@@ -38,6 +38,8 @@
 - (IBAction) newPlaylist:(id)sender;
 - (IBAction) loadPlaylist:(id)sender;
 - (IBAction) savePlaylist:(id)sender;
+- (IBAction) addTracksToPlaylist:(id)sender;
+- (IBAction) removeSelectedTracksFromPlaylist:(id)sender;
 - (IBAction) toggleWindow:(id)sender;
 
 @end

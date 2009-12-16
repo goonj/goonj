@@ -65,6 +65,16 @@
     [playlistViewController savePlaylist:[[savePanel URL] path]];
 }
 
+- (IBAction) addTracksToPlaylist:(id)sender
+{
+	// Add track.
+}
+
+- (IBAction) removeSelectedTracksFromPlaylist:(id)sender
+{
+	[playlistViewController removeSelectedTracks];
+}
+
 - (IBAction) toggleWindow:(id)sender
 {
 	if ([[self window] isVisible] == NO)

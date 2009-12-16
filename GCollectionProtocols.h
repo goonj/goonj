@@ -30,8 +30,8 @@
 
 - (NSUInteger) count;
 - (GTrack *) trackAtIndex:(NSUInteger)index;
-- (BOOL) savePlaylistAs:(NSString *)aURL;
-- (BOOL) loadPlaylist:(NSString *)aURL;
+- (BOOL) saveCollectionAs:(NSString *)aURL;
+- (BOOL) loadCollection:(NSString *)aURL;
 - (BOOL) isLocalCollection;
 
 @end
@@ -40,6 +40,7 @@
 @protocol GMutableCollection < GCollection >
 
 - (void) addTrack:(GTrack *)track;
+- (void) removeTrack:(GTrack *)track;
 - (void) clearPlaylist;
 
 @end
@@ -47,10 +48,15 @@
 // Ordered collections have a specific order.
 @protocol GOrderedCollection < GCollection >
 
-- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
-- (void) removeTrackAtIndex:(NSUInteger)index;
-- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
 
 @end
 
+@protocol GOrderedMutableCollection < GCollection >
+
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
+- (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) removeTracksAtIndexes:(NSIndexSet *)indexes;
+- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
+
+@end
 

@@ -25,7 +25,7 @@
 #import "GCollectionProtocols.h"
 
 
-@interface GM3UPlaylist : NSObject < GMutableCollection, GOrderedCollection > {
+@interface GM3UPlaylist : NSObject < GOrderedMutableCollection > {
     NSMutableArray *trackList;
 }
 
@@ -34,6 +34,7 @@
 - (void) addTrack:(GTrack *)track;
 - (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
 - (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) removeTracksAtIndexes:(NSIndexSet *)indexes;
 - (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
 - (void) clearPlaylist;
 - (NSUInteger) count;

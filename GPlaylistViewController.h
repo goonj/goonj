@@ -27,7 +27,7 @@
 #import "GCollectionProtocols.h"
 
 @interface GPlaylistViewController : NSObject {
-	id < GMutableCollection, GOrderedCollection > playlist;
+	id < GOrderedMutableCollection > playlist;
 	
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTableView *playlistView;
@@ -35,6 +35,7 @@
 
 - (void) addTrack:(GTrack *)aTrack;
 - (void) addTracksFromDirectory:(NSString *)aURL;
+- (void) removeSelectedTracks;
 - (void) clearPlaylist;
 - (BOOL) savePlaylist:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;

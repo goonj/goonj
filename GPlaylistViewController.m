@@ -129,6 +129,13 @@
 	}
 }
 
+- (void) removeSelectedTracks
+{
+	NSIndexSet *selectedTracks = [playlistView selectedRowIndexes];
+	[playlist removeTracksAtIndexes:selectedTracks];
+	[playlistView reloadData];
+}
+
 - (void) clearPlaylist
 {
 	[playlist clearPlaylist];

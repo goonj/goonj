@@ -68,6 +68,11 @@
     [trackList removeObjectAtIndex:index];
 }
 
+- (void) removeTracksAtIndexes:(NSIndexSet *)indexes
+{
+	[trackList removeObjectsAtIndexes:indexes];
+}
+
 - (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex
 {
     id something = [trackList objectAtIndex:initIndex];
