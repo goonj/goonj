@@ -1,6 +1,6 @@
 /*
-    File: GCollectionProtocol.h
-    Description: A protocol to define a generic collection of media files and
+    File: GCollectionProtocols.h
+    Description: Protocols to define a generic collection of media files and
     their associated methods.
 
     This file is part of Goonj.

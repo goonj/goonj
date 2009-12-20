@@ -29,9 +29,11 @@
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	[mainWindowController initWithWindowNibName:@"MainWindow" owner:mainWindowController];
-	[mainWindowController loadWindow];
 	[[mainWindowController window] setExcludedFromWindowsMenu:YES];
-	[prefController initWithWindowNibName:@"Preferences"];
+    [mainWindowController setShouldCascadeWindows:NO];
+    [mainWindowController window];
+
+    [prefController initWithWindowNibName:@"Preferences"];
     
     // Create Application Support folder if it doesn't exist.
     NSString *location = [@"~/Library/Application Support/Goonj" stringByExpandingTildeInPath];

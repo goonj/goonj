@@ -42,7 +42,7 @@
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{320, 158}, {799, 617}}</string>
-				<int key="NSWTFlags">536871936</int>
+				<int key="NSWTFlags">-1610611712</int>
 				<string key="NSWindowTitle">Goonj</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<object class="NSToolbar" key="NSViewClass" id="555293113">
@@ -526,6 +526,7 @@
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{612, 584}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSFrameAutosaveName">GMainWindow</string>
 			</object>
 			<object class="NSCustomObject" id="826352085">
 				<string key="NSClassName">GPlaylistViewController</string>
@@ -899,9 +900,9 @@
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{329, 106}, {799, 617}}</string>
+					<string>{{124, 106}, {799, 617}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{329, 106}, {799, 617}}</string>
+					<string>{{124, 106}, {799, 617}}</string>
 					<integer value="1"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
@@ -962,13 +963,17 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>addTracksToPlaylist:</string>
 							<string>loadPlaylist:</string>
 							<string>newPlaylist:</string>
+							<string>removeSelectedTracksFromPlaylist:</string>
 							<string>savePlaylist:</string>
 							<string>toggleWindow:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
