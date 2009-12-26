@@ -30,6 +30,7 @@
 @interface GMainWindowController : NSWindowController {
 	IBOutlet NSTableView *playlistView;
 	IBOutlet GPlaylistViewController *playlistViewController;
+    IBOutlet NSView *saveFileFormat;
 }
 
 - (BOOL) validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;

@@ -42,4 +42,8 @@
 - (BOOL) savePlaylistAs:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;
 
+// Now Playing methods
+- (BOOL) saveNowPlaying;
+- (BOOL) loadNowPlaying;
+
 @end

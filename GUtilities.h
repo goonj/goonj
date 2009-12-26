@@ -30,6 +30,6 @@
 @interface GUtilities : NSObject
 
 + (BOOL) isHidden:(NSString *)aPath;
-+ (id < GMutableCollection, GOrderedCollection >) initPlaylistWithFile:(NSString *)aURL;
++ (id < GOrderedMutableCollection >) initPlaylistWithFile:(NSString *)aURL;
 
 @end

@@ -48,21 +48,45 @@
 - (IBAction) loadPlaylist:(id)sender
 {
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
-   [openPanel setCanChooseDirectories:NO];
-   [openPanel setAllowsMultipleSelection:NO];
-   [openPanel runModal];
-
-   NSString *URL = [[[openPanel URLs] objectAtIndex:0] path];
-   [playlistViewController loadPlaylist:URL];
+    [openPanel setCanChooseDirectories:NO];
+    [openPanel setAllowsMultipleSelection:NO];
+    [openPanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
+    
+    [openPanel beginSheetForDirectory:nil file:nil 
+                       modalForWindow:[self window] 
+                        modalDelegate:self 
+                       didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) 
+                          contextInfo:NULL];
+}
+     
+- (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
+{
+	if (returnCode == NSOKButton)
+	{
+        NSString *URL = [[[panel URLs] objectAtIndex:0] path];
+        [playlistViewController loadPlaylist:URL];
+	}
 }
 
 - (IBAction) savePlaylist:(id)sender
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
     [savePanel setTitle:@"Save Playlist"];
+    [savePanel setAccessoryView:saveFileFormat];
     [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
-    [savePanel runModal];
-    [playlistViewController savePlaylist:[[savePanel URL] path]];
+    [savePanel beginSheetForDirectory:nil file:@"My Playlist" 
+                       modalForWindow:[self window] 
+                        modalDelegate:self 
+                       didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:) 
+                          contextInfo:NULL];
+}
+
+- (void) savePanelDidEnd:(NSSavePanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
+{
+	if (returnCode == NSOKButton)
+	{
+		[playlistViewController savePlaylist:[[panel URL] path]];
+	}
 }
 
 - (IBAction) addTracksToPlaylist:(id)sender
