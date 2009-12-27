@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A97B6A4F0B94F8E800F4683E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70015CD0B8FD8D200CF7383 /* AudioToolbox.framework */; };
+		A991DEB10B9DFED700B3991A /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70015D60B8FD92C00CF7383 /* CoreAudio.framework */; };
+		A991E1650B9E0F1000B3991A /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70016770B8FDB9100CF7383 /* CAStreamBasicDescription.cpp */; };
+		A991E1670B9E0F3500B3991A /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70016790B8FDB9100CF7383 /* CAXException.cpp */; };
+		A995226A0B9E469D002A9146 /* CAAudioFileFormats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A99522680B9E469D002A9146 /* CAAudioFileFormats.cpp */; };
+		F70015E60B8FD9A200CF7383 /* CAPThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70015E10B8FD9A200CF7383 /* CAPThread.cpp */; };
+		F70015E90B8FD9E500CF7383 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */; };
+		F700166E0B8FDB1F00CF7383 /* aqrecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F700166D0B8FDB1F00CF7383 /* aqrecord.cpp */; };
+		F700167E0B8FDBB500CF7383 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70016770B8FDB9100CF7383 /* CAStreamBasicDescription.cpp */; };
+		F700167F0B8FDBB600CF7383 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70016790B8FDB9100CF7383 /* CAXException.cpp */; };
+		F70016810B8FDBD100CF7383 /* aqplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F70016800B8FDBD100CF7383 /* aqplay.cpp */; };
+		F70016830B8FDBE200CF7383 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70015CD0B8FD8D200CF7383 /* AudioToolbox.framework */; };
+		F70016840B8FDBE300CF7383 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		A99522680B9E469D002A9146 /* CAAudioFileFormats.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = CAAudioFileFormats.cpp; path = Examples/CoreAudio/PublicUtility/CAAudioFileFormats.cpp; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		A99522690B9E469D002A9146 /* CAAudioFileFormats.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = CAAudioFileFormats.h; path = Examples/CoreAudio/PublicUtility/CAAudioFileFormats.h; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		F70015CB0B8FD8AC00CF7383 /* AQRecord */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AQRecord; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70015CD0B8FD8D200CF7383 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		F70015D60B8FD92C00CF7383 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
+		F70015E10B8FD9A200CF7383 /* CAPThread.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = CAPThread.cpp; path = Examples/CoreAudio/PublicUtility/CAPThread.cpp; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		F70015E20B8FD9A200CF7383 /* CAPThread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = CAPThread.h; path = Examples/CoreAudio/PublicUtility/CAPThread.h; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		F700166D0B8FDB1F00CF7383 /* aqrecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aqrecord.cpp; sourceTree = "<group>"; };
+		F70016720B8FDB5A00CF7383 /* AQPlay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AQPlay; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70016770B8FDB9100CF7383 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = CAStreamBasicDescription.cpp; path = Examples/CoreAudio/PublicUtility/CAStreamBasicDescription.cpp; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		F70016780B8FDB9100CF7383 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = Examples/CoreAudio/PublicUtility/CAStreamBasicDescription.h; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		F70016790B8FDB9100CF7383 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = CAXException.cpp; path = Examples/CoreAudio/PublicUtility/CAXException.cpp; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		F700167A0B8FDB9100CF7383 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = Examples/CoreAudio/PublicUtility/CAXException.h; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		F70016800B8FDBD100CF7383 /* aqplay.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = aqplay.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F70015C90B8FD8AC00CF7383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70015E90B8FD9E500CF7383 /* CoreFoundation.framework in Frameworks */,
+				A97B6A4F0B94F8E800F4683E /* AudioToolbox.framework in Frameworks */,
+				A991DEB10B9DFED700B3991A /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70016700B8FDB5A00CF7383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70016830B8FDBE200CF7383 /* AudioToolbox.framework in Frameworks */,
+				F70016840B8FDBE300CF7383 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* AudioQueueTools */ = {
+			isa = PBXGroup;
+			children = (
+				F70016800B8FDBD100CF7383 /* aqplay.cpp */,
+				F700166D0B8FDB1F00CF7383 /* aqrecord.cpp */,
+				F70015DA0B8FD94500CF7383 /* PublicUtility */,
+				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
+				19C28FBDFE9D53C911CA2CBB /* Products */,
+			);
+			name = AudioQueueTools;
+			sourceTree = "<group>";
+		};
+		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F70015D60B8FD92C00CF7383 /* CoreAudio.framework */,
+				09AB6884FE841BABC02AAC07 /* CoreFoundation.framework */,
+				F70015CD0B8FD8D200CF7383 /* AudioToolbox.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		19C28FBDFE9D53C911CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F70015CB0B8FD8AC00CF7383 /* AQRecord */,
+				F70016720B8FDB5A00CF7383 /* AQPlay */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F70015DA0B8FD94500CF7383 /* PublicUtility */ = {
+			isa = PBXGroup;
+			children = (
+				A99522680B9E469D002A9146 /* CAAudioFileFormats.cpp */,
+				A99522690B9E469D002A9146 /* CAAudioFileFormats.h */,
+				F70016770B8FDB9100CF7383 /* CAStreamBasicDescription.cpp */,
+				F70016780B8FDB9100CF7383 /* CAStreamBasicDescription.h */,
+				F70016790B8FDB9100CF7383 /* CAXException.cpp */,
+				F700167A0B8FDB9100CF7383 /* CAXException.h */,
+				F70015E10B8FD9A200CF7383 /* CAPThread.cpp */,
+				F70015E20B8FD9A200CF7383 /* CAPThread.h */,
+			);
+			name = PublicUtility;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F70015CA0B8FD8AC00CF7383 /* AQRecord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F70015D30B8FD8D200CF7383 /* Build configuration list for PBXNativeTarget "AQRecord" */;
+			buildPhases = (
+				F70015C80B8FD8AC00CF7383 /* Sources */,
+				F70015C90B8FD8AC00CF7383 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AQRecord;
+			productName = aqrecord;
+			productReference = F70015CB0B8FD8AC00CF7383 /* AQRecord */;
+			productType = "com.apple.product-type.tool";
+		};
+		F70016710B8FDB5A00CF7383 /* AQPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F70016740B8FDB8900CF7383 /* Build configuration list for PBXNativeTarget "AQPlay" */;
+			buildPhases = (
+				F700166F0B8FDB5A00CF7383 /* Sources */,
+				F70016700B8FDB5A00CF7383 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AQPlay;
+			productName = aqplay;
+			productReference = F70016720B8FDB5A00CF7383 /* AQPlay */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB924B08733DCA0010E9CD /* Build configuration list for PBXProject "AudioQueueTools" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* AudioQueueTools */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F70015CA0B8FD8AC00CF7383 /* AQRecord */,
+				F70016710B8FDB5A00CF7383 /* AQPlay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F70015C80B8FD8AC00CF7383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70015E60B8FD9A200CF7383 /* CAPThread.cpp in Sources */,
+				F700166E0B8FDB1F00CF7383 /* aqrecord.cpp in Sources */,
+				A991E1650B9E0F1000B3991A /* CAStreamBasicDescription.cpp in Sources */,
+				A991E1670B9E0F3500B3991A /* CAXException.cpp in Sources */,
+				A995226A0B9E469D002A9146 /* CAAudioFileFormats.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F700166F0B8FDB5A00CF7383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F700167E0B8FDBB500CF7383 /* CAStreamBasicDescription.cpp in Sources */,
+				F700167F0B8FDBB600CF7383 /* CAXException.cpp in Sources */,
+				F70016810B8FDBD100CF7383 /* aqplay.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB924C08733DCA0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Debug;
+		};
+		1DEB924D08733DCA0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Release;
+		};
+		F70015D40B8FD8D200CF7383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = AQRecord;
+			};
+			name = Debug;
+		};
+		F70015D50B8FD8D200CF7383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = AQRecord;
+			};
+			name = Release;
+		};
+		F70016750B8FDB8900CF7383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = AQPlay;
+			};
+			name = Debug;
+		};
+		F70016760B8FDB8900CF7383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = AQPlay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB924B08733DCA0010E9CD /* Build configuration list for PBXProject "AudioQueueTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB924C08733DCA0010E9CD /* Debug */,
+				1DEB924D08733DCA0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F70015D30B8FD8D200CF7383 /* Build configuration list for PBXNativeTarget "AQRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70015D40B8FD8D200CF7383 /* Debug */,
+				F70015D50B8FD8D200CF7383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F70016740B8FDB8900CF7383 /* Build configuration list for PBXNativeTarget "AQPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70016750B8FDB8900CF7383 /* Debug */,
+				F70016760B8FDB8900CF7383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
