@@ -99,9 +99,9 @@
 
 - (void) addTrack:(GTrack *)aTrack
 {
-	[playlist addTrack:aTrack];
-	[mainWindow setDocumentEdited:YES];
-	[playlistView reloadData];
+    [playlist addTrack:aTrack];
+    [mainWindow setDocumentEdited:YES];
+    [playlistView reloadData];
 }
 
 - (void) addTracksFromDirectory:(NSString *)aDirectory

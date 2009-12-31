@@ -55,12 +55,14 @@
 
 - (void) addTrack:(GTrack *)track
 {
-    [trackList addObject:track];
+    if (track)
+        [trackList addObject:track];
 }
 
 - (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index
 {
-    [trackList insertObject:track atIndex:index];
+    if (track)
+        [trackList insertObject:track atIndex:index];
 }
 
 - (void) removeTrackAtIndex:(NSUInteger)index

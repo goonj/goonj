@@ -24,6 +24,7 @@
 */
 
 
+#import <QTKit/QTKit.h>
 #import "GTrack.h"
 
 
@@ -34,6 +35,9 @@
 - (id) initWithFile:(NSString *)aPath
 {
 	self = [super init];
+
+    if (![QTMovie canInitWithFile:aPath])
+        return nil;
     
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];

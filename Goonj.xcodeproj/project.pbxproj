@@ -13,6 +13,7 @@
 		635CBAB510B675F800D82472 /* GUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 635CBAB410B675F800D82472 /* GUtilities.m */; };
 		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
 		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
+		636EDBE710ECDDD900A3700B /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636EDBE610ECDDD900A3700B /* QTKit.framework */; };
 		638390811058B30000DCE47D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6383907F1058B30000DCE47D /* LICENSE */; };
 		638390821058B30000DCE47D /* README in Resources */ = {isa = PBXBuildFile; fileRef = 638390801058B30000DCE47D /* README */; };
 		638392261058D34C00DCE47D /* GAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638392251058D34C00DCE47D /* GAppController.m */; };
@@ -43,6 +44,7 @@
 		63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXSPFPlaylist.m; sourceTree = "<group>"; };
 		63668AE71084CD0A00CC02E5 /* GM3UPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GM3UPlaylist.h; sourceTree = "<group>"; };
 		63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GM3UPlaylist.m; sourceTree = "<group>"; };
+		636EDBE610ECDDD900A3700B /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		6383907F1058B30000DCE47D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		638390801058B30000DCE47D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		6383914A1058BE6C00DCE47D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				636EDBE710ECDDD900A3700B /* QTKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +111,7 @@
 			children = (
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				636EDBE610ECDDD900A3700B /* QTKit.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
