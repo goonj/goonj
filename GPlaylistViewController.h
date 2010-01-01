@@ -40,9 +40,14 @@
 - (BOOL) savePlaylist:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;
 
-// NSTableView delegate methods.
+// NSTableView delegate and data source methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
-- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row;
-- (void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
+- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column
+                                                                row:(NSInteger)row;
+- (void) tableView:(NSTableView *)tableView setObjectValue:(id)object
+                                            forTableColumn:(NSTableColumn *)tableColumn
+                                                       row:(NSInteger)row;
+- (BOOL) tableView:(NSTableView *)tableView shouldEditTableColumn:(NSTableColumn *)column
+                                                              row:(NSInteger)row;
 
 @end
