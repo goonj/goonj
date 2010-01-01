@@ -26,7 +26,6 @@
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
 		C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */; };
-		C5D6AA6210ED43CE00D53F25 /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D6AA6110ED43CE00D53F25 /* libtag.dylib */; };
 		C5D6AB5B10ED515200D53F25 /* GStatusBar.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5910ED515200D53F25 /* GStatusBar.png */; };
 		C5D6AB5C10ED515200D53F25 /* GStatusBarAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPreferenceController.h; sourceTree = "<group>"; };
 		C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPreferenceController.m; sourceTree = "<group>"; };
 		C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocols.h; sourceTree = "<group>"; };
-		C5D6AA6110ED43CE00D53F25 /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.dylib; path = usr/local/lib/libtag.dylib; sourceTree = SDKROOT; };
 		C5D6AB5910ED515200D53F25 /* GStatusBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBar.png; path = Images/GStatusBar.png; sourceTree = "<group>"; };
 		C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBarAlternate.png; path = Images/GStatusBarAlternate.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +75,6 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				636EDBE710ECDDD900A3700B /* QTKit.framework in Frameworks */,
-				C5D6AA6210ED43CE00D53F25 /* libtag.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +169,6 @@
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-				C5D6AA6110ED43CE00D53F25 /* libtag.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
