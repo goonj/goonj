@@ -38,10 +38,11 @@
     // Create Application Support folder if it doesn't exist.
     NSString *location = [@"~/Library/Application Support/Goonj" stringByExpandingTildeInPath];
     BOOL isDir = [[NSFileManager defaultManager] fileExistsAtPath:location isDirectory:&isDir];
-    if (!isDir) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:location withIntermediateDirectories:NO attributes:nil error:NO];
-    }
-
+    if (!isDir)
+        [[NSFileManager defaultManager] createDirectoryAtPath:location 
+                                  withIntermediateDirectories:NO
+                                                   attributes:nil
+                                                        error:NO];
 }
 
 - (IBAction) showPreferencesWindow:(id)sender
