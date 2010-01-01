@@ -167,7 +167,7 @@
 }
 
 ////
-#pragma mark NSTableView delegate methods
+#pragma mark NSTableView delegate and data source methods
 ////
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
@@ -192,6 +192,16 @@
     GTrack *track;
     track = [playlist trackAtIndex:row];
     [track setValue:object forKey:[tableColumn identifier]];
+}
+
+- (BOOL) tableView:(NSTableView *)tableView shouldEditTableColumn:(NSTableColumn *)column
+                                                              row:(NSInteger)row
+{
+    if ([@"location" isEqualTo:[column identifier]]
+        || [@"time" isEqualTo:[column identifier]])
+        return NO;
+
+    return YES;
 }
 
 ////
