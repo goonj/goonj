@@ -51,7 +51,8 @@
 
 @end
 
-@protocol GOrderedMutableCollection < GCollection >
+// 
+@protocol GOrderedMutableCollection < GMutableCollection, GOrderedCollection >
 
 - (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
 - (void) removeTrackAtIndex:(NSUInteger)index;

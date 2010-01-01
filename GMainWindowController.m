@@ -1,6 +1,6 @@
 /*
 	File: GMainWindowController.m
-	Description: The Goonj main window controller. For now, this controller 
+	Description: The Goonj main window controller. For now, this controller
 	manages most interface elements. Some functionality should be moved out
 	later. File's Owner and delegate of MainWindow.nib (interface).
 
@@ -35,9 +35,19 @@
 			return YES;
 		else
 			return NO;
-	
+
 	// Return YES by default.
 	return YES;
+}
+
+- (void) awakeFromNib
+{
+    NSStatusItem *mItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+
+    [mItem setImage:[NSImage imageNamed:@"GStatusBar"]];
+    [mItem setAlternateImage:[NSImage imageNamed:@"GStatusBarAlternate"]];
+    [mItem setHighlightMode:YES];
+    [mItem setMenu:statusBarMenu];
 }
 
 - (IBAction) newPlaylist:(id)sender
@@ -51,14 +61,14 @@
     [openPanel setCanChooseDirectories:NO];
     [openPanel setAllowsMultipleSelection:NO];
     [openPanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
-    
-    [openPanel beginSheetForDirectory:nil file:nil 
-                       modalForWindow:[self window] 
-                        modalDelegate:self 
-                       didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) 
+
+    [openPanel beginSheetForDirectory:nil file:nil
+                       modalForWindow:[self window]
+                        modalDelegate:self
+                       didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
                           contextInfo:NULL];
 }
-     
+
 - (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
 	if (returnCode == NSOKButton)
@@ -74,10 +84,10 @@
     [savePanel setTitle:@"Save Playlist"];
     [savePanel setAccessoryView:saveFileFormat];
     [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
-    [savePanel beginSheetForDirectory:nil file:@"My Playlist" 
-                       modalForWindow:[self window] 
-                        modalDelegate:self 
-                       didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:) 
+    [savePanel beginSheetForDirectory:nil file:@"My Playlist"
+                       modalForWindow:[self window]
+                        modalDelegate:self
+                       didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)
                           contextInfo:NULL];
 }
 

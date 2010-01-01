@@ -32,13 +32,13 @@
     {
         trackList = [[NSMutableArray alloc] initWithCapacity:0];
         aURL = [aURL stringByExpandingTildeInPath];
-        
+
         if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
             [self loadPlaylist:aURL];
-        
+
         return self;
     }
-    
+
 	return nil;
 }
 
@@ -49,7 +49,7 @@
 		trackList = [[NSMutableArray alloc] initWithArray:aTrackList];
 		return self;
 	}
-	
+
 	return nil;
 }
 
@@ -102,7 +102,7 @@
     aURL = [aURL stringByExpandingTildeInPath];
     NSError *err;
     NSString *write = [NSString string];
-    
+
     for (GTrack *track in trackList)
     {
         NSString *current = [track valueForKey:@"location"];
@@ -121,7 +121,7 @@
     GTrack *track;
     NSArray *lines = [[NSString stringWithContentsOfFile:aURL usedEncoding:&encoding error:&err] componentsSeparatedByString:@"\n"];
 
-    for (NSString *temp in lines) 
+    for (NSString *temp in lines)
     {
         temp = [temp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
@@ -131,9 +131,32 @@
             track = [[GTrack alloc] initWithFile:temp];
             [self addTrack:track];
         }
-        
+
     }
     return YES;
+}
+
+////
+#pragma mark Now Playing methods
+////
+
+- (BOOL) loadNowPlaying
+{
+    
+    return YES;
+}
+
+- (BOOL) saveNowPlaying
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
+    NSString *aSDirectory = [paths objectAtIndex:0];
+    NSString *goonjSupportDirectory = [aSDirectory stringByAppendingPathComponent:@"Goonj"];
+    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.m3u"];
+    
+    if ([self savePlaylistAs:nowPlayingList])
+        return YES;
+    else 
+        return NO;
 }
 
 @end

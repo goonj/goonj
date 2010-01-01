@@ -43,7 +43,7 @@
 - (BOOL) loadPlaylist:(NSString *)aURL;
 
 // Now Playing methods
-- (BOOL) saveNowPlaying;
 - (BOOL) loadNowPlaying;
+- (BOOL) saveNowPlaying;
 
 @end
