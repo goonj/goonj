@@ -40,7 +40,9 @@
     for (NSTableColumn *column in tableColumns)
     {
         NSString *title = [[column headerCell] title];
-        NSMenuItem *item = [tableHeaderContextMenu addItemWithTitle:title action:@selector(contextMenuSelected:) keyEquivalent:@""];
+        NSMenuItem *item = [tableHeaderContextMenu addItemWithTitle:title
+                                                             action:@selector(contextMenuSelected:)
+                                                      keyEquivalent:@""];
         [item setTarget:self];
         [item setRepresentedObject:column];
         [item setState:columnStore ? NSOffState : NSOnState];
@@ -58,8 +60,15 @@
         [playlistView addTableColumn:column];
     }
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTableColumns) name:NSTableViewColumnDidMoveNotification object:playlistView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTableColumns) name:NSTableViewColumnDidResizeNotification object:playlistView];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveTableColumns)
+                                                 name:NSTableViewColumnDidMoveNotification
+                                               object:playlistView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveTableColumns)
+                                                 name:NSTableViewColumnDidResizeNotification
+                                               object:playlistView];
 
 	playlist = [GUtilities initPlaylistWithFile:@"~/Library/Application Support/Goonj/Now Playing.m3u"];
 	[playlistView reloadData];
@@ -166,7 +175,8 @@
 	return [playlist count];
 }
 
-- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
+- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column
+                                                                row:(NSInteger)row
 {
 	GTrack *track = [playlist trackAtIndex:row];
 	NSString *identifier = [column identifier];
@@ -176,7 +186,8 @@
 }
 
 - (void) tableView:(NSTableView *)tableView setObjectValue:(id)object
-  forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+                                            forTableColumn:(NSTableColumn *)tableColumn
+                                                       row:(NSInteger)row
 {
     GTrack *track;
     track = [playlist trackAtIndex:row];
@@ -188,7 +199,7 @@
 ////
 
 - (BOOL) tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes 
-      toPasteboard:(NSPasteboard *)pboard
+                                                    toPasteboard:(NSPasteboard *)pboard
 {
     // Copy the row numbers to the pasteboard.
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
@@ -198,7 +209,8 @@
 }
 
 - (NSDragOperation) tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info
-                  proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation
+                                                        proposedRow:(NSInteger)row
+                                              proposedDropOperation:(NSTableViewDropOperation)dropOperation
 {
     if ([info draggingSource] == tableView) 
     {
@@ -206,11 +218,11 @@
     } else {
         return NSDragOperationCopy;
     }
-
 }
 
-- (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row
-     dropOperation:(NSTableViewDropOperation)dropOperation
+- (BOOL) tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info
+                                                   row:(NSInteger)row
+                                         dropOperation:(NSTableViewDropOperation)dropOperation
 {
     NSPasteboard *pboard = [info draggingPasteboard];
     NSArray *files;
@@ -223,7 +235,8 @@
         BOOL isDirectory;
         for (NSString *currentFile in files)
         {
-            [[NSFileManager defaultManager] fileExistsAtPath:currentFile isDirectory:&isDirectory];
+            [[NSFileManager defaultManager] fileExistsAtPath:currentFile
+                                                 isDirectory:&isDirectory];
         
             if (isDirectory == NO) 
             {
@@ -232,13 +245,13 @@
             } else
                 [self addTracksFromDirectory:currentFile];
         }
-    } 
-    else if ([pboard availableTypeFromArray:[NSArray arrayWithObject:@"internalTableRows"]]) 
+    } else if ([pboard availableTypeFromArray:[NSArray arrayWithObject:@"internalTableRows"]]) 
     {
         NSData *rowdata = [pboard dataForType:@"internalTableRows"];
         NSIndexSet *rowindexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowdata];
         NSUInteger onerow;
-        for (onerow = [rowindexes firstIndex]; onerow <= [rowindexes lastIndex]; onerow = [rowindexes indexGreaterThanIndex:onerow])
+        for (onerow = [rowindexes firstIndex]; onerow <= [rowindexes lastIndex];
+            onerow = [rowindexes indexGreaterThanIndex:onerow])
         {   
             if (row >= [playlist count]) {
                 // Allow people to drop beyond the range of the playlist and shift
