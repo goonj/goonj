@@ -36,8 +36,10 @@
     [prefController initWithWindowNibName:@"Preferences"];
     
     // Create Application Support folder if it doesn't exist.
-    NSString *location = [@"~/Library/Application Support/Goonj" stringByExpandingTildeInPath];
-    BOOL isDir = [[NSFileManager defaultManager] fileExistsAtPath:location isDirectory:&isDir];
+    NSString *location = [@"~/Library/Application Support/Goonj"
+        stringByExpandingTildeInPath];
+    BOOL isDir = [[NSFileManager defaultManager] fileExistsAtPath:location
+                                                      isDirectory:&isDir];
     if (!isDir)
         [[NSFileManager defaultManager] createDirectoryAtPath:location 
                                   withIntermediateDirectories:NO
@@ -49,7 +51,6 @@
 {
 	[prefController loadWindow];
 	[[prefController window] makeKeyAndOrderFront:self];
-
 }
 
 @end
