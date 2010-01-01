@@ -42,7 +42,6 @@
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
         [self setValue:aPath forKey:@"location"];
-        // Can't use lastPathComponent on NSURL because we need Leopard compatibility.
 		[properties setValue:[aPath lastPathComponent] forKey:@"name"];
 	}
 
