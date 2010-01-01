@@ -35,7 +35,7 @@
     NSArray *columnStore = [[NSUserDefaults standardUserDefaults] arrayForKey:@"ColumnsUserDefault"];
     NSMenu *tableHeaderContextMenu = [[NSMenu alloc] initWithTitle:@""];
     [[playlistView headerView] setMenu:tableHeaderContextMenu];
-    
+
     NSArray *tableColumns = [NSArray arrayWithArray:[playlistView tableColumns]];
     for (NSTableColumn *column in tableColumns)
     {
@@ -48,7 +48,7 @@
         [item setState:columnStore ? NSOffState : NSOnState];
         if (columnStore) [playlistView removeTableColumn:column];
     }
-    
+
     NSTableColumn *column;
 	for (NSDictionary *colinfo in columnStore)
     {
@@ -64,7 +64,7 @@
                                              selector:@selector(saveTableColumns)
                                                  name:NSTableViewColumnDidMoveNotification
                                                object:playlistView];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(saveTableColumns)
                                                  name:NSTableViewColumnDidResizeNotification
@@ -80,16 +80,16 @@
     BOOL on = ([sender state] == NSOnState);
     [sender setState:on ? NSOffState : NSOnState];
     NSTableColumn *column = [sender representedObject];
-    
+
     if (on)
-    {		
+    {
         [playlistView removeTableColumn:column];
         [playlistView sizeLastColumnToFit];
     } else {
         [playlistView addTableColumn:column];
         [playlistView sizeToFit];
     }
-    
+
     [playlistView setNeedsDisplay:YES];
 }
 
@@ -117,16 +117,16 @@
 {
 	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager]
 		enumeratorAtPath:aDirectory];
-	
+
 	NSString *fileName, *filePath;
 	GTrack *track;
 	BOOL isDirectory;
 	while (fileName = [dirEnum nextObject]) {
 		filePath = [aDirectory stringByAppendingPathComponent:fileName];
-        
+
         if ([GUtilities isHidden:filePath])
             continue;
-		
+
         [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
 
 		if (isDirectory == YES)
@@ -208,7 +208,7 @@
 #pragma mark Drag and drop operations
 ////
 
-- (BOOL) tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes 
+- (BOOL) tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes
                                                     toPasteboard:(NSPasteboard *)pboard
 {
     // Copy the row numbers to the pasteboard.
@@ -222,7 +222,7 @@
                                                         proposedRow:(NSInteger)row
                                               proposedDropOperation:(NSTableViewDropOperation)dropOperation
 {
-    if ([info draggingSource] == tableView) 
+    if ([info draggingSource] == tableView)
     {
         return NSDragOperationMove;
     } else {
@@ -236,33 +236,33 @@
 {
     NSPasteboard *pboard = [info draggingPasteboard];
     NSArray *files;
-    
+
     if ([pboard availableTypeFromArray:[NSArray arrayWithObject:NSFilenamesPboardType]])
     {
         files = [pboard propertyListForType:NSFilenamesPboardType];
-    
+
         GTrack *draggedTrack;
         BOOL isDirectory;
         for (NSString *currentFile in files)
         {
             [[NSFileManager defaultManager] fileExistsAtPath:currentFile
                                                  isDirectory:&isDirectory];
-        
-            if (isDirectory == NO) 
+
+            if (isDirectory == NO)
             {
                 draggedTrack = [[GTrack alloc] initWithFile:currentFile];
                 [playlist addTrack:draggedTrack atIndex:row];
             } else
                 [self addTracksFromDirectory:currentFile];
         }
-    } else if ([pboard availableTypeFromArray:[NSArray arrayWithObject:@"internalTableRows"]]) 
+    } else if ([pboard availableTypeFromArray:[NSArray arrayWithObject:@"internalTableRows"]])
     {
         NSData *rowdata = [pboard dataForType:@"internalTableRows"];
         NSIndexSet *rowindexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowdata];
         NSUInteger onerow;
         for (onerow = [rowindexes firstIndex]; onerow <= [rowindexes lastIndex];
             onerow = [rowindexes indexGreaterThanIndex:onerow])
-        {   
+        {
             if (row >= [playlist count]) {
                 // Allow people to drop beyond the range of the playlist and shift
                 // track to the last position.

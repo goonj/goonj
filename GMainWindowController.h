@@ -32,6 +32,8 @@
 	IBOutlet GPlaylistViewController *playlistViewController;
     IBOutlet NSView *saveFileFormat;
     IBOutlet NSMenu *statusBarMenu;
+
+    NSStatusItem *mItem;
 }
 
 - (BOOL) validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;

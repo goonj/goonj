@@ -42,12 +42,15 @@
 
 - (void) awakeFromNib
 {
-    NSStatusItem *mItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-
-    [mItem setImage:[NSImage imageNamed:@"GStatusBar"]];
-    [mItem setAlternateImage:[NSImage imageNamed:@"GStatusBarAlternate"]];
-    [mItem setHighlightMode:YES];
-    [mItem setMenu:statusBarMenu];
+    // For some reason, this awakeFromNib is called twice, thus generating 2
+    // status menus if I don't check for its existence.
+    if (!mItem) {
+        mItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+        [mItem setImage:[NSImage imageNamed:@"GStatusBar"]];
+        [mItem setAlternateImage:[NSImage imageNamed:@"GStatusBarAlternate"]];
+        [mItem setHighlightMode:YES];
+        [mItem setMenu:statusBarMenu];
+    }
 }
 
 - (IBAction) newPlaylist:(id)sender
