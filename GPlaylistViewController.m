@@ -273,7 +273,7 @@
         }
     }
 
-	[playlist savePlaylistAs:[GUtilities getNowPlayingPath]];
+	[playlist savePlaylistAs:[GUtilities nowPlayingPath]];
     [playlistView reloadData];
     return YES;
 }
