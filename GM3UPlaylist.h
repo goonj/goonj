@@ -33,14 +33,16 @@
 - (id) initWithTrackList:(NSArray *)aTrackList;
 - (void) addTrack:(GTrack *)track;
 - (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
+- (void) removeTrack:(GTrack *)track;
 - (void) removeTrackAtIndex:(NSUInteger)index;
 - (void) removeTracksAtIndexes:(NSIndexSet *)indexes;
 - (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
 - (void) clearPlaylist;
 - (NSUInteger) count;
 - (GTrack *) trackAtIndex:(NSUInteger)index;
-- (BOOL) savePlaylistAs:(NSString *)aURL;
-- (BOOL) loadPlaylist:(NSString *)aURL;
+- (BOOL) saveCollectionAs:(NSString *)aURL;
+- (BOOL) loadCollection:(NSString *)aURL;
+- (BOOL) isLocalCollection;
 
 // Now Playing methods
 - (BOOL) loadNowPlaying;

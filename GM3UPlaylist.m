@@ -34,7 +34,7 @@
         aURL = [aURL stringByExpandingTildeInPath];
 
         if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
-            [self loadPlaylist:aURL];
+            [self loadCollection:aURL];
 
         return self;
     }
@@ -63,6 +63,11 @@
 {
     if (track)
         [trackList insertObject:track atIndex:index];
+}
+
+- (void) removeTrack:(GTrack *)track
+{
+    [trackList removeObject:track];
 }
 
 - (void) removeTrackAtIndex:(NSUInteger)index
@@ -97,7 +102,7 @@
     return [trackList objectAtIndex:index];
 }
 
-- (BOOL) savePlaylistAs:(NSString *)aURL
+- (BOOL) saveCollectionAs:(NSString *)aURL
 {
     aURL = [aURL stringByExpandingTildeInPath];
     NSError *err;
@@ -115,7 +120,7 @@
     return YES;
 }
 
-- (BOOL) loadPlaylist:(NSString *)aURL
+- (BOOL) loadCollection:(NSString *)aURL
 {
     NSError *err; NSStringEncoding encoding;
     GTrack *track;
@@ -136,13 +141,18 @@
     return YES;
 }
 
+- (BOOL) isLocalCollection
+{
+    return YES;
+}
+
 ////
 #pragma mark Now Playing methods
 ////
 
 - (BOOL) loadNowPlaying
 {
-    
+
     return YES;
 }
 
@@ -152,10 +162,10 @@
     NSString *aSDirectory = [paths objectAtIndex:0];
     NSString *goonjSupportDirectory = [aSDirectory stringByAppendingPathComponent:@"Goonj"];
     NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.m3u"];
-    
-    if ([self savePlaylistAs:nowPlayingList])
+
+    if ([self saveCollectionAs:nowPlayingList])
         return YES;
-    else 
+    else
         return NO;
 }
 

@@ -154,14 +154,14 @@
 
 - (BOOL) savePlaylist:(NSString *)aURL
 {
-    return [playlist savePlaylistAs:aURL];
+    return [playlist saveCollectionAs:aURL];
 }
 
 - (BOOL) loadPlaylist:(NSString *)aURL
 {
     // No need to clear the playlist before loading it, since
     // the GPlaylist will clear itself on successful load.
-    [playlist loadPlaylist:aURL];
+    [playlist loadCollection:aURL];
     [playlistView reloadData];
     return YES;
 }
@@ -273,7 +273,6 @@
         }
     }
 
-	[playlist savePlaylistAs:[GUtilities nowPlayingPath]];
     [playlistView reloadData];
     return YES;
 }
