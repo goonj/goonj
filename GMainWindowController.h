@@ -31,6 +31,7 @@
 	IBOutlet NSTableView *playlistView;
 	IBOutlet GPlaylistViewController *playlistViewController;
     IBOutlet NSView *saveFileFormat;
+    IBOutlet NSPopUpButton *fileFormatSelector;
     IBOutlet NSMenu *statusBarMenu;
 
     NSStatusItem *mItem;

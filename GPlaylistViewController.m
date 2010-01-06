@@ -70,7 +70,7 @@
                                                  name:NSTableViewColumnDidResizeNotification
                                                object:playlistView];
 
-	playlist = [GUtilities initPlaylistWithFile:@"~/Library/Application Support/Goonj/Now Playing.m3u"];
+	playlist = [GM3UPlaylist loadNowPlaying];
 	[playlistView reloadData];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];
 }

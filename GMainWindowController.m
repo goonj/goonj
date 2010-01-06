@@ -51,6 +51,10 @@
         [mItem setHighlightMode:YES];
         [mItem setMenu:statusBarMenu];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(popupButtonWasClicked:inSavePanel:)
+                                                 name:NSPopUpButtonWillPopUpNotification
+                                               object:nil];
 }
 
 - (IBAction) newPlaylist:(id)sender
@@ -64,7 +68,6 @@
     [openPanel setCanChooseDirectories:NO];
     [openPanel setAllowsMultipleSelection:NO];
     [openPanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
-
     [openPanel beginSheetForDirectory:nil file:nil
                        modalForWindow:[self window]
                         modalDelegate:self
@@ -92,6 +95,12 @@
                         modalDelegate:self
                        didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)
                           contextInfo:NULL];
+}
+
+- (void) popupButtonWasClicked:(NSNotification *)notification inSavePanel:(NSSavePanel *)panel
+{
+    NSPopUpButton *pb = [notification object];
+    NSLog(@"Clicked %@", [pb titleOfSelectedItem]);
 }
 
 - (void) savePanelDidEnd:(NSSavePanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo

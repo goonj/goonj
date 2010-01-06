@@ -150,20 +150,20 @@
 #pragma mark Now Playing methods
 ////
 
-- (BOOL) loadNowPlaying
++ (GM3UPlaylist *) loadNowPlaying
 {
-
-    return YES;
+    GM3UPlaylist* pA = [[GM3UPlaylist alloc] initWithFile:[GUtilities nowPlayingPath]];
+    return pA;
 }
 
-- (BOOL) saveNowPlaying
++ (BOOL) saveNowPlaying
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
     NSString *aSDirectory = [paths objectAtIndex:0];
     NSString *goonjSupportDirectory = [aSDirectory stringByAppendingPathComponent:@"Goonj"];
     NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.m3u"];
 
-    if ([self saveCollectionAs:nowPlayingList])
+    if ([[GM3UPlaylist alloc] saveCollectionAs:nowPlayingList])
         return YES;
     else
         return NO;

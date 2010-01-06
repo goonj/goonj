@@ -23,6 +23,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "GCollectionProtocols.h"
+#import "GUtilities.h"
 
 
 @interface GM3UPlaylist : NSObject < GOrderedMutableCollection > {
@@ -45,7 +46,7 @@
 - (BOOL) isLocalCollection;
 
 // Now Playing methods
-- (BOOL) loadNowPlaying;
-- (BOOL) saveNowPlaying;
++ (GM3UPlaylist *) loadNowPlaying;
++ (BOOL) saveNowPlaying;
 
 @end
