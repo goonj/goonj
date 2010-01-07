@@ -47,6 +47,13 @@
                                                         error:NO];
 }
 
+- (void) applicationWillTerminate:(NSNotification *)aNotification
+{
+    [[NSNotificationCenter defaultCenter]
+        postNotificationName:@"GoonjWillTerminateNotification"
+                  object:nil];
+}
+
 - (IBAction) showPreferencesWindow:(id)sender
 {
 	[prefController loadWindow];
