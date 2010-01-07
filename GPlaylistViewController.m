@@ -60,17 +60,23 @@
         [playlistView addTableColumn:column];
     }
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(saveTableColumns)
-                                                 name:NSTableViewColumnDidMoveNotification
-                                               object:playlistView];
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self
+                      selector:@selector(saveTableColumns)
+                          name:NSTableViewColumnDidMoveNotification
+                        object:playlistView];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(saveTableColumns)
-                                                 name:NSTableViewColumnDidResizeNotification
-                                               object:playlistView];
+    [defaultCenter addObserver:self
+                      selector:@selector(saveTableColumns)
+                          name:NSTableViewColumnDidResizeNotification
+                        object:playlistView];
 
-	playlist = [GM3UPlaylist loadNowPlaying];
+    [defaultCenter addObserver:self
+                      selector:@selector(performFinalCleanup)
+                          name:@"GoonjWillTerminateNotification"
+                        object:nil];
+
+    playlist = [GM3UPlaylist loadNowPlaying];
 	[playlistView reloadData];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];
 }
@@ -164,6 +170,12 @@
     [playlist loadCollection:aURL];
     [playlistView reloadData];
     return YES;
+}
+
+- (void) performFinalCleanup
+{
+    [self savePlaylist:[GUtilities nowPlayingPath]];
+    [self saveTableColumns];
 }
 
 ////
