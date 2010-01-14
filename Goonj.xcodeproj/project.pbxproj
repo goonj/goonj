@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,9 @@
 		C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */; };
 		C5D6AB5B10ED515200D53F25 /* GStatusBar.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5910ED515200D53F25 /* GStatusBar.png */; };
 		C5D6AB5C10ED515200D53F25 /* GStatusBarAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */; };
+		C5DC9B3610F9193C0088381D /* GNextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9B3310F9193C0088381D /* GNextButton.png */; };
+		C5DC9B3710F9193C0088381D /* GPlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9B3410F9193C0088381D /* GPlayButton.png */; };
+		C5DC9B3810F9193C0088381D /* GPreviousButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9B3510F9193C0088381D /* GPreviousButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocols.h; sourceTree = "<group>"; };
 		C5D6AB5910ED515200D53F25 /* GStatusBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBar.png; path = Images/GStatusBar.png; sourceTree = "<group>"; };
 		C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBarAlternate.png; path = Images/GStatusBarAlternate.png; sourceTree = "<group>"; };
+		C5DC9B3310F9193C0088381D /* GNextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GNextButton.png; path = Images/GNextButton.png; sourceTree = "<group>"; };
+		C5DC9B3410F9193C0088381D /* GPlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GPlayButton.png; path = Images/GPlayButton.png; sourceTree = "<group>"; };
+		C5DC9B3510F9193C0088381D /* GPreviousButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GPreviousButton.png; path = Images/GPreviousButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,9 @@
 		C5D6AB5D10ED515900D53F25 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C5DC9B3310F9193C0088381D /* GNextButton.png */,
+				C5DC9B3410F9193C0088381D /* GPlayButton.png */,
+				C5DC9B3510F9193C0088381D /* GPreviousButton.png */,
 				C5D6AB5910ED515200D53F25 /* GStatusBar.png */,
 				C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */,
 			);
@@ -200,6 +209,16 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C5DC9AD610F908450088381D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8D1107260486CEB800E47090 /* Goonj */ = {
@@ -209,6 +228,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				C5DC9AD610F908450088381D /* Headers */,
 			);
 			buildRules = (
 			);
@@ -226,10 +246,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = "The Goonj Project";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Goonj" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Goonj */;
 			projectDirPath = "";
@@ -255,6 +276,9 @@
 				C551BA7B10B54F2E00174867 /* Credits.html in Resources */,
 				C5D6AB5B10ED515200D53F25 /* GStatusBar.png in Resources */,
 				C5D6AB5C10ED515200D53F25 /* GStatusBarAlternate.png in Resources */,
+				C5DC9B3610F9193C0088381D /* GNextButton.png in Resources */,
+				C5DC9B3710F9193C0088381D /* GPlayButton.png in Resources */,
+				C5DC9B3810F9193C0088381D /* GPreviousButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +344,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -337,6 +366,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Goonj_Prefix.pch;
