@@ -21,8 +21,16 @@
     Copyright 2009 Ankur Sethi.
 */
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+#import <CoreServices/CoreServices.h>
 
+void FSEventCallback(
+    ConstFSEventStreamRef streamRef,
+    void *clientCallbackInfo,
+    size_t numEvents,
+    void *eventPaths,
+    const FSEventStreamEventFlags eventFlags[],
+    const FSEventStreamEventId eventIds[]);
 
 @interface GDirectoryWatcher : NSObject {
 
