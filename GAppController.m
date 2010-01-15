@@ -36,8 +36,7 @@
     [prefController initWithWindowNibName:@"Preferences"];
     
     // Create Application Support folder if it doesn't exist.
-    NSString *location = [@"~/Library/Application Support/Goonj"
-        stringByExpandingTildeInPath];
+    NSString *location = [GUtilities nowPlayingPath];
     BOOL isDir = [[NSFileManager defaultManager] fileExistsAtPath:location
                                                       isDirectory:&isDir];
     if (!isDir)

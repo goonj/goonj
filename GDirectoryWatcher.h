@@ -28,4 +28,7 @@
 
 }
 
+- (id) initWithDirectories:(NSArray *)theDirectories;
+- (void) startWatching;
+
 @end
