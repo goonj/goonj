@@ -22,6 +22,7 @@
 */
 
 #import "GAppController.h"
+#import "GUtilities.h"
 
 
 @implementation GAppController
