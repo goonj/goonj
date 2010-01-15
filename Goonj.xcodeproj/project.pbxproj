@@ -10,6 +10,8 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
 		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
+		634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */; };
+		634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */; };
 		635CBAB510B675F800D82472 /* GUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 635CBAB410B675F800D82472 /* GUtilities.m */; };
 		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
 		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
@@ -40,6 +42,8 @@
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
+		634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDirectoryWatcher.h; sourceTree = "<group>"; };
+		634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDirectoryWatcher.m; sourceTree = "<group>"; };
 		635CBAB310B675F800D82472 /* GUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUtilities.h; sourceTree = "<group>"; };
 		635CBAB410B675F800D82472 /* GUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUtilities.m; sourceTree = "<group>"; };
 		63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSPFPlaylist.h; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				634CADC0110095C400BFC105 /* Library */,
 				63668AE31084CC7600CC02E5 /* Playlist */,
 				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
 				C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */,
@@ -171,6 +176,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		634CADC0110095C400BFC105 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */,
+				634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		635CBAEF10B67AA200D82472 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +225,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +309,7 @@
 				63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */,
 				635CBAB510B675F800D82472 /* GUtilities.m in Sources */,
 				C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */,
+				634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
