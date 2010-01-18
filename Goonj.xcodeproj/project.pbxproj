@@ -33,6 +33,8 @@
 		C5DC9B3610F9193C0088381D /* GNextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9B3310F9193C0088381D /* GNextButton.png */; };
 		C5DC9B3710F9193C0088381D /* GPlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9B3410F9193C0088381D /* GPlayButton.png */; };
 		C5DC9B3810F9193C0088381D /* GPreviousButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9B3510F9193C0088381D /* GPreviousButton.png */; };
+		C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E911104D70E002A64E5 /* GVolumeHigh.png */; };
+		C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E921104D70E002A64E5 /* GVolumeLow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		C5DC9B3310F9193C0088381D /* GNextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GNextButton.png; path = Images/GNextButton.png; sourceTree = "<group>"; };
 		C5DC9B3410F9193C0088381D /* GPlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GPlayButton.png; path = Images/GPlayButton.png; sourceTree = "<group>"; };
 		C5DC9B3510F9193C0088381D /* GPreviousButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GPreviousButton.png; path = Images/GPreviousButton.png; sourceTree = "<group>"; };
+		C5E55E911104D70E002A64E5 /* GVolumeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeHigh.png; path = Images/GVolumeHigh.png; sourceTree = "<group>"; };
+		C5E55E921104D70E002A64E5 /* GVolumeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeLow.png; path = Images/GVolumeLow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,8 @@
 		C5D6AB5D10ED515900D53F25 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C5E55E911104D70E002A64E5 /* GVolumeHigh.png */,
+				C5E55E921104D70E002A64E5 /* GVolumeLow.png */,
 				C5DC9B3310F9193C0088381D /* GNextButton.png */,
 				C5DC9B3410F9193C0088381D /* GPlayButton.png */,
 				C5DC9B3510F9193C0088381D /* GPreviousButton.png */,
@@ -294,6 +300,8 @@
 				C5DC9B3610F9193C0088381D /* GNextButton.png in Resources */,
 				C5DC9B3710F9193C0088381D /* GPlayButton.png in Resources */,
 				C5DC9B3810F9193C0088381D /* GPreviousButton.png in Resources */,
+				C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */,
+				C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
