@@ -45,6 +45,12 @@
                                   withIntermediateDirectories:NO
                                                    attributes:nil
                                                         error:NO];
+
+    NSArray *watchDirectories = [NSArray arrayWithObjects:@"/", nil];
+    directoryWatcher = [[GDirectoryWatcher alloc] initWithDirectories:watchDirectories];
+    [NSThread detachNewThreadSelector:@selector(startWatching)
+                             toTarget:directoryWatcher
+                           withObject:nil];
 }
 
 - (void) applicationWillTerminate:(NSNotification *)aNotification
