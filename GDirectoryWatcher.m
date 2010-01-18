@@ -24,6 +24,53 @@
 #import "GDirectoryWatcher.h"
 
 
+void FSEventCallback(
+    ConstFSEventStreamRef streamRef,
+    void *clientCallbackInfo,
+    size_t numEvents,
+    void *eventPaths,
+    const FSEventStreamEventFlags eventFlags[],
+    const FSEventStreamEventId eventIds[])
+{
+    int i;
+    char **paths = eventPaths;
+    NSMutableArray *directoriesToScan = [[NSMutableArray alloc]
+        initWithCapacity:numEvents];
+    
+    for(i = 0 ; i < numEvents ; i++) {
+        NSLog(@"Changed: %s (event ID: %d)", paths[i], eventIds[i]);
+        [directoriesToScan addObject:[NSString stringWithCString:paths[i]
+                                                   encoding:NSUTF8StringEncoding]];
+    }
+
+    [[NSNotificationCenter defaultCenter]
+        postNotificationName:@"GoonjWatchDirectoriesChangedNotification"
+                      object:directoriesToScan];
+}
+
 @implementation GDirectoryWatcher
+
+- (id) initWithDirectories:(NSArray *)theDirectories
+{
+    if (self = [super init]) {
+        watchedDirectories = theDirectories;
+        // TODO: save the last fsevent ID to the plist.
+        eventStream = FSEventStreamCreate(NULL, &FSEventCallback, NULL,
+            (CFArrayRef)watchedDirectories, kFSEventStreamEventIdSinceNow,
+            1, kFSEventStreamCreateFlagNone);
+
+        return self;
+    }
+    return nil;
+}
+
+- (void) startWatching
+{
+    FSEventStreamScheduleWithRunLoop(eventStream,
+        [[NSRunLoop currentRunLoop] getCFRunLoop],
+        kCFRunLoopCommonModes);
+    FSEventStreamStart(eventStream);
+    [[NSRunLoop currentRunLoop] run];
+}
 
 @end

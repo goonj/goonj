@@ -23,3 +23,7 @@
 
 - GoonjWillTerminateNotification: posted by the app delegate before application
   exit.
+
+- GoonjWatchDirectoriesChangedNotification: posted by the directory watcher when
+  a watch directory is changed. The NSNotification comes with an NSArray of
+  paths to scan.

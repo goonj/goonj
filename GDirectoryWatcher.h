@@ -33,7 +33,8 @@ void FSEventCallback(
     const FSEventStreamEventId eventIds[]);
 
 @interface GDirectoryWatcher : NSObject {
-
+    NSArray *watchedDirectories;
+    FSEventStreamRef eventStream;
 }
 
 - (id) initWithDirectories:(NSArray *)theDirectories;
