@@ -55,6 +55,11 @@
                                              selector:@selector(popupButtonWasClicked:inSavePanel:)
                                                  name:NSPopUpButtonWillPopUpNotification
                                                object:nil];
+    
+//    NSView *sv = [[self window] contentView];
+//    NSRect frame = NSMakeRect(20, 550, 100, 21);
+//    PSMTabBarControl *pb = [[PSMTabBarControl alloc] initWithFrame:frame];
+//    [sv addSubview:pb];
 }
 
 - (IBAction) newPlaylist:(id)sender

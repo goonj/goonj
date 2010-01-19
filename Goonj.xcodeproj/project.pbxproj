@@ -35,7 +35,25 @@
 		C5DC9B3810F9193C0088381D /* GPreviousButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9B3510F9193C0088381D /* GPreviousButton.png */; };
 		C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E911104D70E002A64E5 /* GVolumeHigh.png */; };
 		C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E921104D70E002A64E5 /* GVolumeLow.png */; };
+		C5E5623E110590B9002A64E5 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E5623D110590B9002A64E5 /* BWToolkitFramework.framework */; };
+		C5E56240110590B9002A64E5 /* PSMTabBarControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E5623F110590B9002A64E5 /* PSMTabBarControl.framework */; };
+		C5E5627A110590C9002A64E5 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5E5623D110590B9002A64E5 /* BWToolkitFramework.framework */; };
+		C5E5627B110590C9002A64E5 /* PSMTabBarControl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5E5623F110590B9002A64E5 /* PSMTabBarControl.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C5E55EF91104EF50002A64E5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C5E5627A110590C9002A64E5 /* BWToolkitFramework.framework in CopyFiles */,
+				C5E5627B110590C9002A64E5 /* PSMTabBarControl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -78,6 +96,8 @@
 		C5DC9B3510F9193C0088381D /* GPreviousButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GPreviousButton.png; path = Images/GPreviousButton.png; sourceTree = "<group>"; };
 		C5E55E911104D70E002A64E5 /* GVolumeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeHigh.png; path = Images/GVolumeHigh.png; sourceTree = "<group>"; };
 		C5E55E921104D70E002A64E5 /* GVolumeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeLow.png; path = Images/GVolumeLow.png; sourceTree = "<group>"; };
+		C5E5623D110590B9002A64E5 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = Frameworks/BWToolkitFramework.framework; sourceTree = "<group>"; };
+		C5E5623F110590B9002A64E5 /* PSMTabBarControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PSMTabBarControl.framework; path = Frameworks/PSMTabBarControl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +107,8 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				634CADC81100C03F00BFC105 /* CoreServices.framework in Frameworks */,
+				C5E5623E110590B9002A64E5 /* BWToolkitFramework.framework in Frameworks */,
+				C5E56240110590B9002A64E5 /* PSMTabBarControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +149,8 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5E5623D110590B9002A64E5 /* BWToolkitFramework.framework */,
+				C5E5623F110590B9002A64E5 /* PSMTabBarControl.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -250,6 +274,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				C5DC9AD610F908450088381D /* Headers */,
+				C5E55EF91104EF50002A64E5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -409,7 +434,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
