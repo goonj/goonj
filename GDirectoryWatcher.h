@@ -38,6 +38,7 @@ void FSEventCallback(
 }
 
 - (id) initWithDirectories:(NSArray *)theDirectories;
+- (id) initWithDefaultWatchDirectories;
 - (void) startWatching;
 
 @end

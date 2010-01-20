@@ -64,6 +64,18 @@ void FSEventCallback(
     return nil;
 }
 
+- (id) initWithDefaultWatchDirectories
+{
+    if (self = [super init]) {
+        watchedDirectories = [[NSUserDefaults standardUserDefaults]
+            arrayForKey:@"LibraryFolderLocations"];
+        NSLog(@"%@", watchedDirectories);
+        return self;
+    }
+
+    return nil;
+}
+
 - (void) startWatching
 {
     FSEventStreamScheduleWithRunLoop(eventStream,

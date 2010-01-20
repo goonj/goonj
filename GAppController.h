@@ -24,14 +24,14 @@
 #import <Cocoa/Cocoa.h>
 #import "GDirectoryWatcher.h"
 #import "GMainWindowController.h"
-#import "GPreferenceController.h"
+#import "GPreferencesController.h"
 
 
 @interface GAppController : NSObject {
     GDirectoryWatcher *directoryWatcher;
 
 	IBOutlet GMainWindowController *mainWindowController;
-    IBOutlet GPreferenceController *prefController;
+    IBOutlet GPreferencesController *prefController;
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification;
