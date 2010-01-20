@@ -1,9 +1,9 @@
 /*
-    File: GPreferenceController.m
-    Description: The Goonj preferences window delegate (implementation).
- 
+    File: GPreferenceController.h
+    Description: The Goonj preferences window delegate (interface).
+
     This file is part of Goonj.
- 
+
     Goonj is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -21,10 +21,17 @@
     Copyright 2009 Ankur Sethi.
 */
 
-#import "GPreferenceController.h"
+#import <Cocoa/Cocoa.h>
 
+@interface GPreferencesController : NSWindowController {
+    NSMutableArray *locations;
+    
+    IBOutlet NSButton *addLibraryLocation;
+    IBOutlet NSButton *removeLibraryLocations;
+    IBOutlet NSTableView *libraryLocations;
+}
 
-@implementation GPreferenceController
-
+- (IBAction) addLibraryLocation:(id)sender;
+- (IBAction) removeLibraryLocations:(id)sender;
 
 @end
