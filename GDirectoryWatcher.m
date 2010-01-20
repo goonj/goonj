@@ -52,7 +52,7 @@ void FSEventCallback(
 - (id) initWithDirectories:(NSArray *)theDirectories
 {
     if (self = [super init]) {
-        watchedDirectories = theDirectories;
+        watchedDirectories = [NSMutableArray arrayWithArray:theDirectories];
         // TODO: save the last fsevent ID to the plist.
         eventStream = FSEventStreamCreate(NULL, &FSEventCallback, NULL,
             (CFArrayRef)watchedDirectories, kFSEventStreamEventIdSinceNow,

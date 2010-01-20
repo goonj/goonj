@@ -46,7 +46,6 @@
                                                    attributes:nil
                                                         error:NO];
 
-    NSArray *watchDirectories = [NSArray arrayWithObjects:@"/", nil];
     directoryWatcher = [[GDirectoryWatcher alloc] initWithDefaultWatchDirectories];
     [NSThread detachNewThreadSelector:@selector(startWatching)
                              toTarget:directoryWatcher
