@@ -47,7 +47,7 @@
                                                         error:NO];
 
     NSArray *watchDirectories = [NSArray arrayWithObjects:@"/", nil];
-    directoryWatcher = [[GDirectoryWatcher alloc] initWithDirectories:watchDirectories];
+    directoryWatcher = [[GDirectoryWatcher alloc] initWithDefaultWatchDirectories];
     [NSThread detachNewThreadSelector:@selector(startWatching)
                              toTarget:directoryWatcher
                            withObject:nil];
@@ -62,7 +62,6 @@
 
 - (IBAction) showPreferencesWindow:(id)sender
 {
-	[prefController loadWindow];
 	[[prefController window] makeKeyAndOrderFront:self];
 }
 

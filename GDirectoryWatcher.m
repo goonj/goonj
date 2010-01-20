@@ -38,7 +38,6 @@ void FSEventCallback(
         initWithCapacity:numEvents];
     
     for(i = 0 ; i < numEvents ; i++) {
-        NSLog(@"Changed: %s (event ID: %d)", paths[i], eventIds[i]);
         [directoriesToScan addObject:[NSString stringWithCString:paths[i]
                                                    encoding:NSUTF8StringEncoding]];
     }
@@ -67,9 +66,21 @@ void FSEventCallback(
 - (id) initWithDefaultWatchDirectories
 {
     if (self = [super init]) {
-        watchedDirectories = [[NSUserDefaults standardUserDefaults]
+        NSArray *paths = [[NSUserDefaults standardUserDefaults]
             arrayForKey:@"LibraryFolderLocations"];
-        NSLog(@"%@", watchedDirectories);
+
+        watchedDirectories = [[NSMutableArray alloc]
+            initWithCapacity:[paths count]];
+        
+        for (NSString *directory in paths) {
+            directory = [directory stringByExpandingTildeInPath];
+            [watchedDirectories addObject:directory];
+        }
+
+        eventStream = FSEventStreamCreate(NULL, &FSEventCallback, NULL,
+            (CFArrayRef)watchedDirectories, kFSEventStreamEventIdSinceNow,
+            1, kFSEventStreamCreateFlagNone);
+        
         return self;
     }
 
