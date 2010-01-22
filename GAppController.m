@@ -34,14 +34,12 @@
     [mainWindowController setShouldCascadeWindows:NO];
     [mainWindowController window];
 
-    [prefController initWithWindowNibName:@"Preferences"];
-    
     // Create Application Support folder if it doesn't exist.
     NSString *location = [GUtilities nowPlayingPath];
     BOOL isDir = [[NSFileManager defaultManager] fileExistsAtPath:location
                                                       isDirectory:&isDir];
     if (!isDir)
-        [[NSFileManager defaultManager] createDirectoryAtPath:location 
+        [[NSFileManager defaultManager] createDirectoryAtPath:location
                                   withIntermediateDirectories:NO
                                                    attributes:nil
                                                         error:NO];
@@ -61,6 +59,7 @@
 
 - (IBAction) showPreferencesWindow:(id)sender
 {
+    [prefController initWithWindowNibName:@"Preferences"];
 	[[prefController window] makeKeyAndOrderFront:self];
 }
 

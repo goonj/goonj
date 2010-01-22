@@ -23,8 +23,6 @@
 */
 
 #import "GPlaylistViewController.h"
-#import "GTrack.h"
-#import "GUtilities.h"
 
 
 @implementation GPlaylistViewController

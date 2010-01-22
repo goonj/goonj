@@ -24,11 +24,15 @@
 
 #import <Cocoa/Cocoa.h>
 #import "GTrack.h"
+#import "GM3UPlaylist.h"
+#import "GUtilities.h"
 #import "GCollectionProtocols.h"
+#import "GTabViewController.h"
+
 
 @interface GPlaylistViewController : NSObject {
 	id < GOrderedMutableCollection > playlist;
-	
+
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTableView *playlistView;
 }
