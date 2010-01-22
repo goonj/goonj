@@ -60,6 +60,7 @@
         [playlistView addTableColumn:column];
     }
 
+    // Setup notification observers.
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self
                       selector:@selector(saveTableColumns)
@@ -76,6 +77,7 @@
                           name:@"GoonjWillTerminateNotification"
                         object:nil];
 
+    // Load Now Playing list.
     playlist = [GM3UPlaylist loadNowPlaying];
 	[playlistView reloadData];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];

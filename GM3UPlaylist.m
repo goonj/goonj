@@ -158,12 +158,7 @@
 
 + (BOOL) saveNowPlaying
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, NO);
-    NSString *aSDirectory = [paths objectAtIndex:0];
-    NSString *goonjSupportDirectory = [aSDirectory stringByAppendingPathComponent:@"Goonj"];
-    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.m3u"];
-
-    if ([[GM3UPlaylist alloc] saveCollectionAs:nowPlayingList])
+    if ([[GM3UPlaylist alloc] saveCollectionAs:[GUtilities nowPlayingPath]])
         return YES;
     else
         return NO;

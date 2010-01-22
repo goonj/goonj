@@ -1,9 +1,9 @@
 /*
     File: GPreferenceController.m
     Description: The Goonj preferences window delegate (implementation).
- 
+
     This file is part of Goonj.
- 
+
     Goonj is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -28,7 +28,7 @@
 
 - (void) awakeFromNib
 {
-    locations = [[NSMutableArray alloc] 
+    locations = [[NSMutableArray alloc]
                  initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"LibraryFolderLocations"]];
 }
 
@@ -60,8 +60,10 @@
 - (IBAction) removeLibraryLocations:(id)sender
 {
     NSInteger row = [libraryLocations selectedRow];
-    [locations removeObjectAtIndex:row];
-    [libraryLocations reloadData];
+    if (row >= 0) {
+        [locations removeObjectAtIndex:row];
+        [libraryLocations reloadData];
+    }
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView
@@ -69,7 +71,7 @@
     return [locations count];
 }
 
-- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn 
+- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn
                                                                 row:(NSInteger)row
 {
     return [locations objectAtIndex:row];
