@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="81"/>
+			<integer value="57"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -201,7 +201,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="561243404">
+								<object class="NSMenuItem" id="958458415">
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">New Tab</string>
 									<string key="NSKeyEquiv">N</string>
@@ -276,7 +276,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="670866631">
+								<object class="NSMenuItem" id="458366604">
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">Close Tab</string>
 									<string key="NSKeyEquiv">w</string>
@@ -534,9 +534,6 @@
 			</object>
 			<object class="NSCustomObject" id="733273718">
 				<string key="NSClassName">GMainWindowController</string>
-			</object>
-			<object class="NSUserDefaultsController" id="226329772">
-				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="1002720578">
 				<string key="NSClassName">GPreferencesController</string>
@@ -854,8 +851,8 @@
 							<reference ref="579971712"/>
 							<reference ref="33109377"/>
 							<reference ref="959495538"/>
-							<reference ref="670866631"/>
-							<reference ref="561243404"/>
+							<reference ref="458366604"/>
+							<reference ref="958458415"/>
 						</object>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -1054,11 +1051,6 @@
 						<string key="objectName">7</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">470</int>
-						<reference key="object" ref="226329772"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">486</int>
 						<reference key="object" ref="499179627"/>
 						<object class="NSMutableArray" key="children">
@@ -1181,12 +1173,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">589</int>
-						<reference key="object" ref="670866631"/>
+						<reference key="object" ref="458366604"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">590</int>
-						<reference key="object" ref="561243404"/>
+						<reference key="object" ref="958458415"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
 				</object>
@@ -1250,7 +1242,6 @@
 					<string>465.ImportedFromIB2</string>
 					<string>469.IBPluginDependency</string>
 					<string>469.ImportedFromIB2</string>
-					<string>470.IBPluginDependency</string>
 					<string>486.IBPluginDependency</string>
 					<string>487.IBEditorWindowLastContentRect</string>
 					<string>487.IBPluginDependency</string>
@@ -1357,7 +1348,6 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{337, 699}, {158, 93}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
