@@ -52,14 +52,10 @@
         [mItem setMenu:statusBarMenu];
     }
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(popupButtonWasClicked:inSavePanel:)
-                                                 name:NSPopUpButtonWillPopUpNotification
+                                             selector:@selector(menuItemWasClicked:)
+                                                 name:NSMenuDidSendActionNotification
                                                object:nil];
-    
-//    NSView *sv = [[self window] contentView];
-//    NSRect frame = NSMakeRect(20, 550, 100, 21);
-//    PSMTabBarControl *pb = [[PSMTabBarControl alloc] initWithFrame:frame];
-//    [sv addSubview:pb];
+
 }
 
 - (IBAction) newPlaylist:(id)sender
@@ -102,18 +98,18 @@
                           contextInfo:NULL];
 }
 
-- (void) popupButtonWasClicked:(NSNotification *)notification inSavePanel:(NSSavePanel *)panel
-{
-    NSPopUpButton *pb = [notification object];
-    NSLog(@"Clicked %@", [pb titleOfSelectedItem]);
-}
-
 - (void) savePanelDidEnd:(NSSavePanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
 {
 	if (returnCode == NSOKButton)
 	{
 		[playlistViewController savePlaylist:[[panel URL] path]];
 	}
+}
+
+- (void) menuItemWasClicked:(NSNotification *)notification
+{
+    NSMenuItem *clicked = [[notification userInfo] objectForKey:@"MenuItem"];
+    NSLog(@"\"%@\" was clicked.", [clicked title]);
 }
 
 - (IBAction) addTracksToPlaylist:(id)sender
