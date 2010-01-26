@@ -27,7 +27,6 @@
 #import "GM3UPlaylist.h"
 #import "GUtilities.h"
 #import "GCollectionProtocols.h"
-#import "GTabViewController.h"
 
 
 @interface GPlaylistViewController : NSObject {
