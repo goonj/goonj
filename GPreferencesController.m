@@ -62,6 +62,7 @@
     NSInteger row = [libraryLocations selectedRow];
     if (row >= 0) {
         [locations removeObjectAtIndex:row];
+        [[NSUserDefaults standardUserDefaults] setObject:locations forKey:@"LibraryFolderLocations"];
         [libraryLocations reloadData];
     }
 }
