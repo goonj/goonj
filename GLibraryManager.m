@@ -43,7 +43,6 @@
 - (BOOL) createInitialDatabase
 {
 	int err;
-/*
     err = sqlite3_open_v2([[GUtilities tracksDatabasePath]
         cStringUsingEncoding:NSUTF8StringEncoding],
 	        &databaseConnection,
@@ -54,7 +53,6 @@
         return NO;
 	
 	return YES;
-*/
 }
 
 @end

@@ -10,6 +10,9 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		631CEE43111309E40005372F /* GLibraryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 631CEE41111309E40005372F /* GLibraryManager.h */; };
 		631CEE44111309E40005372F /* GLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CEE42111309E40005372F /* GLibraryManager.m */; };
+		631CEEDF1113310D0005372F /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 631CEEDC1113310D0005372F /* sqlite3.c */; };
+		631CEEE01113310D0005372F /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = 631CEEDD1113310D0005372F /* sqlite3.h */; };
+		631CEEE11113310D0005372F /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = 631CEEDE1113310D0005372F /* sqlite3ext.h */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
 		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
 		634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */; };
@@ -65,6 +68,9 @@
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
 		631CEE41111309E40005372F /* GLibraryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLibraryManager.h; sourceTree = "<group>"; };
 		631CEE42111309E40005372F /* GLibraryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLibraryManager.m; sourceTree = "<group>"; };
+		631CEEDC1113310D0005372F /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = thirdparty/sqlite3/sqlite3.c; sourceTree = "<group>"; };
+		631CEEDD1113310D0005372F /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = thirdparty/sqlite3/sqlite3.h; sourceTree = "<group>"; };
+		631CEEDE1113310D0005372F /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3ext.h; path = thirdparty/sqlite3/sqlite3ext.h; sourceTree = "<group>"; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
 		634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDirectoryWatcher.h; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 		29B97314FDCFA39411CA2CEA /* Goonj */ = {
 			isa = PBXGroup;
 			children = (
+				631CEECA1113302F0005372F /* Third Party */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -210,6 +217,24 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		631CEECA1113302F0005372F /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				631CEEDB111330FA0005372F /* SQLite3 */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		631CEEDB111330FA0005372F /* SQLite3 */ = {
+			isa = PBXGroup;
+			children = (
+				631CEEDC1113310D0005372F /* sqlite3.c */,
+				631CEEDD1113310D0005372F /* sqlite3.h */,
+				631CEEDE1113310D0005372F /* sqlite3ext.h */,
+			);
+			name = SQLite3;
 			sourceTree = "<group>";
 		};
 		634CADC0110095C400BFC105 /* Library */ = {
@@ -267,6 +292,8 @@
 			files = (
 				634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */,
 				631CEE43111309E40005372F /* GLibraryManager.h in Headers */,
+				631CEEE01113310D0005372F /* sqlite3.h in Headers */,
+				631CEEE11113310D0005372F /* sqlite3ext.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +382,7 @@
 				C581284F10B80EDF00BBF0F6 /* GPreferencesController.m in Sources */,
 				634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */,
 				631CEE44111309E40005372F /* GLibraryManager.m in Sources */,
+				631CEEDF1113310D0005372F /* sqlite3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
