@@ -28,4 +28,7 @@
 
 }
 
+- (id)initWithDefaultDatabase;
+- (BOOL)createInitialDatabase;
+
 @end
