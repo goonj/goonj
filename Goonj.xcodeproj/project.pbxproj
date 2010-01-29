@@ -10,7 +10,6 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		631CEE43111309E40005372F /* GLibraryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 631CEE41111309E40005372F /* GLibraryManager.h */; };
 		631CEE44111309E40005372F /* GLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CEE42111309E40005372F /* GLibraryManager.m */; };
-		631CEE4D11130DA40005372F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 631CEE4C11130DA40005372F /* libsqlite3.dylib */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
 		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
 		634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */; };
@@ -66,7 +65,6 @@
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
 		631CEE41111309E40005372F /* GLibraryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLibraryManager.h; sourceTree = "<group>"; };
 		631CEE42111309E40005372F /* GLibraryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLibraryManager.m; sourceTree = "<group>"; };
-		631CEE4C11130DA40005372F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
 		634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDirectoryWatcher.h; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				634CADC81100C03F00BFC105 /* CoreServices.framework in Frameworks */,
 				C5E5623E110590B9002A64E5 /* BWToolkitFramework.framework in Frameworks */,
 				C5E56240110590B9002A64E5 /* PSMTabBarControl.framework in Frameworks */,
-				631CEE4D11130DA40005372F /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +146,6 @@
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				634CADC71100C03F00BFC105 /* CoreServices.framework */,
-				631CEE4C11130DA40005372F /* libsqlite3.dylib */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
