@@ -22,8 +22,39 @@
 */
 
 #import "GLibraryManager.h"
+#import "GUtilities.h"
 
 
 @implementation GLibraryManager
+
+- (id) initWithDefaultDatabase
+{
+    if (self = [super init]) {
+        if ([[NSFileManager defaultManager]
+            fileExistsAtPath:[GUtilities tracksDatabasePath]])
+            NSLog(@"db exists");
+        else if ([self createInitialDatabase])
+            return self;
+    }
+    
+    return nil;
+}
+
+- (BOOL) createInitialDatabase
+{
+	int err;
+/*
+    err = sqlite3_open_v2([[GUtilities tracksDatabasePath]
+        cStringUsingEncoding:NSUTF8StringEncoding],
+	        &databaseConnection,
+			SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE,
+			NULL);
+
+    if (err != SQLITE_OK)
+        return NO;
+	
+	return YES;
+*/
+}
 
 @end

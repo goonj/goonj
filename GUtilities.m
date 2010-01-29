@@ -51,13 +51,21 @@
 	return nil;
 }
 
-+ (NSString *) nowPlayingPath
++ (NSString *) applicationSupportPath
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
         NSUserDomainMask, NO);
-    NSString *goonjSupportDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Goonj"];
-    NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingPathComponent:@"Now Playing.m3u"];
-    return nowPlayingList;
+    return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Goonj"];
+}
+
++ (NSString *) nowPlayingPath
+{
+    return [[self applicationSupportPath] stringByAppendingPathComponent:@"Now Playing.m3u"];
+}
+
++ (NSString *) tracksDatabasePath
+{
+    return [[self applicationSupportPath] stringByAppendingPathComponent:@"tracks.db"];
 }
 
 @end

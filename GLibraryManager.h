@@ -22,13 +22,14 @@
 */
 
 #import <Cocoa/Cocoa.h>
+#import <sqlite3.h>
 
 
 @interface GLibraryManager : NSObject {
-
+//    sqlite3 *databaseConnection;
 }
 
-- (id)initWithDefaultDatabase;
-- (BOOL)createInitialDatabase;
+- (id) initWithDefaultDatabase;
+- (BOOL) createInitialDatabase;
 
 @end

@@ -31,6 +31,8 @@
 
 + (BOOL) isHidden:(NSString *)aPath;
 + (id < GOrderedMutableCollection >) initPlaylistWithFile:(NSString *)aURL;
++ (NSString *) applicationSupportPath;
 + (NSString *) nowPlayingPath;
++ (NSString *) tracksDatabasePath;
 
 @end
