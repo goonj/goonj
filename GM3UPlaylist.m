@@ -150,9 +150,9 @@
 #pragma mark Now Playing methods
 ////
 
-+ (GM3UPlaylist *) loadNowPlaying
++ (id < GOrderedMutableCollection >) loadNowPlaying
 {
-    GM3UPlaylist* pA = [[GM3UPlaylist alloc] initWithFile:[GUtilities nowPlayingPath]];
+    id < GOrderedMutableCollection > pA = [[GM3UPlaylist alloc] initWithFile:[GUtilities nowPlayingPath]];
     return pA;
 }
 

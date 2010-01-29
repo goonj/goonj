@@ -42,8 +42,8 @@
 
 - (void) awakeFromNib
 {
-    // For some reason, this awakeFromNib is called twice, thus generating 2
-    // status menus if I don't check for its existence.
+    // For some reason, this awakeFromNib is called twice, thus generating two
+    // status menus if we don't check for its existence.
     if (!mItem) {
         mItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
         [mItem setImage:[NSImage imageNamed:@"GStatusBar"]];
@@ -51,11 +51,6 @@
         [mItem setHighlightMode:YES];
         [mItem setMenu:statusBarMenu];
     }
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(menuItemWasClicked:)
-                                                 name:NSMenuDidSendActionNotification
-                                               object:nil];
-
 }
 
 - (IBAction) newPlaylist:(id)sender
@@ -68,12 +63,11 @@
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
     [openPanel setCanChooseDirectories:NO];
     [openPanel setAllowsMultipleSelection:NO];
-    [openPanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
     [openPanel beginSheetForDirectory:nil file:nil
                        modalForWindow:[self window]
                         modalDelegate:self
                        didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
-                          contextInfo:NULL];
+                          contextInfo:nil];
 }
 
 - (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
@@ -95,7 +89,7 @@
                        modalForWindow:[self window]
                         modalDelegate:self
                        didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)
-                          contextInfo:NULL];
+                          contextInfo:nil];
 }
 
 - (void) savePanelDidEnd:(NSSavePanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
@@ -104,12 +98,6 @@
 	{
 		[playlistViewController savePlaylist:[[panel URL] path]];
 	}
-}
-
-- (void) menuItemWasClicked:(NSNotification *)notification
-{
-    NSMenuItem *clicked = [[notification userInfo] objectForKey:@"MenuItem"];
-    NSLog(@"\"%@\" was clicked.", [clicked title]);
 }
 
 - (IBAction) addTracksToPlaylist:(id)sender

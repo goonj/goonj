@@ -42,7 +42,7 @@
                        modalForWindow:[self window]
                         modalDelegate:self
                        didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
-                          contextInfo:NULL];
+                          contextInfo:nil];
 }
 
 - (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
