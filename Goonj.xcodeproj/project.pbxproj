@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		631CEE43111309E40005372F /* GLibraryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 631CEE41111309E40005372F /* GLibraryManager.h */; };
+		631CEE44111309E40005372F /* GLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CEE42111309E40005372F /* GLibraryManager.m */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
 		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
 		634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */; };
@@ -61,6 +63,8 @@
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
+		631CEE41111309E40005372F /* GLibraryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLibraryManager.h; sourceTree = "<group>"; };
+		631CEE42111309E40005372F /* GLibraryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLibraryManager.m; sourceTree = "<group>"; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
 		634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDirectoryWatcher.h; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 			children = (
 				634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */,
 				634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */,
+				631CEE41111309E40005372F /* GLibraryManager.h */,
+				631CEE42111309E40005372F /* GLibraryManager.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */,
+				631CEE43111309E40005372F /* GLibraryManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +354,7 @@
 				635CBAB510B675F800D82472 /* GUtilities.m in Sources */,
 				C581284F10B80EDF00BBF0F6 /* GPreferencesController.m in Sources */,
 				634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */,
+				631CEE44111309E40005372F /* GLibraryManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
