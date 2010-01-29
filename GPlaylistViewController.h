@@ -31,9 +31,11 @@
 
 @interface GPlaylistViewController : NSObject {
 	id < GOrderedMutableCollection > playlist;
+    NSMutableDictionary *playlistStore;
 
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTableView *playlistView;
+    IBOutlet NSPopUpButton *playlistSelector;
 }
 
 - (void) addTrack:(GTrack *)aTrack;

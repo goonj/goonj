@@ -42,7 +42,7 @@
                        modalForWindow:[self window]
                         modalDelegate:self
                        didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
-                          contextInfo:NULL];
+                          contextInfo:nil];
 }
 
 - (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
@@ -62,6 +62,7 @@
     NSInteger row = [libraryLocations selectedRow];
     if (row >= 0) {
         [locations removeObjectAtIndex:row];
+        [[NSUserDefaults standardUserDefaults] setObject:locations forKey:@"LibraryFolderLocations"];
         [libraryLocations reloadData];
     }
 }

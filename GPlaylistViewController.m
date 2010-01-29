@@ -75,9 +75,16 @@
                           name:@"GoonjWillTerminateNotification"
                         object:nil];
 
+    [defaultCenter addObserver:self
+                      selector:@selector(menuItemWasClicked:)
+                          name:NSMenuDidSendActionNotification
+                        object:nil];
+
     // Load Now Playing list.
     playlist = [GM3UPlaylist loadNowPlaying];
-	[playlistView reloadData];
+    [playlistView reloadData]; // Removing this will cause pain, shock and sudden death.
+    playlistStore = [[NSMutableDictionary alloc] init];
+    [playlistStore setValue:playlist forKey:@"Now Playing"];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];
 }
 
@@ -110,6 +117,24 @@
                          nil]];
     }
     [[NSUserDefaults standardUserDefaults] setObject:cols forKey:@"ColumnsUserDefault"];
+}
+
+- (void) performFinalCleanup
+{
+    //    [self savePlaylist:[GUtilities nowPlayingPath]]; DONT UNCOMMENT UNTIL PLAYLISTS ARE FIXED.
+    [self saveTableColumns];
+}
+
+- (void) menuItemWasClicked:(NSNotification *)notification
+{
+    NSMenu *clicked = [[notification userInfo] objectForKey:@"MenuItem"];
+    NSString *menuName = [clicked title];
+
+    if ([playlistStore objectForKey:menuName] != nil) {
+        [playlist clearPlaylist];
+        playlist = [playlistStore objectForKey:menuName];
+        [playlistView reloadData];
+    }
 }
 
 - (void) addTrack:(GTrack *)aTrack
@@ -165,17 +190,19 @@
 
 - (BOOL) loadPlaylist:(NSString *)aURL
 {
-    // No need to clear the playlist before loading it, since
-    // the GPlaylist will clear itself on successful load.
+    NSString *fileName = [NSString stringWithString:aURL];
+    fileName = [[fileName lastPathComponent] stringByDeletingPathExtension];
+
+    [playlist clearPlaylist];
+    playlist = [GUtilities initPlaylistWithFile:aURL];
+
     [playlist loadCollection:aURL];
+    [playlistStore setValue:playlist forKey:fileName];
+    [playlistSelector addItemWithTitle:fileName];
+    [playlistSelector selectItemWithTitle:fileName];
+
     [playlistView reloadData];
     return YES;
-}
-
-- (void) performFinalCleanup
-{
-    [self savePlaylist:[GUtilities nowPlayingPath]];
-    [self saveTableColumns];
 }
 
 ////
