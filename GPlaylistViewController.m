@@ -84,7 +84,7 @@
     playlist = [GM3UPlaylist loadNowPlaying];
     [playlistView reloadData]; // Removing this will cause pain, shock and sudden death.
     playlistStore = [[NSMutableDictionary alloc] init];
-    [playlistStore setValue:playlist forKey:@"Now Playing"];
+    [playlistStore setObject:playlist forKey:@"Now Playing"];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];
 }
 
@@ -131,7 +131,6 @@
     NSString *menuName = [clicked title];
 
     if ([playlistStore objectForKey:menuName] != nil) {
-        [playlist clearPlaylist];
         playlist = [playlistStore objectForKey:menuName];
         [playlistView reloadData];
     }
@@ -193,11 +192,9 @@
     NSString *fileName = [NSString stringWithString:aURL];
     fileName = [[fileName lastPathComponent] stringByDeletingPathExtension];
 
-    [playlist clearPlaylist];
     playlist = [GUtilities initPlaylistWithFile:aURL];
 
-    [playlist loadCollection:aURL];
-    [playlistStore setValue:playlist forKey:fileName];
+    [playlistStore setObject:playlist forKey:fileName];
     [playlistSelector addItemWithTitle:fileName];
     [playlistSelector selectItemWithTitle:fileName];
 

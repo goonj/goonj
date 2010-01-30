@@ -125,7 +125,6 @@
     NSError *err; NSStringEncoding encoding;
     GTrack *track;
     NSArray *lines = [[NSString stringWithContentsOfFile:aURL usedEncoding:&encoding error:&err] componentsSeparatedByString:@"\n"];
-
     for (NSString *temp in lines)
     {
         temp = [temp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -136,7 +135,6 @@
             track = [[GTrack alloc] initWithFile:temp];
             [self addTrack:track];
         }
-
     }
     return YES;
 }
