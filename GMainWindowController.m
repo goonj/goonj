@@ -64,6 +64,7 @@
     [openPanel setCanChooseDirectories:NO];
     [openPanel setAllowsMultipleSelection:NO];
     [openPanel beginSheetForDirectory:nil file:nil
+                                types:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]
                        modalForWindow:[self window]
                         modalDelegate:self
                        didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
