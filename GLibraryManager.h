@@ -31,5 +31,6 @@
 
 - (id) initWithDefaultDatabase;
 - (BOOL) createInitialDatabase;
+- (void) startManager;
 
 @end

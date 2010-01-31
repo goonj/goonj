@@ -23,12 +23,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "GDirectoryWatcher.h"
+#import "GLibraryManager.h"
 #import "GMainWindowController.h"
 #import "GPreferencesController.h"
 
 
 @interface GAppController : NSObject {
     GDirectoryWatcher *directoryWatcher;
+	GLibraryManager *libraryManager;
 
 	IBOutlet GMainWindowController *mainWindowController;
     IBOutlet GPreferencesController *prefController;
