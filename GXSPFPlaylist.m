@@ -1,24 +1,24 @@
 /*
-	File: GXSPFPlaylist.m
-	Description: XSPF playlist support (implementation).
+    File: GXSPFPlaylist.m
+    Description: XSPF playlist support (implementation).
 
-	This file is part of Goonj.
+    This file is part of Goonj.
 
-	Goonj is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+    Goonj is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-	Goonj is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	GNU General Public License for more details.
+    Goonj is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with Goonj. If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with Goonj. If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2009 Pratul Kalia.
-	Copyright 2009 Ankur Sethi.
+    Copyright 2009 Ankur Sethi.
 */
 
 #import "GXSPFPlaylist.h"
@@ -31,10 +31,10 @@
 	if (self = [super init]) {
         trackList = [[NSMutableArray alloc] initWithCapacity:0];
         aURL = [aURL stringByExpandingTildeInPath];
-        
+
         if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
             [self loadPlaylist:[aURL stringByExpandingTildeInPath]];
-        
+
         return self;
     }
 
@@ -134,7 +134,7 @@
 
     // Loading the playlist was a success, so clear the old playlist.
     [trackList removeAllObjects];
-	
+
     NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
 
 	// There should be only ONE tracklist in a playlist, anyway.
@@ -146,7 +146,7 @@
 	NSString *unescapedString;
 	for (NSXMLElement *XSPFTrack in XSPFTracks) {
 		NSXMLElement *XSPFLocation = [[XSPFTrack elementsForName:@"location"] objectAtIndex:0];
-		
+
 		// Need to call stringByReplacingPercentEscapesUsingEncoding twice. Insane, I tell you.
 		unescapedString = [[XSPFLocation stringValue] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		unescapedString = [unescapedString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

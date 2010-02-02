@@ -36,7 +36,7 @@ void FSEventCallback(
     char **paths = eventPaths;
     NSMutableArray *directoriesToScan = [[NSMutableArray alloc]
         initWithCapacity:numEvents];
-    
+
     for(i = 0 ; i < numEvents ; i++) {
         [directoriesToScan addObject:[NSString stringWithCString:paths[i]
                                                    encoding:NSUTF8StringEncoding]];
@@ -71,7 +71,7 @@ void FSEventCallback(
 
         watchedDirectories = [[NSMutableArray alloc]
             initWithCapacity:[paths count]];
-        
+
         for (NSString *directory in paths) {
             directory = [directory stringByExpandingTildeInPath];
             [watchedDirectories addObject:directory];
@@ -80,7 +80,7 @@ void FSEventCallback(
         eventStream = FSEventStreamCreate(NULL, &FSEventCallback, NULL,
             (CFArrayRef)watchedDirectories, kFSEventStreamEventIdSinceNow,
             1, kFSEventStreamCreateFlagNone);
-        
+
         return self;
     }
 
