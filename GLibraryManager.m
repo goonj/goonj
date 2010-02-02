@@ -47,6 +47,8 @@
 
     if (err != SQLITE_OK)
         return NO;
+	else if (![self createDatabaseSchema])
+		return NO;
 	
     return YES;
 }
@@ -123,13 +125,11 @@
 
 - (void) startManager
 {
-	NSLog(@"starting manager");
-	NSLog(@"%@", databasePath);
-	if ([[NSFileManager defaultManager] fileExistsAtPath:[GUtilities tracksDatabasePath]]);
+	if ([[NSFileManager defaultManager] fileExistsAtPath:databasePath]);
 	else
 		[self createInitialDatabase];
 	
-	// TODO: remove this once the rest of the manager works fine.
+	// TODO: remove this once the rest of the manager works.
 	sqlite3_close(databaseConnection);
 }
 
