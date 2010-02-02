@@ -50,9 +50,10 @@
                            withObject:nil];
 	
 	libraryManager = [[GLibraryManager alloc] initWithDefaultDatabase];
-	[NSThread detachNewThreadSelector:@selector(startManager)
-							 toTarget:libraryManager
-						   withObject:nil];
+	[libraryManager startManager];
+//	[NSThread detachNewThreadSelector:@selector(startManager)
+//							 toTarget:libraryManager
+//						   withObject:nil];
 }
 
 - (void) applicationWillTerminate:(NSNotification *)aNotification

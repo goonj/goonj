@@ -27,10 +27,13 @@
 
 @interface GLibraryManager : NSObject {
     sqlite3 *databaseConnection;
+	NSString *databasePath;
 }
 
 - (id) initWithDefaultDatabase;
 - (BOOL) createInitialDatabase;
+- (BOOL) createDatabaseSchema;
+- (BOOL) singleStepQuery:(NSString *)aQueryString;
 - (void) startManager;
 
 @end
