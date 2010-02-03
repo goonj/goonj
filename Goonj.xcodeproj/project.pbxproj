@@ -145,6 +145,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5D1E988111362F600C3898B /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				634CADC71100C03F00BFC105 /* CoreServices.framework */,
 			);
@@ -154,7 +155,6 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C5D1E988111362F600C3898B /* BWToolkitFramework.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
