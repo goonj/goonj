@@ -33,7 +33,7 @@
         aURL = [aURL stringByExpandingTildeInPath];
 
         if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
-            [self loadPlaylist:[aURL stringByExpandingTildeInPath]];
+            [self loadCollection:[aURL stringByExpandingTildeInPath]];
 
         return self;
     }
@@ -51,9 +51,26 @@
     [trackList insertObject:track atIndex:index];
 }
 
+- (void) removeTrack:(GTrack *)track
+{
+    [trackList removeObject:track];
+}
+
 - (void) removeTrackAtIndex:(NSUInteger)index
 {
     [trackList removeObjectAtIndex:index];
+}
+
+- (void) removeTracksAtIndexes:(NSIndexSet *)indexes
+{
+	[trackList removeObjectsAtIndexes:indexes];
+}
+
+- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex
+{
+    id something = [trackList objectAtIndex:initIndex];
+    [trackList removeObjectAtIndex:initIndex];
+    [trackList insertObject:something atIndex:endIndex];
 }
 
 - (void) clearPlaylist
@@ -71,7 +88,12 @@
     return [trackList objectAtIndex:index];
 }
 
-- (BOOL) savePlaylistAs:(NSString *)aURL
+- (BOOL) isLocalCollection
+{
+    return YES;
+}
+
+- (BOOL) saveCollectionAs:(NSString *)aURL
 {
     // TODO: save more metadata.
 
@@ -122,7 +144,7 @@
 	return [XMLData writeToFile:[aURL stringByExpandingTildeInPath] atomically:NO];
 }
 
-- (BOOL) loadPlaylist:(NSString *)aURL
+- (BOOL) loadCollection:(NSString *)aURL
 {
     NSError *err = nil;
     NSXMLDocument *XSPFDoc = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL fileURLWithPath:aURL]
