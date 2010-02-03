@@ -84,6 +84,14 @@
 	[self setValue:[NSString stringWithCString:tag->comment().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"comment"];
+	
+	int length = audioProperties->length(), minutes = 0, seconds = 0;
+	while (length > 60) {
+		minutes++;
+		length -= 60;
+	}
+	seconds = length;
+	[self setValue:[NSString stringWithFormat:@"%d:%02d", minutes, seconds] forKey:@"time"];
 }
 
 - (NSString *)path
