@@ -11,6 +11,7 @@
 			<string key="NS.object.0">740</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
+			<integer value="100"/>
 			<integer value="2"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -999,13 +1000,13 @@
 				<string key="NSClassName">GPlaylistViewController</string>
 			</object>
 			<object class="NSCustomView" id="1047375673">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">290</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSTextField" id="807457522">
 						<reference key="NSNextResponder" ref="1047375673"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{112, 20}, {79, 17}}</string>
+						<string key="NSFrame">{{112, 16}, {79, 17}}</string>
 						<reference key="NSSuperview" ref="1047375673"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="809790099">
@@ -1021,7 +1022,7 @@
 					<object class="NSPopUpButton" id="1047903482">
 						<reference key="NSNextResponder" ref="1047375673"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{193, 16}, {122, 26}}</string>
+						<string key="NSFrame">{{193, 12}, {122, 26}}</string>
 						<reference key="NSSuperview" ref="1047375673"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="890704744">
@@ -1074,7 +1075,8 @@
 						</object>
 					</object>
 				</array>
-				<string key="NSFrameSize">{432, 60}</string>
+				<string key="NSFrameSize">{432, 48}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 		</array>
@@ -1743,7 +1745,7 @@
 				<string key="1.editorWindowContentRectSynchronizationRect">{{202, 428}, {480, 270}}</string>
 				<boolean value="YES" key="1.windowTemplate.hasMinSize"/>
 				<string key="1.windowTemplate.minSize">{640, 640}</string>
-				<string key="100.IBEditorWindowLastContentRect">{{217, 671}, {432, 60}}</string>
+				<string key="100.IBEditorWindowLastContentRect">{{465, 632}, {432, 48}}</string>
 				<string key="100.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="101.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>

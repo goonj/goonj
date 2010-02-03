@@ -25,7 +25,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import "GPlaylistViewController.h"
-#import <PSMTabBarControl/PSMTabBarControl.h>
 
 
 @interface GMainWindowController : NSWindowController {
