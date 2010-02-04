@@ -34,10 +34,12 @@
     IBOutlet NSPopUpButton *fileFormatSelector;
     IBOutlet NSMenu *statusBarMenu;
 
+    NSString *lastFormatSelected;
     NSStatusItem *mItem;
 }
 
 - (BOOL) validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem;
+- (void) saveAppropriatePlaylist:(NSString *)path;
 
 // Actions.
 - (IBAction) newPlaylist:(id)sender;

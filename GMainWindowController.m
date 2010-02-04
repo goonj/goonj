@@ -51,6 +51,14 @@
         [mItem setHighlightMode:YES];
         [mItem setMenu:statusBarMenu];
     }
+
+    lastFormatSelected = [[NSString alloc] init];
+
+    NSNotificationCenter *defCenter = [NSNotificationCenter defaultCenter];
+    [defCenter addObserver:self
+                  selector:@selector(menuItemWasClicked:)
+                      name:NSMenuDidSendActionNotification
+                    object:fileFormatSelector];
 }
 
 - (IBAction) newPlaylist:(id)sender
@@ -84,21 +92,32 @@
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
     [savePanel setTitle:@"Save Playlist"];
-    [savePanel setAccessoryView:saveFileFormat];
+    [savePanel setNameFieldStringValue:@"My Playlist"];
     [savePanel setAllowedFileTypes:[NSArray arrayWithObjects:@"m3u", @"xspf", nil]];
-    [savePanel beginSheetForDirectory:nil file:@"My Playlist"
-                       modalForWindow:[self window]
-                        modalDelegate:self
-                       didEndSelector:@selector(savePanelDidEnd:returnCode:contextInfo:)
-                          contextInfo:nil];
+    [savePanel setAllowsOtherFileTypes:NO];
+    [savePanel setExtensionHidden:TRUE];
+    [savePanel setAccessoryView:saveFileFormat];
+
+    [savePanel beginSheetModalForWindow:[self window] completionHandler:^(NSInteger returnCode) {
+        if (returnCode == NSOKButton) {
+            [self saveAppropriatePlaylist:[[savePanel URL] path]];
+        }
+    }];
 }
 
-- (void) savePanelDidEnd:(NSSavePanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
+- (void) saveAppropriatePlaylist:(NSString *)path
 {
-	if (returnCode == NSOKButton)
-	{
-		[playlistViewController savePlaylist:[[panel URL] path]];
-	}
+    [playlistViewController savePlaylist:path];
+}
+
+- (void) menuItemWasClicked:(NSNotification *)notification
+{
+    NSMenu *clicked = [[notification userInfo] objectForKey:@"MenuItem"];
+
+  	if ([[clicked title] caseInsensitiveCompare:@"M3U"] == NSOrderedSame)
+        lastFormatSelected = [clicked title];
+  	if ([[clicked title] caseInsensitiveCompare:@"XSPF"] == NSOrderedSame)
+        lastFormatSelected = [clicked title];
 }
 
 - (IBAction) addTracksToPlaylist:(id)sender
