@@ -11,8 +11,8 @@
 			<string key="NS.object.0">740</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
+			<integer value="253"/>
 			<integer value="100"/>
-			<integer value="2"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -566,7 +566,7 @@
 																	<bytes key="NSWhite">MC41AA</bytes>
 																</object>
 															</object>
-															<double key="NSRowHeight">14</double>
+															<double key="NSRowHeight">15</double>
 															<int key="NSTvFlags">-759169024</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
@@ -627,7 +627,7 @@
 											<reference key="NSContentView" ref="586119052"/>
 											<reference key="NSHeaderClipView" ref="898060395"/>
 											<reference key="NSCornerView" ref="290111164"/>
-											<bytes key="NSScrollAmts">QSAAAEEgAABBgAAAQYAAAA</bytes>
+											<bytes key="NSScrollAmts">QSAAAEEgAABBiAAAQYgAAA</bytes>
 										</object>
 									</array>
 									<string key="NSFrameSize">{186, 499}</string>
@@ -1745,7 +1745,7 @@
 				<string key="1.editorWindowContentRectSynchronizationRect">{{202, 428}, {480, 270}}</string>
 				<boolean value="YES" key="1.windowTemplate.hasMinSize"/>
 				<string key="1.windowTemplate.minSize">{640, 640}</string>
-				<string key="100.IBEditorWindowLastContentRect">{{465, 632}, {432, 48}}</string>
+				<string key="100.IBEditorWindowLastContentRect">{{402, 561}, {432, 48}}</string>
 				<string key="100.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="101.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
