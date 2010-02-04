@@ -202,6 +202,21 @@
     return YES;
 }
 
+- (void) locateInFinder
+{
+	NSWorkspace* ws = [NSWorkspace sharedWorkspace];
+	NSIndexSet *selectedRows = [playlistView selectedRowIndexes];
+    NSUInteger row;
+
+	for (row = [selectedRows firstIndex];
+		 row != NSNotFound; row = [selectedRows indexGreaterThanIndex:row])
+	{
+		NSString *location = [[playlist trackAtIndex:row] path];
+		[ws selectFile:location inFileViewerRootedAtPath:location];
+	}
+}
+
+
 ////
 #pragma mark NSTableView delegate and data source methods
 ////

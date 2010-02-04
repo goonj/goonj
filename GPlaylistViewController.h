@@ -45,6 +45,7 @@
 - (BOOL) savePlaylist:(NSString *)aURL;
 - (BOOL) loadPlaylist:(NSString *)aURL;
 - (void) performFinalCleanup;
+- (void) locateInFinder;
 
 // NSTableView delegate and data source methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;

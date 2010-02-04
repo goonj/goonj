@@ -11,7 +11,7 @@
 			<string key="NS.object.0">740</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="57"/>
+			<integer value="81"/>
 			<integer value="569"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -229,6 +229,15 @@
 									<bool key="NSIsSeparator">YES</bool>
 									<string key="NSTitle"/>
 									<string key="NSKeyEquiv"/>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+								<object class="NSMenuItem" id="1020030325">
+									<reference key="NSMenu" ref="720053764"/>
+									<string key="NSTitle">Locate in Finder</string>
+									<string key="NSKeyEquiv">l</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -729,6 +738,14 @@
 					</object>
 					<int key="connectionID">595</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">locateInFinder:</string>
+						<reference key="source" ref="733273718"/>
+						<reference key="destination" ref="1020030325"/>
+					</object>
+					<int key="connectionID">598</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -816,6 +833,7 @@
 							<reference ref="33109377"/>
 							<reference ref="959495538"/>
 							<reference ref="458366604"/>
+							<reference ref="1020030325"/>
 						</array>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -1132,6 +1150,11 @@
 						<reference key="object" ref="458366604"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">596</int>
+						<reference key="object" ref="1020030325"/>
+						<reference key="parent" ref="720053764"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1221,13 +1244,14 @@
 				<string key="584.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="586.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="589.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="596.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="72.ImportedFromIB2"/>
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="79.ImportedFromIB2"/>
 				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="80.ImportedFromIB2"/>
-				<string key="81.IBEditorWindowLastContentRect">{{323, 578}, {260, 173}}</string>
+				<string key="81.IBEditorWindowLastContentRect">{{323, 558}, {260, 193}}</string>
 				<string key="81.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<integer value="1" key="81.ImportedFromIB2"/>
 				<string key="81.editorWindowContentRectSynchronizationRect">{{145, 474}, {199, 203}}</string>
@@ -1242,7 +1266,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">595</int>
+			<int key="maxID">598</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1266,8 +1290,8 @@
 					<string key="className">GMainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addTracksToPlaylist:">id</string>
 						<string key="loadPlaylist:">id</string>
+						<string key="locateInFinder:">id</string>
 						<string key="newPlaylist:">id</string>
 						<string key="removeSelectedTracksFromPlaylist:">id</string>
 						<string key="savePlaylist:">id</string>
@@ -1276,27 +1300,12 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="fileFormatSelector">NSPopUpButton</string>
 						<string key="playlistView">NSTableView</string>
-						<string key="playlistViewController">GPlaylistViewController</string>
 						<string key="saveFileFormat">NSView</string>
 						<string key="statusBarMenu">NSMenu</string>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">GMainWindowController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">GPlaylistViewController</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="mainWindow">NSWindow</string>
-						<string key="playlist">id</string>
-						<string key="playlistSelector">NSPopUpButton</string>
-						<string key="playlistView">NSTableView</string>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">GPlaylistViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

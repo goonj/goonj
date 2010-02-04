@@ -120,11 +120,6 @@
         lastFormatSelected = [clicked title];
 }
 
-- (IBAction) addTracksToPlaylist:(id)sender
-{
-	// Add track.
-}
-
 - (IBAction) removeSelectedTracksFromPlaylist:(id)sender
 {
 	[playlistViewController removeSelectedTracks];
@@ -136,6 +131,11 @@
 		[[self window] makeKeyAndOrderFront:self];
 	else
 		[[self window] close];
+}
+
+- (IBAction) locateInFinder:(id)sender
+{
+    [playlistViewController locateInFinder];
 }
 
 @end
