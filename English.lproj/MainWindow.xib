@@ -11,8 +11,7 @@
 			<string key="NS.object.0">740</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="41"/>
-			<integer value="100"/>
+			<integer value="2"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -850,7 +849,6 @@
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<string key="NSAutosaveName">GNowPlaylist</string>
-															<int key="NSGridStyleMask">1</int>
 															<int key="NSColumnAutoresizingStyle">4</int>
 															<int key="NSDraggingSourceMaskForLocal">15</int>
 															<int key="NSDraggingSourceMaskForNonLocal">0</int>
@@ -982,8 +980,24 @@
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{759, 6}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="1006"/>
-							<int key="NSpiFlags">28938</int>
+							<int key="NSpiFlags">20746</int>
 							<double key="NSMaxValue">100</double>
+						</object>
+						<object class="NSTextField" id="245233257">
+							<reference key="NSNextResponder" ref="1006"/>
+							<int key="NSvFlags">291</int>
+							<string key="NSFrame">{{391, 6}, {363, 14}}</string>
+							<reference key="NSSuperview" ref="1006"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSTextFieldCell" key="NSCell" id="513225887">
+								<int key="NSCellFlags">68288064</int>
+								<int key="NSCellFlags2">71435264</int>
+								<string key="NSContents">Updating your music library...</string>
+								<reference key="NSSupport" ref="26"/>
+								<reference key="NSControlView" ref="245233257"/>
+								<reference key="NSBackgroundColor" ref="283621958"/>
+								<reference key="NSTextColor" ref="82196072"/>
+							</object>
 						</object>
 					</array>
 					<string key="NSFrameSize">{795, 698}</string>
@@ -1001,7 +1015,7 @@
 				<string key="NSClassName">GPlaylistViewController</string>
 			</object>
 			<object class="NSCustomView" id="1047375673">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">290</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSTextField" id="807457522">
@@ -1077,7 +1091,6 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{432, 48}</string>
-				<reference key="NSSuperview"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 		</array>
@@ -1223,6 +1236,7 @@
 							<reference ref="656041665"/>
 							<reference ref="905643878"/>
 							<reference ref="541133219"/>
+							<reference ref="245233257"/>
 						</array>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -1734,6 +1748,19 @@
 						<reference key="object" ref="541133219"/>
 						<reference key="parent" ref="1006"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">266</int>
+						<reference key="object" ref="245233257"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="513225887"/>
+						</array>
+						<reference key="parent" ref="1006"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">267</int>
+						<reference key="object" ref="513225887"/>
+						<reference key="parent" ref="245233257"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1836,6 +1863,8 @@
 				<string key="258.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="261.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="263.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="266.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="267.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="41.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="43.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1854,7 +1883,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">265</int>
+			<int key="maxID">267</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1862,8 +1891,8 @@
 					<string key="className">GMainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addTracksToPlaylist:">id</string>
 						<string key="loadPlaylist:">id</string>
+						<string key="locateInFinder:">id</string>
 						<string key="newPlaylist:">id</string>
 						<string key="removeSelectedTracksFromPlaylist:">id</string>
 						<string key="savePlaylist:">id</string>

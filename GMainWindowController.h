@@ -29,11 +29,11 @@
 
 @interface GMainWindowController : NSWindowController {
 	IBOutlet NSTableView *playlistView;
+	IBOutlet GPlaylistViewController *playlistViewController;
     IBOutlet NSView *saveFileFormat;
     IBOutlet NSPopUpButton *fileFormatSelector;
     IBOutlet NSMenu *statusBarMenu;
 
-	GPlaylistViewController *playlistViewController;
     NSString *lastFormatSelected;
     NSStatusItem *mItem;
 }
