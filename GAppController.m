@@ -64,7 +64,8 @@
 - (IBAction) showPreferencesWindow:(id)sender
 {
     [prefController initWithWindowNibName:@"Preferences"];
-	[[prefController window] makeKeyAndOrderFront:self];
+    [NSApp activateIgnoringOtherApps:YES];
+    [[prefController window] makeKeyAndOrderFront:self];
 }
 
 @end
