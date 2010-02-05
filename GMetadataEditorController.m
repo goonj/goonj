@@ -1,6 +1,6 @@
 /*
-    File: GAppController.h
-    Description: The Goonj application delegate (interface).
+    File: GMetadataEditorController.m
+    Description: The Metadata Editor window controller. (implementation)
 
     This file is part of Goonj.
 
@@ -8,6 +8,7 @@
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
+
     Goonj is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
@@ -20,26 +21,9 @@
     Copyright 2009 Ankur Sethi.
 */
 
-#import <Cocoa/Cocoa.h>
-#import "GDirectoryWatcher.h"
-#import "GLibraryManager.h"
-#import "GMainWindowController.h"
-#import "GPreferencesController.h"
 #import "GMetadataEditorController.h"
 
 
-@interface GAppController : NSObject {
-    GDirectoryWatcher *directoryWatcher;
-	GLibraryManager *libraryManager;
-
-	IBOutlet GMainWindowController *mainWindowController;
-    IBOutlet GPreferencesController *prefController;
-    IBOutlet GMetadataEditorController *metadataController;
-}
-
-- (void) applicationDidFinishLaunching:(NSNotification *)aNotification;
-- (void) applicationWillTerminate:(NSNotification *)aNotification;
-- (IBAction) showPreferencesWindow:(id)sender;
-- (IBAction) showMetadataEditor:(id)sender;
+@implementation GMetadataEditorController
 
 @end

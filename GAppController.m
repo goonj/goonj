@@ -68,4 +68,10 @@
     [[prefController window] makeKeyAndOrderFront:self];
 }
 
+- (IBAction) showMetadataEditor:(id)sender
+{
+    [metadataController initWithWindowNibName:@"MetadataEditor"];
+    [[metadataController window] makeKeyAndOrderFront:self];
+}
+
 @end

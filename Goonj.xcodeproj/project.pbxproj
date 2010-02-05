@@ -29,6 +29,9 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C54EC3F6111B5D45008D852B /* libtag.1.7.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
 		C54EC3F7111B5D4A008D852B /* libtag.1.7.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
+		C54EC418111B7654008D852B /* MetadataEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54EC417111B7654008D852B /* MetadataEditor.xib */; };
+		C54EC421111C4B25008D852B /* GMetadataEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = C54EC41F111C4B25008D852B /* GMetadataEditorController.h */; };
+		C54EC422111C4B25008D852B /* GMetadataEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54EC420111C4B25008D852B /* GMetadataEditorController.m */; };
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
 		C581284F10B80EDF00BBF0F6 /* GPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C581284E10B80EDF00BBF0F6 /* GPreferencesController.m */; };
@@ -91,6 +94,9 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.7.0.dylib; path = usr/local/lib/libtag.1.7.0.dylib; sourceTree = SDKROOT; };
+		C54EC417111B7654008D852B /* MetadataEditor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetadataEditor.xib; sourceTree = "<group>"; };
+		C54EC41F111C4B25008D852B /* GMetadataEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMetadataEditorController.h; sourceTree = "<group>"; };
+		C54EC420111C4B25008D852B /* GMetadataEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMetadataEditorController.m; sourceTree = "<group>"; };
 		C551B84E10AFE4CC00174867 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		C551BA7A10B54F2E00174867 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
@@ -137,6 +143,8 @@
 				638392251058D34C00DCE47D /* GAppController.m */,
 				63274DF4105A0DDD005AC3BA /* GMainWindowController.h */,
 				63274DF5105A0DDD005AC3BA /* GMainWindowController.m */,
+				C54EC41F111C4B25008D852B /* GMetadataEditorController.h */,
+				C54EC420111C4B25008D852B /* GMetadataEditorController.m */,
 				63ECAFC3105B59A000E635C7 /* GPlaylistViewController.h */,
 				63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */,
 				63917FB21062871C00DDF469 /* GTrack.h */,
@@ -225,9 +233,10 @@
 		635CBAEF10B67AA200D82472 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				63349B0F10B596F4000155E2 /* Preferences.xib */,
-				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
+				C54EC417111B7654008D852B /* MetadataEditor.xib */,
+				63349B0F10B596F4000155E2 /* Preferences.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 				631CEE43111309E40005372F /* GLibraryManager.h in Headers */,
 				C5BC4FB611135AF200F07110 /* sqlite3.h in Headers */,
 				C5BC4FB711135AF200F07110 /* sqlite3ext.h in Headers */,
+				C54EC421111C4B25008D852B /* GMetadataEditorController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +365,7 @@
 				C5DC9B3810F9193C0088381D /* GPreviousButton.png in Resources */,
 				C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */,
 				C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */,
+				C54EC418111B7654008D852B /* MetadataEditor.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +404,7 @@
 				634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */,
 				631CEE44111309E40005372F /* GLibraryManager.m in Sources */,
 				C5BC4FB511135AF200F07110 /* sqlite3.c in Sources */,
+				C54EC422111C4B25008D852B /* GMetadataEditorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
