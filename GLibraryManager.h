@@ -34,6 +34,8 @@
 - (BOOL) createInitialDatabase;
 - (BOOL) createDatabaseSchema;
 - (BOOL) performInitialScan;
+- (void) addTracksFromDirectory:(NSString *)aDirectory;
+- (void) addTrack:(NSString *)aUrl;
 - (BOOL) singleStepQuery:(NSString *)aQueryString;
 - (void) startManager;
 

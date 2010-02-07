@@ -39,7 +39,7 @@
 
 - (BOOL) createInitialDatabase
 {
-    int err;
+	int err;
     err = sqlite3_open_v2([databasePath cStringUsingEncoding:NSUTF8StringEncoding],
 	        &databaseConnection,
 			SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE,
@@ -47,9 +47,8 @@
 
     if (err != SQLITE_OK)
         return NO;
-	else if (![self createDatabaseSchema])
-		return NO;
 	
+	[self createDatabaseSchema];
 	[self performInitialScan];
 
     return YES;
@@ -103,7 +102,42 @@
 
 - (BOOL) performInitialScan
 {
+	NSArray *watchDirectories = [[NSUserDefaults standardUserDefaults]
+								 arrayForKey:@"LibraryFolderLocations"];
+	
+	
+	for (NSString *directory in watchDirectories)
+		[self addTracksFromDirectory:[directory stringByExpandingTildeInPath]];
+	
 	return YES;
+}
+
+- (void) addTracksFromDirectory:(NSString *)aDirectory
+{
+	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager]
+									  enumeratorAtPath:aDirectory];
+	
+	NSString *fileName, *filePath;
+	BOOL isDirectory;
+	while (fileName = [dirEnum nextObject]) {
+		filePath = [aDirectory stringByAppendingPathComponent:fileName];
+		
+		if ([GUtilities isHidden:filePath])
+			continue;
+		
+		[[NSFileManager defaultManager] fileExistsAtPath:filePath
+											 isDirectory:&isDirectory];
+		
+		if (isDirectory == YES)
+			[self addTracksFromDirectory:filePath];
+		else
+			[self addTrack:filePath];
+	}
+}
+
+- (void) addTrack:(NSString *)aUrl
+{
+	NSLog(@"%@", aUrl);
 }
 
 - (BOOL) singleStepQuery:(NSString *)aQueryString
