@@ -27,9 +27,9 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C521D6B1111F1A6B008B1179 /* MetaEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = C521D6B0111F1A6B008B1179 /* MetaEditor.xib */; };
 		C54EC3F6111B5D45008D852B /* libtag.1.7.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
 		C54EC3F7111B5D4A008D852B /* libtag.1.7.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
-		C54EC418111B7654008D852B /* MetadataEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54EC417111B7654008D852B /* MetadataEditor.xib */; };
 		C54EC421111C4B25008D852B /* GMetadataEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = C54EC41F111C4B25008D852B /* GMetadataEditorController.h */; };
 		C54EC422111C4B25008D852B /* GMetadataEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54EC420111C4B25008D852B /* GMetadataEditorController.m */; };
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
@@ -93,8 +93,8 @@
 		63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C521D6AD111F1A5F008B1179 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MetaEditor.xib; sourceTree = "<group>"; };
 		C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.7.0.dylib; path = usr/local/lib/libtag.1.7.0.dylib; sourceTree = SDKROOT; };
-		C54EC417111B7654008D852B /* MetadataEditor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MetadataEditor.xib; sourceTree = "<group>"; };
 		C54EC41F111C4B25008D852B /* GMetadataEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMetadataEditorController.h; sourceTree = "<group>"; };
 		C54EC420111C4B25008D852B /* GMetadataEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMetadataEditorController.m; sourceTree = "<group>"; };
 		C551B84E10AFE4CC00174867 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 			children = (
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
-				C54EC417111B7654008D852B /* MetadataEditor.xib */,
+				C521D6B0111F1A6B008B1179 /* MetaEditor.xib */,
 				63349B0F10B596F4000155E2 /* Preferences.xib */,
 			);
 			name = Interface;
@@ -365,7 +365,7 @@
 				C5DC9B3810F9193C0088381D /* GPreviousButton.png in Resources */,
 				C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */,
 				C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */,
-				C54EC418111B7654008D852B /* MetadataEditor.xib in Resources */,
+				C521D6B1111F1A6B008B1179 /* MetaEditor.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +441,14 @@
 				6383914A1058BE6C00DCE47D /* English */,
 			);
 			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		C521D6B0111F1A6B008B1179 /* MetaEditor.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C521D6AD111F1A5F008B1179 /* English */,
+			);
+			name = MetaEditor.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
