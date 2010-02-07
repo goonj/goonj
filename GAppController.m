@@ -70,8 +70,8 @@
 
 - (IBAction) showMetadataEditor:(id)sender
 {
-    [metadataController initWithWindowNibName:@"MetaEditor"];
-    [[metadataController window] makeKeyAndOrderFront:self];
+    [metadataController initWithWindowNibName:@"MetaEditor" owner:metadataController];
+    [metadataController showWindow:sender];
 }
 
 @end
