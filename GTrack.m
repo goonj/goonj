@@ -33,15 +33,12 @@
 
 @dynamic path;
 
-- (id) initWithFile:(NSString *)aPath
+- (id) initWithFile:(NSString *)aUrl
 {
 	self = [super init];
 
 	if (self) {
-		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
-        [self setValue:aPath forKey:@"location"];
-		[self readPropertiesFromID3Tags];
-
+		properties = [GTrack metadataForFile:aUrl];
 		return self;
 	}
 
@@ -58,44 +55,52 @@
     [properties setValue:value forKey:key];
 }
 
-- (void) readPropertiesFromID3Tags
+- (NSString *)path
 {
-	TagLib::FileRef fileRef([[self valueForKey:@"location"] cStringUsingEncoding:NSUTF8StringEncoding]);
+    return [self valueForKey:@"location"];
+}
+
++ (NSMutableDictionary *) metadataForFile:(NSString *)aUrl
+{
+	NSMutableDictionary *metadata = [[NSMutableDictionary alloc] init];
+	TagLib::FileRef fileRef([aUrl cStringUsingEncoding:NSUTF8StringEncoding]);
 	TagLib::Tag *tag = fileRef.tag();
 	TagLib::AudioProperties *audioProperties = fileRef.audioProperties();
-
-	[self setValue:[NSString stringWithCString:tag->title().toCString(true)
+	
+	[metadata setValue:aUrl forKey:@"location"];
+	
+	[metadata setValue:[NSString stringWithCString:tag->title().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"name"];
-
-	[self setValue:[NSString stringWithCString:tag->artist().toCString(true)
+	
+	[metadata setValue:[NSString stringWithCString:tag->artist().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"artist"];
-
-	[self setValue:[NSString stringWithCString:tag->album().toCString(true)
+	
+	[metadata setValue:[NSString stringWithCString:tag->album().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"album"];
-
-	[self setValue:[NSString stringWithCString:tag->genre().toCString(true)
+	
+	[metadata setValue:[NSString stringWithCString:tag->genre().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"genre"];
-
-	[self setValue:[NSString stringWithCString:tag->comment().toCString(true)
+	
+	[metadata setValue:[NSString stringWithCString:tag->comment().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"comment"];
-
+	
 	int length = audioProperties->length(), minutes = 0, seconds = 0;
+	
 	while (length > 60) {
 		minutes++;
 		length -= 60;
 	}
+	
 	seconds = length;
-	[self setValue:[NSString stringWithFormat:@"%d:%02d", minutes, seconds] forKey:@"time"];
-}
-
-- (NSString *)path
-{
-    return [self valueForKey:@"location"];
+	[metadata setValue:[NSString stringWithFormat:@"%d:%02d", minutes, seconds]
+				forKey:@"time"];
+	
+	return metadata;
 }
 
 @end

@@ -49,6 +49,8 @@
         return NO;
 	else if (![self createDatabaseSchema])
 		return NO;
+	
+	[self performInitialScan];
 
     return YES;
 }
@@ -96,6 +98,11 @@
 	if (![self singleStepQuery:theStatement])
 		return NO;
 
+	return YES;
+}
+
+- (BOOL) performInitialScan
+{
 	return YES;
 }
 

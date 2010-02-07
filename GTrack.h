@@ -35,8 +35,8 @@
 - (id) initWithFile:(NSString *)aPath;
 - (NSString *) valueForKey:(NSString *)aKey;
 - (void) setValue:(NSString *)value forKey:(NSString *)key;
-- (void) readPropertiesFromID3Tags;
 - (NSString *)path;
++ (NSMutableDictionary *) metadataForFile:(NSString *)aUrl;
 
 @property (readwrite, assign) NSString *path;
 

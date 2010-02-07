@@ -33,6 +33,7 @@
 - (id) initWithDefaultDatabase;
 - (BOOL) createInitialDatabase;
 - (BOOL) createDatabaseSchema;
+- (BOOL) performInitialScan;
 - (BOOL) singleStepQuery:(NSString *)aQueryString;
 - (void) startManager;
 
