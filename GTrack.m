@@ -64,8 +64,14 @@
 {
 	NSMutableDictionary *metadata = [[NSMutableDictionary alloc] init];
 	TagLib::FileRef fileRef([aUrl cStringUsingEncoding:NSUTF8StringEncoding]);
+	
 	TagLib::Tag *tag = fileRef.tag();
+	if (!tag)
+		return nil;
+	
 	TagLib::AudioProperties *audioProperties = fileRef.audioProperties();
+	if (!audioProperties)
+		return nil;
 	
 	[metadata setValue:aUrl forKey:@"location"];
 	

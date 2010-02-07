@@ -137,7 +137,7 @@
 
 - (void) addTrack:(NSString *)aUrl
 {
-	NSLog(@"%@", aUrl);
+	// NSLog(@"%@", [GTrack metadataForFile:aUrl]);
 }
 
 - (BOOL) singleStepQuery:(NSString *)aQueryString
