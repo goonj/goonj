@@ -41,6 +41,8 @@
 		C58308B8111FFC550089D77F /* GoonjPlayup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B2111FFC550089D77F /* GoonjPlayup.png */; };
 		C58308B9111FFC550089D77F /* GoonjRewinddown.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B3111FFC550089D77F /* GoonjRewinddown.png */; };
 		C58308BA111FFC550089D77F /* GoonjRewindup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B4111FFC550089D77F /* GoonjRewindup.png */; };
+		C58308FC1120436A0089D77F /* GPlaybackController.h in Headers */ = {isa = PBXBuildFile; fileRef = C58308FA1120436A0089D77F /* GPlaybackController.h */; };
+		C58308FD1120436A0089D77F /* GPlaybackController.m in Sources */ = {isa = PBXBuildFile; fileRef = C58308FB1120436A0089D77F /* GPlaybackController.m */; };
 		C5BC4FB511135AF200F07110 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = C5BC4FB211135AF200F07110 /* sqlite3.c */; };
 		C5BC4FB611135AF200F07110 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = C5BC4FB311135AF200F07110 /* sqlite3.h */; };
 		C5BC4FB711135AF200F07110 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = C5BC4FB411135AF200F07110 /* sqlite3ext.h */; };
@@ -111,6 +113,8 @@
 		C58308B2111FFC550089D77F /* GoonjPlayup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjPlayup.png; path = Images/GoonjPlayup.png; sourceTree = "<group>"; };
 		C58308B3111FFC550089D77F /* GoonjRewinddown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjRewinddown.png; path = Images/GoonjRewinddown.png; sourceTree = "<group>"; };
 		C58308B4111FFC550089D77F /* GoonjRewindup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjRewindup.png; path = Images/GoonjRewindup.png; sourceTree = "<group>"; };
+		C58308FA1120436A0089D77F /* GPlaybackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaybackController.h; sourceTree = "<group>"; };
+		C58308FB1120436A0089D77F /* GPlaybackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaybackController.m; sourceTree = "<group>"; };
 		C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocols.h; sourceTree = "<group>"; };
 		C5BC4FB211135AF200F07110 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		C5BC4FB311135AF200F07110 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				63274DF5105A0DDD005AC3BA /* GMainWindowController.m */,
 				C54EC41F111C4B25008D852B /* GMetadataEditorController.h */,
 				C54EC420111C4B25008D852B /* GMetadataEditorController.m */,
+				C58308FA1120436A0089D77F /* GPlaybackController.h */,
+				C58308FB1120436A0089D77F /* GPlaybackController.m */,
 				63ECAFC3105B59A000E635C7 /* GPlaylistViewController.h */,
 				63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */,
 				63917FB21062871C00DDF469 /* GTrack.h */,
@@ -306,6 +312,7 @@
 				C5BC4FB611135AF200F07110 /* sqlite3.h in Headers */,
 				C5BC4FB711135AF200F07110 /* sqlite3ext.h in Headers */,
 				C54EC421111C4B25008D852B /* GMetadataEditorController.h in Headers */,
+				C58308FC1120436A0089D77F /* GPlaybackController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +424,7 @@
 				631CEE44111309E40005372F /* GLibraryManager.m in Sources */,
 				C5BC4FB511135AF200F07110 /* sqlite3.c in Sources */,
 				C54EC422111C4B25008D852B /* GMetadataEditorController.m in Sources */,
+				C58308FD1120436A0089D77F /* GPlaybackController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

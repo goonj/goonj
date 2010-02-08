@@ -1,6 +1,6 @@
 /*
-    File: GUtilities.h
-    Description: Some utility class methods. (interface).
+    File: GPlaybackController.h
+    Description: The Goonj playback controller (interface).
 
     This file is part of Goonj.
 
@@ -22,18 +22,10 @@
 */
 
 #import <Cocoa/Cocoa.h>
-#import "GCollectionProtocols.h"
-#import "GXSPFPlaylist.h"
-#import "GM3UPlaylist.h"
 
 
-@interface GUtilities : NSObject
+@interface GPlaybackController : NSObject {
 
-+ (BOOL) isHidden:(NSString *)aPath;
-+ (id < GOrderedMutableCollection >) initPlaylistWithFile:(NSString *)aURL;
-+ (NSString *) applicationSupportPath;
-+ (NSString *) nowPlayingPath;
-+ (NSString *) tracksDatabasePath;
-+ (NSArray *) supportedFormats;
+}
 
 @end
