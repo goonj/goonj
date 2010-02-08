@@ -68,4 +68,12 @@
     return [[self applicationSupportPath] stringByAppendingPathComponent:@"tracks.db"];
 }
 
++ (NSArray *) supportedFormats
+{
+    return [NSArray arrayWithObjects:
+            @"mp3",
+            @"aac", 
+            nil];
+}
+
 @end
