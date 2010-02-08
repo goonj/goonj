@@ -23,12 +23,6 @@
 		638392261058D34C00DCE47D /* GAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638392251058D34C00DCE47D /* GAppController.m */; };
 		638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638392BD1058D9CA00DCE47D /* MainWindow.xib */; };
 		63917FB41062871C00DDF469 /* GTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63917FB31062871C00DDF469 /* GTrack.m */; };
-		63C5421F111F31BC0086F10D /* GoonjFFup.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5421B111F31BC0086F10D /* GoonjFFup.png */; };
-		63C54220111F31BC0086F10D /* GoonjPlaydown.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5421C111F31BC0086F10D /* GoonjPlaydown.png */; };
-		63C54221111F31BC0086F10D /* GoonjPlayup.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5421D111F31BC0086F10D /* GoonjPlayup.png */; };
-		63C54222111F31BC0086F10D /* GoonjRewindup.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C5421E111F31BC0086F10D /* GoonjRewindup.png */; };
-		63C5423A111F326D0086F10D /* GoonjFFdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C54238111F326D0086F10D /* GoonjFFdown.png */; };
-		63C5423B111F326D0086F10D /* GoonjRewinddown.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C54239111F326D0086F10D /* GoonjRewinddown.png */; };
 		63ECAFC5105B59A000E635C7 /* GPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -41,6 +35,12 @@
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
 		C581284F10B80EDF00BBF0F6 /* GPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C581284E10B80EDF00BBF0F6 /* GPreferencesController.m */; };
+		C58308B5111FFC550089D77F /* GoonjFFdown.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308AF111FFC550089D77F /* GoonjFFdown.png */; };
+		C58308B6111FFC550089D77F /* GoonjFFup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B0111FFC550089D77F /* GoonjFFup.png */; };
+		C58308B7111FFC550089D77F /* GoonjPlaydown.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B1111FFC550089D77F /* GoonjPlaydown.png */; };
+		C58308B8111FFC550089D77F /* GoonjPlayup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B2111FFC550089D77F /* GoonjPlayup.png */; };
+		C58308B9111FFC550089D77F /* GoonjRewinddown.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B3111FFC550089D77F /* GoonjRewinddown.png */; };
+		C58308BA111FFC550089D77F /* GoonjRewindup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B4111FFC550089D77F /* GoonjRewindup.png */; };
 		C5BC4FB511135AF200F07110 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = C5BC4FB211135AF200F07110 /* sqlite3.c */; };
 		C5BC4FB611135AF200F07110 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = C5BC4FB311135AF200F07110 /* sqlite3.h */; };
 		C5BC4FB711135AF200F07110 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = C5BC4FB411135AF200F07110 /* sqlite3ext.h */; };
@@ -92,12 +92,6 @@
 		638392251058D34C00DCE47D /* GAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAppController.m; sourceTree = "<group>"; };
 		63917FB21062871C00DDF469 /* GTrack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; includeInIndex = 0; path = GTrack.h; sourceTree = "<group>"; };
 		63917FB31062871C00DDF469 /* GTrack.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GTrack.m; sourceTree = "<group>"; };
-		63C5421B111F31BC0086F10D /* GoonjFFup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoonjFFup.png; sourceTree = "<group>"; };
-		63C5421C111F31BC0086F10D /* GoonjPlaydown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoonjPlaydown.png; sourceTree = "<group>"; };
-		63C5421D111F31BC0086F10D /* GoonjPlayup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoonjPlayup.png; sourceTree = "<group>"; };
-		63C5421E111F31BC0086F10D /* GoonjRewindup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoonjRewindup.png; sourceTree = "<group>"; };
-		63C54238111F326D0086F10D /* GoonjFFdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoonjFFdown.png; sourceTree = "<group>"; };
-		63C54239111F326D0086F10D /* GoonjRewinddown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoonjRewinddown.png; sourceTree = "<group>"; };
 		63ECAFC3105B59A000E635C7 /* GPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylistViewController.h; sourceTree = "<group>"; };
 		63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +105,12 @@
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
 		C581284D10B80EDF00BBF0F6 /* GPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPreferencesController.h; sourceTree = "<group>"; };
 		C581284E10B80EDF00BBF0F6 /* GPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPreferencesController.m; sourceTree = "<group>"; };
+		C58308AF111FFC550089D77F /* GoonjFFdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjFFdown.png; path = Images/GoonjFFdown.png; sourceTree = "<group>"; };
+		C58308B0111FFC550089D77F /* GoonjFFup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjFFup.png; path = Images/GoonjFFup.png; sourceTree = "<group>"; };
+		C58308B1111FFC550089D77F /* GoonjPlaydown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjPlaydown.png; path = Images/GoonjPlaydown.png; sourceTree = "<group>"; };
+		C58308B2111FFC550089D77F /* GoonjPlayup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjPlayup.png; path = Images/GoonjPlayup.png; sourceTree = "<group>"; };
+		C58308B3111FFC550089D77F /* GoonjRewinddown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjRewinddown.png; path = Images/GoonjRewinddown.png; sourceTree = "<group>"; };
+		C58308B4111FFC550089D77F /* GoonjRewindup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjRewindup.png; path = Images/GoonjRewindup.png; sourceTree = "<group>"; };
 		C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocols.h; sourceTree = "<group>"; };
 		C5BC4FB211135AF200F07110 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		C5BC4FB311135AF200F07110 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
@@ -280,12 +280,12 @@
 		C5D6AB5D10ED515900D53F25 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				63C54238111F326D0086F10D /* GoonjFFdown.png */,
-				63C54239111F326D0086F10D /* GoonjRewinddown.png */,
-				63C5421B111F31BC0086F10D /* GoonjFFup.png */,
-				63C5421C111F31BC0086F10D /* GoonjPlaydown.png */,
-				63C5421D111F31BC0086F10D /* GoonjPlayup.png */,
-				63C5421E111F31BC0086F10D /* GoonjRewindup.png */,
+				C58308AF111FFC550089D77F /* GoonjFFdown.png */,
+				C58308B0111FFC550089D77F /* GoonjFFup.png */,
+				C58308B1111FFC550089D77F /* GoonjPlaydown.png */,
+				C58308B2111FFC550089D77F /* GoonjPlayup.png */,
+				C58308B3111FFC550089D77F /* GoonjRewinddown.png */,
+				C58308B4111FFC550089D77F /* GoonjRewindup.png */,
 				C5E55E911104D70E002A64E5 /* GVolumeHigh.png */,
 				C5E55E921104D70E002A64E5 /* GVolumeLow.png */,
 				C5D6AB5910ED515200D53F25 /* GStatusBar.png */,
@@ -372,12 +372,12 @@
 				C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */,
 				C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */,
 				C521D6B1111F1A6B008B1179 /* MetaEditor.xib in Resources */,
-				63C5421F111F31BC0086F10D /* GoonjFFup.png in Resources */,
-				63C54220111F31BC0086F10D /* GoonjPlaydown.png in Resources */,
-				63C54221111F31BC0086F10D /* GoonjPlayup.png in Resources */,
-				63C54222111F31BC0086F10D /* GoonjRewindup.png in Resources */,
-				63C5423A111F326D0086F10D /* GoonjFFdown.png in Resources */,
-				63C5423B111F326D0086F10D /* GoonjRewinddown.png in Resources */,
+				C58308B5111FFC550089D77F /* GoonjFFdown.png in Resources */,
+				C58308B6111FFC550089D77F /* GoonjFFup.png in Resources */,
+				C58308B7111FFC550089D77F /* GoonjPlaydown.png in Resources */,
+				C58308B8111FFC550089D77F /* GoonjPlayup.png in Resources */,
+				C58308B9111FFC550089D77F /* GoonjRewinddown.png in Resources */,
+				C58308BA111FFC550089D77F /* GoonjRewindup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
