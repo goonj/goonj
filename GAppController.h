@@ -1,38 +1,45 @@
 /*
-	File: GAppController.h
-	Description: The Goonj application delegate (interface).
+    File: GAppController.h
+    Description: The Goonj application delegate (interface).
 
-	This file is part of Goonj.
+    This file is part of Goonj.
 
-	Goonj is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+    Goonj is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Goonj is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
 
-	Goonj is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with Goonj. If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with Goonj. If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2009 Pratul Kalia.
     Copyright 2009 Ankur Sethi.
 */
 
 #import <Cocoa/Cocoa.h>
+#import "GDirectoryWatcher.h"
+#import "GLibraryManager.h"
 #import "GMainWindowController.h"
-#import "GPreferenceController.h"
+#import "GPreferencesController.h"
+#import "GMetadataEditorController.h"
 
 
 @interface GAppController : NSObject {
+    GDirectoryWatcher *directoryWatcher;
+	GLibraryManager *libraryManager;
+
 	IBOutlet GMainWindowController *mainWindowController;
-    IBOutlet GPreferenceController *prefController;
-    
+    IBOutlet GPreferencesController *prefController;
+    IBOutlet GMetadataEditorController *metadataController;
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification;
-- (IBAction) showPreferencesWindow:(id) sender;
+- (void) applicationWillTerminate:(NSNotification *)aNotification;
+- (IBAction) showPreferencesWindow:(id)sender;
+- (IBAction) showMetadataEditor:(id)sender;
 
 @end

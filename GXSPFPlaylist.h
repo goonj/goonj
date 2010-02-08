@@ -25,10 +25,20 @@
 #import "GCollectionProtocols.h"
 
 
-@interface GXSPFPlaylist : NSObject < GMutableCollection, GOrderedCollection > {
+@interface GXSPFPlaylist : NSObject < GOrderedMutableCollection > {
 	NSMutableArray *trackList;
 }
 
-- (BOOL) loadPlaylist:(NSString *)aURL;
+- (id) initWithFile:(NSString *)aURL;
+- (void) addTrack:(GTrack *)track;
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
+- (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) removeTracksAtIndexes:(NSIndexSet *)indexes;
+- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
+- (void) clearPlaylist;
+- (NSUInteger) count;
+- (GTrack *) trackAtIndex:(NSUInteger)index;
+- (BOOL) saveCollectionAs:(NSString *)aURL;
+- (BOOL) loadCollection:(NSString *)aURL;
 
 @end

@@ -1,21 +1,21 @@
 /*
-	File: HACKING
-	Description: The Goonj hacking and code standards.
+    File: HACKING
+    Description: The Goonj hacking and code standards.
 
-	This file is part of Goonj.
+    This file is part of Goonj.
 
-	Goonj is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+    Goonj is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-	Goonj is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-	GNU General Public License for more details.
+    Goonj is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with Goonj. If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with Goonj. If not, see <http://www.gnu.org/licenses/>.
 
     Copyright 2009 Pratul Kalia.
     Copyright 2009 Ankur Sethi.
@@ -28,7 +28,7 @@ General formatting
   particular file, you should add your name to the Copyrights at the end of the
   license header. Put your full name and please see that the list is sorted via
   last name.
-  
+
 - Indent all code using 4 spaces only. No tabs.
 
 - The header of each file must contain the file name and a small description of
@@ -37,28 +37,31 @@ General formatting
 - All files that are imported should be right at the top of the header files.
   OS X frameworks should be mentioned first, and then other project specific
   files. For example:
-  
+
     #import <Cocoa/Cocoa.h>
     #import <CoreData/CoreData.h>
     #import "GAppController.h"
     #import "GTrack.h"
-   
+
    Headers must be sorted alphabetically.
 
-- Give a gap of 2 lines between the license header and the file imports. Also, 
+- Give a gap of 2 lines between the license header and the file imports. Also,
   a gap of 2 lines between the file imports, and the code.
 
+- It is recommended you use Google Toolbox For Mac Xcode Plugin. It smartly
+  removes trailing whitespaces from files when they are being saved. Get it from
+  http://code.google.com/p/google-toolbox-for-mac/wiki/GTMXcodePlugin
 
 ////
 Classes
 ////
 - Class definitions in a header file must have the opening brace "{" in the same
   line as the name line.
-  
-- Always list the instance variables before the IBOutlets. If required for 
+
+- Always list the instance variables before the IBOutlets. If required for
   readability, you may separate the instance variables and IBOutlets with a line
   and an optional comment.
-  
+
 - The closing brace of the @interface block should be on a new line.
 
 - There should be a gap of one line before you start the method definitions.
@@ -72,7 +75,7 @@ Classes
   For example:
     - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
     + (id) someFooBar;
-    
+
 - Constants should start with "k", like kDateOfBirth or kFathersName.
 
 - #pragma marks should have a line of "////" (4 backslashes), before and after
@@ -84,7 +87,7 @@ Methods
 ////
 - Method names should have one space after the -/+. There should also be one
   space between the closing ")" of the return type and the method name.
-  
+
 - Both, the opening and closing parenthesis, of all the methods should be on
   their own lines.
 

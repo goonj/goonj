@@ -1,6 +1,6 @@
 /*
-    File: GCollectionProtocol.h
-    Description: A protocol to define a generic collection of media files and
+    File: GCollectionProtocols.h
+    Description: Protocols to define a generic collection of media files and
     their associated methods.
 
     This file is part of Goonj.
@@ -30,6 +30,9 @@
 
 - (NSUInteger) count;
 - (GTrack *) trackAtIndex:(NSUInteger)index;
+- (BOOL) saveCollectionAs:(NSString *)aURL;
+- (BOOL) loadCollection:(NSString *)aURL;
+- (BOOL) isLocalCollection;
 
 @end
 
@@ -37,8 +40,7 @@
 @protocol GMutableCollection < GCollection >
 
 - (void) addTrack:(GTrack *)track;
-- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
-- (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) removeTrack:(GTrack *)track;
 - (void) clearPlaylist;
 
 @end
@@ -47,7 +49,15 @@
 @protocol GOrderedCollection < GCollection >
 
 
-
 @end
 
+//
+@protocol GOrderedMutableCollection < GMutableCollection, GOrderedCollection >
+
+- (void) addTrack:(GTrack *)track atIndex:(NSUInteger)index;
+- (void) removeTrackAtIndex:(NSUInteger)index;
+- (void) removeTracksAtIndexes:(NSIndexSet *)indexes;
+- (void) moveTrackFromIndex:(NSUInteger)initIndex toIndex:(NSUInteger)endIndex;
+
+@end
 

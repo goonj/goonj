@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		631CEE43111309E40005372F /* GLibraryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 631CEE41111309E40005372F /* GLibraryManager.h */; };
+		631CEE44111309E40005372F /* GLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631CEE42111309E40005372F /* GLibraryManager.m */; };
 		63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274DF5105A0DDD005AC3BA /* GMainWindowController.m */; };
 		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
+		634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */; };
+		634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */; };
+		634CADC81100C03F00BFC105 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634CADC71100C03F00BFC105 /* CoreServices.framework */; };
 		635CBAB510B675F800D82472 /* GUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 635CBAB410B675F800D82472 /* GUtilities.m */; };
 		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
 		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
@@ -18,25 +23,62 @@
 		638392261058D34C00DCE47D /* GAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638392251058D34C00DCE47D /* GAppController.m */; };
 		638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638392BD1058D9CA00DCE47D /* MainWindow.xib */; };
 		63917FB41062871C00DDF469 /* GTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63917FB31062871C00DDF469 /* GTrack.m */; };
-		63ECAFC5105B59A000E635C7 /* GPlaylistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECAFC4105B59A000E635C7 /* GPlaylistController.m */; };
+		63ECAFC5105B59A000E635C7 /* GPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C521D6B1111F1A6B008B1179 /* MetaEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = C521D6B0111F1A6B008B1179 /* MetaEditor.xib */; };
+		C54EC3F6111B5D45008D852B /* libtag.1.7.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
+		C54EC3F7111B5D4A008D852B /* libtag.1.7.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
+		C54EC421111C4B25008D852B /* GMetadataEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = C54EC41F111C4B25008D852B /* GMetadataEditorController.h */; };
+		C54EC422111C4B25008D852B /* GMetadataEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54EC420111C4B25008D852B /* GMetadataEditorController.m */; };
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
 		C566A013107B1A7F000D322E /* HACKING in Resources */ = {isa = PBXBuildFile; fileRef = C566A012107B1A7F000D322E /* HACKING */; };
-		C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */; };
+		C581284F10B80EDF00BBF0F6 /* GPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C581284E10B80EDF00BBF0F6 /* GPreferencesController.m */; };
+		C58308B5111FFC550089D77F /* GoonjFFdown.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308AF111FFC550089D77F /* GoonjFFdown.png */; };
+		C58308B6111FFC550089D77F /* GoonjFFup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B0111FFC550089D77F /* GoonjFFup.png */; };
+		C58308B7111FFC550089D77F /* GoonjPlaydown.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B1111FFC550089D77F /* GoonjPlaydown.png */; };
+		C58308B8111FFC550089D77F /* GoonjPlayup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B2111FFC550089D77F /* GoonjPlayup.png */; };
+		C58308B9111FFC550089D77F /* GoonjRewinddown.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B3111FFC550089D77F /* GoonjRewinddown.png */; };
+		C58308BA111FFC550089D77F /* GoonjRewindup.png in Resources */ = {isa = PBXBuildFile; fileRef = C58308B4111FFC550089D77F /* GoonjRewindup.png */; };
+		C5BC4FB511135AF200F07110 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = C5BC4FB211135AF200F07110 /* sqlite3.c */; };
+		C5BC4FB611135AF200F07110 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = C5BC4FB311135AF200F07110 /* sqlite3.h */; };
+		C5BC4FB711135AF200F07110 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = C5BC4FB411135AF200F07110 /* sqlite3ext.h */; };
+		C5D1E989111362F600C3898B /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D1E988111362F600C3898B /* BWToolkitFramework.framework */; };
+		C5D1E9BA1113630500C3898B /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5D1E988111362F600C3898B /* BWToolkitFramework.framework */; };
+		C5D6AB5B10ED515200D53F25 /* GStatusBar.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5910ED515200D53F25 /* GStatusBar.png */; };
+		C5D6AB5C10ED515200D53F25 /* GStatusBarAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */; };
+		C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E911104D70E002A64E5 /* GVolumeHigh.png */; };
+		C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E921104D70E002A64E5 /* GVolumeLow.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C5E55EF91104EF50002A64E5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C54EC3F7111B5D4A008D852B /* libtag.1.7.0.dylib in CopyFiles */,
+				C5D1E9BA1113630500C3898B /* BWToolkitFramework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Goonj_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goonj_Prefix.pch; sourceTree = "<group>"; };
+		631CEE41111309E40005372F /* GLibraryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLibraryManager.h; sourceTree = "<group>"; };
+		631CEE42111309E40005372F /* GLibraryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLibraryManager.m; sourceTree = "<group>"; };
 		63274DF4105A0DDD005AC3BA /* GMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMainWindowController.h; sourceTree = "<group>"; };
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
+		634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDirectoryWatcher.h; sourceTree = "<group>"; };
+		634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDirectoryWatcher.m; sourceTree = "<group>"; };
+		634CADC71100C03F00BFC105 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		635CBAB310B675F800D82472 /* GUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUtilities.h; sourceTree = "<group>"; };
 		635CBAB410B675F800D82472 /* GUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUtilities.m; sourceTree = "<group>"; };
 		63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSPFPlaylist.h; sourceTree = "<group>"; };
@@ -48,18 +90,36 @@
 		6383914A1058BE6C00DCE47D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		638392241058D34C00DCE47D /* GAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAppController.h; sourceTree = "<group>"; };
 		638392251058D34C00DCE47D /* GAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAppController.m; sourceTree = "<group>"; };
-		63917FB21062871C00DDF469 /* GTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTrack.h; sourceTree = "<group>"; };
-		63917FB31062871C00DDF469 /* GTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTrack.m; sourceTree = "<group>"; };
-		63ECAFC3105B59A000E635C7 /* GPlaylistController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylistController.h; sourceTree = "<group>"; };
-		63ECAFC4105B59A000E635C7 /* GPlaylistController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistController.m; sourceTree = "<group>"; };
+		63917FB21062871C00DDF469 /* GTrack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; includeInIndex = 0; path = GTrack.h; sourceTree = "<group>"; };
+		63917FB31062871C00DDF469 /* GTrack.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GTrack.m; sourceTree = "<group>"; };
+		63ECAFC3105B59A000E635C7 /* GPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylistViewController.h; sourceTree = "<group>"; };
+		63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C521D6AD111F1A5F008B1179 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MetaEditor.xib; sourceTree = "<group>"; };
+		C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.7.0.dylib; path = usr/local/lib/libtag.1.7.0.dylib; sourceTree = SDKROOT; };
+		C54EC41F111C4B25008D852B /* GMetadataEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMetadataEditorController.h; sourceTree = "<group>"; };
+		C54EC420111C4B25008D852B /* GMetadataEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMetadataEditorController.m; sourceTree = "<group>"; };
 		C551B84E10AFE4CC00174867 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		C551BA7A10B54F2E00174867 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		C566A012107B1A7F000D322E /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
-		C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPreferenceController.h; sourceTree = "<group>"; };
-		C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPreferenceController.m; sourceTree = "<group>"; };
+		C581284D10B80EDF00BBF0F6 /* GPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPreferencesController.h; sourceTree = "<group>"; };
+		C581284E10B80EDF00BBF0F6 /* GPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPreferencesController.m; sourceTree = "<group>"; };
+		C58308AF111FFC550089D77F /* GoonjFFdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjFFdown.png; path = Images/GoonjFFdown.png; sourceTree = "<group>"; };
+		C58308B0111FFC550089D77F /* GoonjFFup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjFFup.png; path = Images/GoonjFFup.png; sourceTree = "<group>"; };
+		C58308B1111FFC550089D77F /* GoonjPlaydown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjPlaydown.png; path = Images/GoonjPlaydown.png; sourceTree = "<group>"; };
+		C58308B2111FFC550089D77F /* GoonjPlayup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjPlayup.png; path = Images/GoonjPlayup.png; sourceTree = "<group>"; };
+		C58308B3111FFC550089D77F /* GoonjRewinddown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjRewinddown.png; path = Images/GoonjRewinddown.png; sourceTree = "<group>"; };
+		C58308B4111FFC550089D77F /* GoonjRewindup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjRewindup.png; path = Images/GoonjRewindup.png; sourceTree = "<group>"; };
 		C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocols.h; sourceTree = "<group>"; };
+		C5BC4FB211135AF200F07110 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		C5BC4FB311135AF200F07110 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		C5BC4FB411135AF200F07110 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		C5D1E988111362F600C3898B /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = Dependencies/BWToolkit/BWToolkitFramework.framework; sourceTree = "<group>"; };
+		C5D6AB5910ED515200D53F25 /* GStatusBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBar.png; path = Images/GStatusBar.png; sourceTree = "<group>"; };
+		C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBarAlternate.png; path = Images/GStatusBarAlternate.png; sourceTree = "<group>"; };
+		C5E55E911104D70E002A64E5 /* GVolumeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeHigh.png; path = Images/GVolumeHigh.png; sourceTree = "<group>"; };
+		C5E55E921104D70E002A64E5 /* GVolumeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeLow.png; path = Images/GVolumeLow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +128,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				634CADC81100C03F00BFC105 /* CoreServices.framework in Frameworks */,
+				C5D1E989111362F600C3898B /* BWToolkitFramework.framework in Frameworks */,
+				C54EC3F6111B5D45008D852B /* libtag.1.7.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,20 +140,23 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				634CADC0110095C400BFC105 /* Library */,
 				63668AE31084CC7600CC02E5 /* Playlist */,
-				C581284D10B80EDF00BBF0F6 /* GPreferenceController.h */,
-				C581284E10B80EDF00BBF0F6 /* GPreferenceController.m */,
+				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
+				C581284D10B80EDF00BBF0F6 /* GPreferencesController.h */,
+				C581284E10B80EDF00BBF0F6 /* GPreferencesController.m */,
 				638392241058D34C00DCE47D /* GAppController.h */,
 				638392251058D34C00DCE47D /* GAppController.m */,
 				63274DF4105A0DDD005AC3BA /* GMainWindowController.h */,
 				63274DF5105A0DDD005AC3BA /* GMainWindowController.m */,
-				63ECAFC3105B59A000E635C7 /* GPlaylistController.h */,
-				63ECAFC4105B59A000E635C7 /* GPlaylistController.m */,
+				C54EC41F111C4B25008D852B /* GMetadataEditorController.h */,
+				C54EC420111C4B25008D852B /* GMetadataEditorController.m */,
+				63ECAFC3105B59A000E635C7 /* GPlaylistViewController.h */,
+				63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */,
 				63917FB21062871C00DDF469 /* GTrack.h */,
 				63917FB31062871C00DDF469 /* GTrack.m */,
 				635CBAB310B675F800D82472 /* GUtilities.h */,
 				635CBAB410B675F800D82472 /* GUtilities.m */,
-				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -98,18 +164,12 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C5D1E988111362F600C3898B /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				634CADC71100C03F00BFC105 /* CoreServices.framework */,
+				C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */,
 			);
 			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -123,6 +183,7 @@
 		29B97314FDCFA39411CA2CEA /* Goonj */ = {
 			isa = PBXGroup;
 			children = (
+				C5BC4FB011135AD900F07110 /* Dependencies */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -145,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				635CBAEF10B67AA200D82472 /* Interface */,
+				C5D6AB5D10ED515900D53F25 /* Images */,
 				C551BA7A10B54F2E00174867 /* Credits.html */,
 				6383907F1058B30000DCE47D /* LICENSE */,
 				638390801058B30000DCE47D /* README */,
@@ -159,17 +221,28 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		634CADC0110095C400BFC105 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */,
+				634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */,
+				631CEE41111309E40005372F /* GLibraryManager.h */,
+				631CEE42111309E40005372F /* GLibraryManager.m */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		635CBAEF10B67AA200D82472 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				63349B0F10B596F4000155E2 /* Preferences.xib */,
-				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				638392BD1058D9CA00DCE47D /* MainWindow.xib */,
+				C521D6B0111F1A6B008B1179 /* MetaEditor.xib */,
+				63349B0F10B596F4000155E2 /* Preferences.xib */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -185,7 +258,58 @@
 			name = Playlist;
 			sourceTree = "<group>";
 		};
+		C5BC4FB011135AD900F07110 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C5BC4FB111135AF200F07110 /* sqlite3 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		C5BC4FB111135AF200F07110 /* sqlite3 */ = {
+			isa = PBXGroup;
+			children = (
+				C5BC4FB211135AF200F07110 /* sqlite3.c */,
+				C5BC4FB311135AF200F07110 /* sqlite3.h */,
+				C5BC4FB411135AF200F07110 /* sqlite3ext.h */,
+			);
+			name = sqlite3;
+			path = Dependencies/sqlite3;
+			sourceTree = "<group>";
+		};
+		C5D6AB5D10ED515900D53F25 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C58308AF111FFC550089D77F /* GoonjFFdown.png */,
+				C58308B0111FFC550089D77F /* GoonjFFup.png */,
+				C58308B1111FFC550089D77F /* GoonjPlaydown.png */,
+				C58308B2111FFC550089D77F /* GoonjPlayup.png */,
+				C58308B3111FFC550089D77F /* GoonjRewinddown.png */,
+				C58308B4111FFC550089D77F /* GoonjRewindup.png */,
+				C5E55E911104D70E002A64E5 /* GVolumeHigh.png */,
+				C5E55E921104D70E002A64E5 /* GVolumeLow.png */,
+				C5D6AB5910ED515200D53F25 /* GStatusBar.png */,
+				C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C5DC9AD610F908450088381D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */,
+				631CEE43111309E40005372F /* GLibraryManager.h in Headers */,
+				C5BC4FB611135AF200F07110 /* sqlite3.h in Headers */,
+				C5BC4FB711135AF200F07110 /* sqlite3ext.h in Headers */,
+				C54EC421111C4B25008D852B /* GMetadataEditorController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8D1107260486CEB800E47090 /* Goonj */ = {
@@ -195,6 +319,9 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				C5DC9AD610F908450088381D /* Headers */,
+				C5E55EF91104EF50002A64E5 /* CopyFiles */,
+				C54EC3B0111B5757008D852B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -212,10 +339,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = "The Goonj Project";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Goonj" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Goonj */;
 			projectDirPath = "";
@@ -239,10 +367,37 @@
 				C566A013107B1A7F000D322E /* HACKING in Resources */,
 				63349B1010B596F4000155E2 /* Preferences.xib in Resources */,
 				C551BA7B10B54F2E00174867 /* Credits.html in Resources */,
+				C5D6AB5B10ED515200D53F25 /* GStatusBar.png in Resources */,
+				C5D6AB5C10ED515200D53F25 /* GStatusBarAlternate.png in Resources */,
+				C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */,
+				C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */,
+				C521D6B1111F1A6B008B1179 /* MetaEditor.xib in Resources */,
+				C58308B5111FFC550089D77F /* GoonjFFdown.png in Resources */,
+				C58308B6111FFC550089D77F /* GoonjFFup.png in Resources */,
+				C58308B7111FFC550089D77F /* GoonjPlaydown.png in Resources */,
+				C58308B8111FFC550089D77F /* GoonjPlayup.png in Resources */,
+				C58308B9111FFC550089D77F /* GoonjRewinddown.png in Resources */,
+				C58308BA111FFC550089D77F /* GoonjRewindup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C54EC3B0111B5757008D852B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change /usr/local/lib/libtag.1.dylib @loader_path/../Frameworks/libtag.1.7.0.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -252,12 +407,16 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				638392261058D34C00DCE47D /* GAppController.m in Sources */,
 				63274DF6105A0DDD005AC3BA /* GMainWindowController.m in Sources */,
-				63ECAFC5105B59A000E635C7 /* GPlaylistController.m in Sources */,
+				63ECAFC5105B59A000E635C7 /* GPlaylistViewController.m in Sources */,
 				63917FB41062871C00DDF469 /* GTrack.m in Sources */,
 				63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */,
 				63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */,
 				635CBAB510B675F800D82472 /* GUtilities.m in Sources */,
-				C581284F10B80EDF00BBF0F6 /* GPreferenceController.m in Sources */,
+				C581284F10B80EDF00BBF0F6 /* GPreferencesController.m in Sources */,
+				634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */,
+				631CEE44111309E40005372F /* GLibraryManager.m in Sources */,
+				C5BC4FB511135AF200F07110 /* sqlite3.c in Sources */,
+				C54EC422111C4B25008D852B /* GMetadataEditorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +455,14 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
+		C521D6B0111F1A6B008B1179 /* MetaEditor.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C521D6AD111F1A5F008B1179 /* English */,
+			);
+			name = MetaEditor.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -304,6 +471,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/Dependencies/BWToolkit\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -321,6 +494,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/Dependencies/BWToolkit\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Goonj_Prefix.pch;
@@ -333,16 +512,17 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_GC = required;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -350,13 +530,19 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_GC = required;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = macosx10.6;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
@@ -371,7 +557,7 @@
 				C01FCF4C08A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Goonj" */ = {
 			isa = XCConfigurationList;
@@ -380,7 +566,7 @@
 				C01FCF5008A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

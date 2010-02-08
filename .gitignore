@@ -12,3 +12,25 @@ profile
 
 # Other
 *.tmproj
+*.tm_build_errors
+
+# Dependencies folder
+*~
+*.o
+*.a
+*.lo
+*.la
+.deps/
+.libs/
+Makefile
+stamp-h1
+stamp-h2
+config.h
+config.log
+config.status
+libtool
+taglib-config
+taglib.pc
+taglib_c.pc
+taglib_config.h
+autom4te.cache
