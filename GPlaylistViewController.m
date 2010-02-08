@@ -38,13 +38,15 @@
     for (NSTableColumn *column in tableColumns)
     {
         NSString *title = [[column headerCell] title];
-        NSMenuItem *item = [tableHeaderContextMenu addItemWithTitle:title
-                                                             action:@selector(contextMenuSelected:)
-                                                      keyEquivalent:@""];
-        [item setTarget:self];
-        [item setRepresentedObject:column];
-        [item setState:columnStore ? NSOffState : NSOnState];
-        if (columnStore) [playlistView removeTableColumn:column];
+        if ([title caseInsensitiveCompare:@"Name"] != NSOrderedSame) {
+            NSMenuItem *item = [tableHeaderContextMenu addItemWithTitle:title
+                                                                 action:@selector(contextMenuSelected:)
+                                                          keyEquivalent:@""];
+            [item setTarget:self];
+            [item setRepresentedObject:column];
+            [item setState:columnStore ? NSOffState : NSOnState];
+            if (columnStore) [playlistView removeTableColumn:column];
+        }
     }
 
     NSTableColumn *column;
