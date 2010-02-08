@@ -36,7 +36,7 @@
 - (NSString *) valueForKey:(NSString *)aKey;
 - (void) setValue:(NSString *)value forKey:(NSString *)key;
 - (NSString *)path;
-+ (NSMutableDictionary *) metadataForFile:(NSString *)aUrl;
++ (NSMutableDictionary *) metadataForFile:(NSString *)aURL;
 
 @property (readwrite, assign) NSString *path;
 

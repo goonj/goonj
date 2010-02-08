@@ -47,7 +47,7 @@
 
     if (err != SQLITE_OK)
         return NO;
-	
+
 	[self createDatabaseSchema];
 	[self performInitialScan];
 
@@ -104,11 +104,11 @@
 {
 	NSArray *watchDirectories = [[NSUserDefaults standardUserDefaults]
 								 arrayForKey:@"LibraryFolderLocations"];
-	
-	
+
+
 	for (NSString *directory in watchDirectories)
 		[self addTracksFromDirectory:[directory stringByExpandingTildeInPath]];
-	
+
 	return YES;
 }
 
@@ -116,18 +116,18 @@
 {
 	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager]
 									  enumeratorAtPath:aDirectory];
-	
+
 	NSString *fileName, *filePath;
 	BOOL isDirectory;
 	while (fileName = [dirEnum nextObject]) {
 		filePath = [aDirectory stringByAppendingPathComponent:fileName];
-		
+
 		if ([GUtilities isHidden:filePath])
 			continue;
-		
+
 		[[NSFileManager defaultManager] fileExistsAtPath:filePath
 											 isDirectory:&isDirectory];
-		
+
 		if (isDirectory == YES)
 			[self addTracksFromDirectory:filePath];
 		else
@@ -135,9 +135,9 @@
 	}
 }
 
-- (void) addTrack:(NSString *)aUrl
+- (void) addTrack:(NSString *)aURL
 {
-	// NSLog(@"%@", [GTrack metadataForFile:aUrl]);
+	// NSLog(@"%@", [GTrack metadataForFile:aURL]);
 }
 
 - (BOOL) singleStepQuery:(NSString *)aQueryString

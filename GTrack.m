@@ -33,12 +33,12 @@
 
 @dynamic path;
 
-- (id) initWithFile:(NSString *)aUrl
+- (id) initWithFile:(NSString *)aURL
 {
 	self = [super init];
 
 	if (self) {
-		properties = [GTrack metadataForFile:aUrl];
+		properties = [GTrack metadataForFile:aURL];
 		return self;
 	}
 
@@ -60,52 +60,52 @@
     return [self valueForKey:@"location"];
 }
 
-+ (NSMutableDictionary *) metadataForFile:(NSString *)aUrl
++ (NSMutableDictionary *) metadataForFile:(NSString *)aURL
 {
 	NSMutableDictionary *metadata = [[NSMutableDictionary alloc] init];
-	TagLib::FileRef fileRef([aUrl cStringUsingEncoding:NSUTF8StringEncoding]);
-	
+	TagLib::FileRef fileRef([aURL cStringUsingEncoding:NSUTF8StringEncoding]);
+
 	TagLib::Tag *tag = fileRef.tag();
 	if (!tag)
 		return nil;
-	
+
 	TagLib::AudioProperties *audioProperties = fileRef.audioProperties();
 	if (!audioProperties)
 		return nil;
-	
-	[metadata setValue:aUrl forKey:@"location"];
-	
+
+	[metadata setValue:aURL forKey:@"location"];
+
 	[metadata setValue:[NSString stringWithCString:tag->title().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"name"];
-	
+
 	[metadata setValue:[NSString stringWithCString:tag->artist().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"artist"];
-	
+
 	[metadata setValue:[NSString stringWithCString:tag->album().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"album"];
-	
+
 	[metadata setValue:[NSString stringWithCString:tag->genre().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"genre"];
-	
+
 	[metadata setValue:[NSString stringWithCString:tag->comment().toCString(true)
 									  encoding:NSUTF8StringEncoding]
 			forKey:@"comment"];
-	
+
 	int length = audioProperties->length(), minutes = 0, seconds = 0;
-	
+
 	while (length > 60) {
 		minutes++;
 		length -= 60;
 	}
-	
+
 	seconds = length;
 	[metadata setValue:[NSString stringWithFormat:@"%d:%02d", minutes, seconds]
 				forKey:@"time"];
-	
+
 	return metadata;
 }
 
