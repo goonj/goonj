@@ -32,28 +32,51 @@
 
 @implementation GPlaybackController
 
+// Various Audio Related Variables
 AudioFileID audioFile;
 AUGraph theGraph;
 CAAudioUnit fileAU;
 CAStreamBasicDescription fileFormat;
 Float64 fileDuration;
 UInt64 nPackets;
+Float64 currentPlayTime;
 
-char *nowPlayingFile;
-
-void Play(char *fileURL);
+// Playback controls
+void Play(const char *fileURL);
+void Pause();
+void Resume();
 void Seek(float seconds);
-void NextTrack(char *fileURL);
-void Stop(char *fileURL);
+void Stop();
 
+// Utility functions
+float GetCurrentPlayingTime();
+
+// State Variables
 bool isPlaying = false;
+bool isTrackLoaded = false;
 
+// CoreAudio Setup functions
 void PrepareFileAU (SInt64 startFrame);
-
 void MakeSimpleGraph ();
+
+
 
 - (IBAction) playButtonWasClicked:(id)sender
 {
+    if (isPlaying) {
+        Pause();
+        isPlaying = false;
+    } else {
+        if (isTrackLoaded) {
+            isPlaying = true;
+            Resume();
+        } else {
+            isTrackLoaded = true;
+            isPlaying = true;
+            Play("/Users/n9986/Desktop/intro-sound.mp3");
+        }
+
+    }
     NSLog(@"Play was clicked.");
 }
 
@@ -67,7 +90,9 @@ void MakeSimpleGraph ();
     NSLog(@"Previous was clicked");
 }
 
-void Play(char *fileURL)
+
+
+void Play(const char *fileURL)
 {
     CFURLRef theURL = CFURLCreateFromFileSystemRepresentation(kCFAllocatorDefault, 
                                                               (UInt8*)fileURL, 
@@ -103,11 +128,12 @@ void Play(char *fileURL)
                    "kAudioFilePropertyAudioDataPacketCount");
     
     fileDuration = (nPackets * fileFormat.mFramesPerPacket) / fileFormat.mSampleRate;
+    currentPlayTime = 0;
     
     // now we load the file contents up for playback before we start playing
     // this has to be done the AU is initialized and anytime it is reset or 
     // uninitialized
-    PrepareFileAU (0);
+    PrepareFileAU (currentPlayTime);
     
 	printf ("file duration: %f secs\n", fileDuration);
     
@@ -115,7 +141,40 @@ void Play(char *fileURL)
 	XThrowIfError (AUGraphStart (theGraph), "AUGraphStart");
 }
 
-void Stop(char *fileURL)
+
+
+void Pause()
+{
+    currentPlayTime = GetCurrentPlayingTime();
+
+    // Reset the Audio Unit to make sure all previous schedules are cleared
+    fileAU.Reset(kAudioUnitScope_Global, 0);
+}
+
+
+
+void Resume()
+{
+
+    SInt64 startFrame = currentPlayTime * fileFormat.mSampleRate;
+
+    PrepareFileAU(startFrame);
+}
+
+
+
+void Seek(float seconds)
+{    
+    SInt64 startFrame = seconds * fileFormat.mSampleRate;
+    
+    // now we load the file contents up for playback before we start playing
+    // this has to be done the AU is initialized and anytime it is reset or uninitialized
+    PrepareFileAU (startFrame);
+}
+
+
+
+void Stop()
 {
     // lets clean up
 	XThrowIfError (AUGraphStop (theGraph), "AUGraphStop");
@@ -124,15 +183,21 @@ void Stop(char *fileURL)
 	XThrowIfError (AUGraphClose (theGraph), "AUGraphClose");
 }
 
-void Seek(float seconds)
-{    
-    SInt64 startFrame = seconds * fileFormat.mSampleRate;
-        
-    // now we load the file contents up for playback before we start playing
-    // this has to be done the AU is initialized and anytime it is reset or uninitialized
-    PrepareFileAU (startFrame);
-}
 
+
+float GetCurrentPlayingTime()
+{
+    AudioTimeStamp stamp;
+    memset (&stamp, 0, sizeof(stamp));
+    
+/*    fileAU.GetProperty(kAudioUnitProperty_CurrentPlayTime, 
+                       kAudioUnitScope_Global, 
+                       0, 
+                       stamp, 
+                       sizeof(stamp));    
+*/                       
+    return (stamp.mSampleTime / 1000 / 1000); 
+}
 
 
 // This prepares the scheduling of the file playback. Used for starting the
