@@ -32,10 +32,14 @@
 @implementation GPlaybackController
 
 AudioFileID audioFile;
-
 AUGraph theGraph;
+CAAudioUnit fileAU;
+CAStreamBasicDescription fileFormat;
+Float64 fileDuration;
+UInt64 nPackets;
 
-char *nowPlayingFile
+
+char *nowPlayingFile;
 
 void Play(char *fileURL);
 void Seek(float seconds);
@@ -75,34 +79,49 @@ void Play(char *fileURL)
 	XThrowIfError (AudioFileOpenURL (theURL, kAudioFileReadPermission, 0, &audioFile), "AudioFileOpenURL");
     
     // get the number of channels of the file
-	CAStreamBasicDescription fileFormat;
 	UInt32 propsize = sizeof(CAStreamBasicDescription);
 	XThrowIfError (AudioFileGetProperty(audioFile, kAudioFilePropertyDataFormat, &propsize, &fileFormat), "AudioFileGetProperty");
 	
 	printf ("playing file: %s\n", fileURL);
 	printf ("format: "); fileFormat.Print();
-    
-    
-    // lets set up our playing state now
-	AUGraph theGraph;
-	CAAudioUnit fileAU;
-    
+ 
     // this makes the graph, the file AU and sets it all up for playing
 	MakeSimpleGraph (theGraph, fileAU, fileFormat, audioFile);
-    
-    
+        
     // calculate the duration
-	UInt64 nPackets;
 	UInt32 packetSize = sizeof(nPackets);
 	XThrowIfError (AudioFileGetProperty(audioFile, kAudioFilePropertyAudioDataPacketCount, &packetSize, &nPackets), "kAudioFilePropertyAudioDataPacketCount");
     
-	Float64 fileDuration = (nPackets * fileFormat.mFramesPerPacket) / fileFormat.mSampleRate;
+    fileDuration = (nPackets * fileFormat.mFramesPerPacket) / fileFormat.mSampleRate;
     
-    Float64 startTimeValue = 15;
+    // now we load the file contents up for playback before we start playing
+    // this has to be done the AU is initialized and anytime it is reset or uninitialized
+    fileDuration = PrepareFileAU (fileAU, 
+                                  fileFormat, 
+                                  audioFile,
+                                  nPackets,
+                                  0,
+                                  fileDuration);
     
-    SInt64 startFrame = startTimeValue * fileFormat.mSampleRate;
+	printf ("file duration: %f secs\n", fileDuration);
     
-    
+    // start playing
+	XThrowIfError (AUGraphStart (theGraph), "AUGraphStart");
+}
+
+void Stop(char *fileURL)
+{
+    // lets clean up
+	XThrowIfError (AUGraphStop (theGraph), "AUGraphStop");
+	XThrowIfError (AUGraphUninitialize (theGraph), "AUGraphUninitialize");
+	XThrowIfError (AudioFileClose (audioFile), "AudioFileClose");
+	XThrowIfError (AUGraphClose (theGraph), "AUGraphClose");
+}
+
+void Seek(float seconds)
+{    
+    SInt64 startFrame = seconds * fileFormat.mSampleRate;
+        
     // now we load the file contents up for playback before we start playing
     // this has to be done the AU is initialized and anytime it is reset or uninitialized
     fileDuration = PrepareFileAU (fileAU, 
@@ -111,22 +130,6 @@ void Play(char *fileURL)
                                   nPackets,
                                   startFrame,
                                   fileDuration);
-    
-	printf ("file duration: %f secs\n", fileDuration);
-    
-    // start playing
-	XThrowIfError (AUGraphStart (theGraph), "AUGraphStart");
-    
-}
-
-void Seek(float seconds)
-{    
-    
-}
-
-void NextTrack(char *fileURL)
-{
-    
 }
 
 double PrepareFileAU (CAAudioUnit &au, 
