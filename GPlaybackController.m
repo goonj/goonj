@@ -73,7 +73,8 @@ void MakeSimpleGraph ();
         } else {
             isTrackLoaded = true;
             isPlaying = true;
-            Play("/Users/n9986/Desktop/intro-sound.mp3");
+            const char *file = [[playlistViewController selectedPlaylistLocation] cStringUsingEncoding:NSUTF8StringEncoding];
+            Play(file);            
         }
 
     }
@@ -83,12 +84,16 @@ void MakeSimpleGraph ();
 
 - (IBAction) nextButtonWasClicked:(id)sender
 {
-    NSLog(@"Next was clicked.");
+    if (isTrackLoaded) {
+        Stop();       
+    }
 }
 
 - (IBAction) previousButtonWasClicked:(id)sender
 {
-    NSLog(@"Previous was clicked");
+    if (isTrackLoaded) {
+        Stop();       
+    }
 }
 
 
@@ -148,6 +153,7 @@ void Pause()
 {
     currentPlayTime = GetCurrentPlayingTime();
 
+    printf("Current Time = %f\n", currentPlayTime);
     // Reset the Audio Unit to make sure all previous schedules are cleared
     fileAU.Reset(kAudioUnitScope_Global, 0);
 }
@@ -191,13 +197,15 @@ float GetCurrentPlayingTime()
     AudioTimeStamp stamp;
     memset (&stamp, 0, sizeof(stamp));
     
-/*    fileAU.GetProperty(kAudioUnitProperty_CurrentPlayTime, 
+    UInt32 propsize = sizeof(AudioTimeStamp);
+    
+    fileAU.GetProperty(kAudioUnitProperty_CurrentPlayTime, 
                        kAudioUnitScope_Global, 
                        0, 
-                       stamp, 
-                       sizeof(stamp));    
-*/                       
-    return (stamp.mSampleTime / 1000 / 1000); 
+                       &stamp, 
+                       &propsize);    
+                       
+    return stamp.mSampleTime / fileFormat.mSampleRate; 
 }
 
 
