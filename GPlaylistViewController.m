@@ -220,9 +220,13 @@
 
 - (NSString *) selectedPlaylistLocation
 {
-    NSString *location = [[NSString alloc] init];
+    NSString *location;
     NSInteger row = [playlistView selectedRow];
-    GTrack *t = [playlist trackAtIndex:row];
+	
+	if (row == -1)
+		return nil;
+    
+	GTrack *t = [playlist trackAtIndex:row];
     location = [t valueForKey:@"location"];
 
     return location;
