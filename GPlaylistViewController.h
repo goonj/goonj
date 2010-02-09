@@ -47,6 +47,9 @@
 - (void) performFinalCleanup;
 - (void) locateInFinder;
 
+- (IBAction) loadNextPlaylist:(id)sender;
+- (IBAction) loadPreviousPlaylist:(id)sender;
+
 // NSTableView delegate and data source methods.
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column
