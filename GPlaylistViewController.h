@@ -46,6 +46,7 @@
 - (BOOL) loadPlaylist:(NSString *)aURL;
 - (void) performFinalCleanup;
 - (void) locateInFinder;
+- (NSString *) selectedPlaylistLocation; 
 
 - (IBAction) loadNextPlaylist:(id)sender;
 - (IBAction) loadPreviousPlaylist:(id)sender;

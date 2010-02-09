@@ -78,6 +78,7 @@ void MakeSimpleGraph ();
 
     }
     NSLog(@"Play was clicked.");
+    NSLog(@"%@", [playlistViewController selectedPlaylistLocation]);
 }
 
 - (IBAction) nextButtonWasClicked:(id)sender
