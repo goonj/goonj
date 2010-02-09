@@ -31,26 +31,11 @@
 
 @implementation GPlaybackController
 
-- (IBAction) playButtonWasClicked:(id)sender
-{
-    NSLog(@"Play was clicked.");
-}
-
-- (IBAction) nextButtonWasClicked:(id)sender
-{
-    NSLog(@"Next was clicked.");
-}
-
-- (IBAction) previousButtonWasClicked:(id)sender
-{
-    NSLog(@"Previous was clicked");
-}
-
 AudioFileID audioFile;
 
 AUGraph theGraph;
 
-//char nowPlayingFile = "";
+char *nowPlayingFile
 
 void Play(char *fileURL);
 void Seek(float seconds);
@@ -68,6 +53,20 @@ double PrepareFileAU (CAAudioUnit &au,
 
 void MakeSimpleGraph (AUGraph &theGraph, CAAudioUnit &fileAU, CAStreamBasicDescription &fileFormat, AudioFileID audioFile);
 
+- (IBAction) playButtonWasClicked:(id)sender
+{
+    NSLog(@"Play was clicked.");
+}
+
+- (IBAction) nextButtonWasClicked:(id)sender
+{
+    NSLog(@"Next was clicked.");
+}
+
+- (IBAction) previousButtonWasClicked:(id)sender
+{
+    NSLog(@"Previous was clicked");
+}
 
 void Play(char *fileURL)
 {
