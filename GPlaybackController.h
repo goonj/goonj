@@ -26,7 +26,7 @@
 
 
 @interface GPlaybackController : NSObject {
-
+	IBOutlet GPlaylistViewController *playlistViewController;
 }
 
 - (IBAction) playButtonWasClicked:(id)sender;

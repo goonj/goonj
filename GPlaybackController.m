@@ -29,8 +29,7 @@
 - (IBAction) playButtonWasClicked:(id)sender
 {
     NSLog(@"Play was clicked.");
-    GPlaylistViewController *pvc = [[GPlaylistViewController alloc] init];
-    NSLog(@"%@", [pvc selectedPlaylistLocation]);
+    NSLog(@"%@", [playlistViewController selectedPlaylistLocation]);
 }
 
 - (IBAction) nextButtonWasClicked:(id)sender
