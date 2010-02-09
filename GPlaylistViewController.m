@@ -218,6 +218,15 @@
 	}
 }
 
+- (NSString *) selectedPlaylistLocation
+{
+    NSString *location = [[NSString alloc] init];
+    NSInteger row = [playlistView selectedRow];
+    GTrack *t = [playlist trackAtIndex:row];
+    location = [t valueForKey:@"location"];
+
+    return location;
+}
 
 ////
 #pragma mark NSTableView delegate and data source methods

@@ -22,6 +22,7 @@
 */
 
 #import <Cocoa/Cocoa.h>
+#import "GPlaylistViewController.h"
 
 
 @interface GPlaybackController : NSObject {
