@@ -330,4 +330,14 @@
     return YES;
 }
 
+- (IBAction) loadNextPlaylist:(id)sender
+{
+    NSLog(@"next");
+}
+
+- (IBAction) loadPreviousPlaylist:(id)sender
+{
+    NSLog(@"prev");
+}
+
 @end

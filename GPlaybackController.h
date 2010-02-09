@@ -28,4 +28,8 @@
 
 }
 
+- (IBAction) playButtonWasClicked:(id)sender;
+- (IBAction) nextButtonWasClicked:(id)sender;
+- (IBAction) previousButtonWasClicked:(id)sender;
+
 @end
