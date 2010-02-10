@@ -31,7 +31,7 @@
 			<object class="NSWindowTemplate" id="604674502">
 				<int key="NSWindowStyleMask">4099</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{157, 237}, {494, 224}}</string>
+				<string key="NSWindowRect">{{465, 473}, {494, 224}}</string>
 				<int key="NSWTFlags">611845120</int>
 				<string key="NSWindowTitle">Library</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -486,10 +486,10 @@
 						</dictionary>
 						<object class="NSMutableData" key="BWSTHWindowSizesByIdentifier">
 							<bytes key="NS.bytes">BAtzdHJlYW10eXBlZIHoA4QBQISEhAxOU0RpY3Rpb25hcnkAhIQITlNPYmplY3QAhYQBaQOShISECE5T
-U3RyaW5nAZSEASskN0U2QTkyMjgtQzlGMy00RjIxLTgwNTQtRTRCRjNGMkY2QkE4hpKEhIQHTlNWYWx1
-ZQCUhAEqhIQLe0NHU2l6ZT1kZH2age4BgS0BhpKElpckMEQ1OTUwRDEtRDRBOC00NEM2LTlEQkMtMjUx
-Q0ZFRjg1MkUyhpKEmJmZmoHCAIGHAIaShJaXF0JXVG9vbGJhclNob3dDb2xvcnNJdGVthpKEmJmZmoHg
-AYFcAYaGA</bytes>
+U3RyaW5nAZSEASsXQldUb29sYmFyU2hvd0NvbG9yc0l0ZW2GkoSEhAdOU1ZhbHVlAJSEASqEhAt7Q0dT
+aXplPWRkfZqB4AGBXAGGkoSWlyQ3RTZBOTIyOC1DOUYzLTRGMjEtODA1NC1FNEJGM0YyRjZCQTiGkoSY
+mZmage4BgS0BhpKElpckMEQ1OTUwRDEtRDRBOC00NEM2LTlEQkMtMjUxQ0ZFRjg1MkUyhpKEmJmZmoHC
+AIGHAIaGA</bytes>
 						</object>
 						<string key="BWSTHSelectedIdentifier">7E6A9228-C9F3-4F21-8054-E4BF3F2F6BA8</string>
 						<string key="BWSTHOldWindowTitle">Preferences</string>
@@ -787,9 +787,9 @@ AYFcAYaGA</bytes>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="1.IBEditorWindowLastContentRect">{{261, 538}, {494, 224}}</string>
+				<string key="1.IBEditorWindowLastContentRect">{{465, 473}, {494, 224}}</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1.IBWindowTemplateEditedContentRect">{{261, 538}, {494, 224}}</string>
+				<string key="1.IBWindowTemplateEditedContentRect">{{465, 473}, {494, 224}}</string>
 				<boolean value="YES" key="1.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="16.IBEditorWindowLastContentRect">{{200, 762}, {616, 0}}</string>
 				<string key="16.IBPluginDependency">com.brandonwalkin.BWToolkit</string>

@@ -11,7 +11,7 @@
 			<string key="NS.object.0">740</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="2"/>
+			<integer value="277"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -31,7 +31,7 @@
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{320, 77}, {795, 698}}</string>
-				<int key="NSWTFlags">1879049216</int>
+				<int key="NSWTFlags">1881146368</int>
 				<string key="NSWindowTitle">Goonj</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
@@ -857,7 +857,7 @@
 															<reference key="NSBackgroundColor" ref="836371808"/>
 															<reference key="NSGridColor" ref="860309730"/>
 															<double key="NSRowHeight">15</double>
-															<int key="NSTvFlags">-675250176</int>
+															<int key="NSTvFlags">-692027392</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<string key="NSAutosaveName">GPlaylistTable</string>
@@ -882,7 +882,7 @@
 													<reference key="NSSuperview" ref="70984094"/>
 													<reference key="NSTarget" ref="70984094"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSCurValue">0.553061224489796</double>
+													<double key="NSCurValue">1</double>
 													<double key="NSPercent">0.97029702970297027</double>
 												</object>
 												<object class="NSScroller" id="157072125">
@@ -1813,9 +1813,9 @@
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1.IBEditorWindowLastContentRect">{{37, 58}, {795, 698}}</string>
+				<string key="1.IBEditorWindowLastContentRect">{{22, 158}, {795, 698}}</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1.IBWindowTemplateEditedContentRect">{{37, 58}, {795, 698}}</string>
+				<string key="1.IBWindowTemplateEditedContentRect">{{22, 158}, {795, 698}}</string>
 				<integer value="1" key="1.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="1.WindowOrigin">{196, 240}</string>
 				<string key="1.editorWindowContentRectSynchronizationRect">{{202, 428}, {480, 270}}</string>
@@ -1928,7 +1928,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">308</int>
+			<int key="maxID">310</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

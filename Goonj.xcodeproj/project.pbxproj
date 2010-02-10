@@ -14,7 +14,6 @@
 		63349B1010B596F4000155E2 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63349B0F10B596F4000155E2 /* Preferences.xib */; };
 		634CADC3110095EF00BFC105 /* GDirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */; };
 		634CADC4110095EF00BFC105 /* GDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */; };
-		634CADC81100C03F00BFC105 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634CADC71100C03F00BFC105 /* CoreServices.framework */; };
 		635CBAB510B675F800D82472 /* GUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 635CBAB410B675F800D82472 /* GUtilities.m */; };
 		63668AE61084CD0100CC02E5 /* GXSPFPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */; };
 		63668AE91084CD0A00CC02E5 /* GM3UPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */; };
@@ -98,7 +97,6 @@
 		63274DF5105A0DDD005AC3BA /* GMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMainWindowController.m; sourceTree = "<group>"; };
 		634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDirectoryWatcher.h; sourceTree = "<group>"; };
 		634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDirectoryWatcher.m; sourceTree = "<group>"; };
-		634CADC71100C03F00BFC105 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		635CBAB310B675F800D82472 /* GUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUtilities.h; sourceTree = "<group>"; };
 		635CBAB410B675F800D82472 /* GUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUtilities.m; sourceTree = "<group>"; };
 		63668AE41084CD0100CC02E5 /* GXSPFPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSPFPlaylist.h; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				634CADC81100C03F00BFC105 /* CoreServices.framework in Frameworks */,
 				C5D1E989111362F600C3898B /* BWToolkitFramework.framework in Frameworks */,
 				C54EC3F6111B5D45008D852B /* libtag.1.7.0.dylib in Frameworks */,
 				89EF36E41121C54A00FB9A38 /* CoreServices.framework in Frameworks */,
@@ -215,7 +212,6 @@
 				89EF36E31121C54A00FB9A38 /* AudioToolbox.framework */,
 				C5D1E988111362F600C3898B /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				634CADC71100C03F00BFC105 /* CoreServices.framework */,
 				C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */,
 			);
 			name = "Linked Frameworks";

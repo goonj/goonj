@@ -23,11 +23,10 @@
 */
 
 #import "GPlaybackController.h"
-
-#include <AudioToolbox/AudioToolbox.h>
-#include "CAXException.h"
-#include "CAStreamBasicDescription.h"
-#include "CAAudioUnit.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "CAXException.h"
+#import "CAStreamBasicDescription.h"
+#import "CAAudioUnit.h"
 
 
 @implementation GPlaybackController
@@ -58,7 +57,6 @@ bool isTrackLoaded = false;
 // CoreAudio Setup functions
 void PrepareFileAU (SInt64 startFrame);
 void MakeSimpleGraph ();
-
 
 
 - (IBAction) playButtonWasClicked:(id)sender
