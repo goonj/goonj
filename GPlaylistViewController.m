@@ -123,8 +123,13 @@
 
 - (void) performFinalCleanup
 {
-    //    [self savePlaylist:[GUtilities nowPlayingPath]]; DONT UNCOMMENT UNTIL PLAYLISTS ARE FIXED.
+    // Switch to Now Playing and save it.
+    playlist = [playlistStore objectForKey:@"Now Playing"];
+    if ([self savePlaylist:[GUtilities nowPlayingPath]])
+        NSLog(@"Now Playing was saved.");
+
     [self saveTableColumns];
+    NSLog(@"Goonj will now quit.");
 }
 
 - (void) menuItemWasClicked:(NSNotification *)notification
@@ -222,10 +227,10 @@
 {
     NSString *location;
     NSInteger row = [playlistView selectedRow];
-	
+
 	if (row == -1)
 		return nil;
-    
+
 	GTrack *t = [playlist trackAtIndex:row];
     location = [t valueForKey:@"location"];
 
