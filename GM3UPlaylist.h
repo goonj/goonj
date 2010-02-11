@@ -45,8 +45,6 @@
 - (BOOL) loadCollection:(NSString *)aURL;
 - (BOOL) isLocalCollection;
 
-// Now Playing methods
 + (GM3UPlaylist *) loadNowPlaying;
-+ (BOOL) saveNowPlaying;
 
 @end

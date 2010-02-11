@@ -144,22 +144,10 @@
     return YES;
 }
 
-////
-#pragma mark Now Playing methods
-////
-
 + (id < GOrderedMutableCollection >) loadNowPlaying
 {
-    id < GOrderedMutableCollection > pA = [[GM3UPlaylist alloc] initWithFile:[GUtilities nowPlayingPath]];
-    return pA;
-}
-
-+ (BOOL) saveNowPlaying
-{
-    if ([[GM3UPlaylist alloc] saveCollectionAs:[GUtilities nowPlayingPath]])
-        return YES;
-    else
-        return NO;
+    id < GOrderedMutableCollection > listArray = [[GM3UPlaylist alloc] initWithFile:[GUtilities nowPlayingPath]];
+    return listArray;
 }
 
 @end

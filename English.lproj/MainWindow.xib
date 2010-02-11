@@ -11,7 +11,7 @@
 			<string key="NS.object.0">740</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="277"/>
+			<integer value="2"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -683,7 +683,7 @@
 															<array class="NSMutableArray" key="NSTableColumns">
 																<object class="NSTableColumn" id="690940618">
 																	<string key="NSIdentifier">name</string>
-																	<double key="NSWidth">92</double>
+																	<double key="NSWidth">115</double>
 																	<double key="NSMinWidth">40</double>
 																	<double key="NSMaxWidth">1000</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -713,7 +713,7 @@
 																</object>
 																<object class="NSTableColumn" id="842741284">
 																	<string key="NSIdentifier">artist</string>
-																	<double key="NSWidth">117</double>
+																	<double key="NSWidth">127</double>
 																	<double key="NSMinWidth">40</double>
 																	<double key="NSMaxWidth">1000</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -740,7 +740,7 @@
 																</object>
 																<object class="NSTableColumn" id="717153162">
 																	<string key="NSIdentifier">album</string>
-																	<double key="NSWidth">90</double>
+																	<double key="NSWidth">92</double>
 																	<double key="NSMinWidth">10</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -772,7 +772,7 @@
 																</object>
 																<object class="NSTableColumn" id="889046128">
 																	<string key="NSIdentifier">genre</string>
-																	<double key="NSWidth">55</double>
+																	<double key="NSWidth">48</double>
 																	<double key="NSMinWidth">10</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -799,7 +799,7 @@
 																</object>
 																<object class="NSTableColumn" id="396011432">
 																	<string key="NSIdentifier">time</string>
-																	<double key="NSWidth">55</double>
+																	<double key="NSWidth">49</double>
 																	<double key="NSMinWidth">10</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -826,7 +826,7 @@
 																</object>
 																<object class="NSTableColumn" id="346921172">
 																	<string key="NSIdentifier">location</string>
-																	<double key="NSWidth">119</double>
+																	<double key="NSWidth">92</double>
 																	<double key="NSMinWidth">10</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -857,7 +857,7 @@
 															<reference key="NSBackgroundColor" ref="836371808"/>
 															<reference key="NSGridColor" ref="860309730"/>
 															<double key="NSRowHeight">15</double>
-															<int key="NSTvFlags">-692027392</int>
+															<int key="NSTvFlags">-677347328</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<string key="NSAutosaveName">GPlaylistTable</string>
@@ -882,19 +882,19 @@
 													<reference key="NSSuperview" ref="70984094"/>
 													<reference key="NSTarget" ref="70984094"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSCurValue">1</double>
+													<double key="NSCurValue">0.21224489795918366</double>
 													<double key="NSPercent">0.97029702970297027</double>
 												</object>
 												<object class="NSScroller" id="157072125">
 													<reference key="NSNextResponder" ref="70984094"/>
 													<int key="NSvFlags">-2147483392</int>
-													<string key="NSFrame">{{0, 507}, {599, 15}}</string>
+													<string key="NSFrame">{{0, 507}, {546, 15}}</string>
 													<reference key="NSSuperview" ref="70984094"/>
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="70984094"/>
 													<string key="NSAction">_doScroller:</string>
 													<double key="NSCurValue">1</double>
-													<double key="NSPercent">0.73677736777367775</double>
+													<double key="NSPercent">0.57655755015839494</double>
 												</object>
 												<object class="NSClipView" id="1025854166">
 													<reference key="NSNextResponder" ref="70984094"/>
@@ -1813,15 +1813,15 @@
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1.IBEditorWindowLastContentRect">{{22, 158}, {795, 698}}</string>
+				<string key="1.IBEditorWindowLastContentRect">{{26, 158}, {795, 698}}</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1.IBWindowTemplateEditedContentRect">{{22, 158}, {795, 698}}</string>
+				<string key="1.IBWindowTemplateEditedContentRect">{{26, 158}, {795, 698}}</string>
 				<integer value="1" key="1.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="1.WindowOrigin">{196, 240}</string>
 				<string key="1.editorWindowContentRectSynchronizationRect">{{202, 428}, {480, 270}}</string>
 				<boolean value="YES" key="1.windowTemplate.hasMinSize"/>
 				<string key="1.windowTemplate.minSize">{640, 640}</string>
-				<string key="100.IBEditorWindowLastContentRect">{{402, 561}, {432, 48}}</string>
+				<string key="100.IBEditorWindowLastContentRect">{{279, 486}, {432, 48}}</string>
 				<string key="100.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="101.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>

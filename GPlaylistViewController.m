@@ -30,7 +30,7 @@
 - (void) awakeFromNib
 {
     // Set up the context menu for the table headers.
-    NSArray *columnStore = [[NSUserDefaults standardUserDefaults] arrayForKey:@"ColumnsUserDefault"];
+    NSArray *columnStore = [[NSUserDefaults standardUserDefaults] arrayForKey:@"PlaylistTableColumns"];
     NSMenu *tableHeaderContextMenu = [[NSMenu alloc] initWithTitle:@""];
     [[playlistView headerView] setMenu:tableHeaderContextMenu];
 
@@ -38,39 +38,24 @@
     for (NSTableColumn *column in tableColumns)
     {
         NSString *title = [[column headerCell] title];
-        if ([title caseInsensitiveCompare:@"Name"] != NSOrderedSame) {
+        if (![title isEqualToString:@"Name"]) {
             NSMenuItem *item = [tableHeaderContextMenu addItemWithTitle:title
                                                                  action:@selector(contextMenuSelected:)
                                                           keyEquivalent:@""];
             [item setTarget:self];
             [item setRepresentedObject:column];
-            [item setState:columnStore ? NSOffState : NSOnState];
-            if (columnStore) [playlistView removeTableColumn:column];
+            if (!columnStore || [columnStore containsObject:title]) {
+                [item setState:NSOnState];
+                [column setHidden:NO];
+            } else {
+                [item setState:NSOffState];
+                [column setHidden:YES];
+            }
         }
-    }
-
-    NSTableColumn *column;
-	for (NSDictionary *colinfo in columnStore)
-    {
-        NSMenuItem *item = [tableHeaderContextMenu itemWithTitle:[colinfo objectForKey:@"title"]];
-        if (!item) continue;
-        [item setState:NSOnState];
-        column = [item representedObject];
-        [column setWidth:[[colinfo objectForKey:@"width"] floatValue]];
-        [playlistView addTableColumn:column];
     }
 
     // Setup notification observers.
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
-    [defaultCenter addObserver:self
-                      selector:@selector(saveTableColumns)
-                          name:NSTableViewColumnDidMoveNotification
-                        object:playlistView];
-
-    [defaultCenter addObserver:self
-                      selector:@selector(saveTableColumns)
-                          name:NSTableViewColumnDidResizeNotification
-                        object:playlistView];
 
     [defaultCenter addObserver:self
                       selector:@selector(performFinalCleanup)
@@ -82,9 +67,8 @@
                           name:NSMenuDidSendActionNotification
                         object:nil];
 
-    // Load Now Playing list.
-    playlist = [GM3UPlaylist loadNowPlaying];
-    [playlistView reloadData]; // Removing this will cause pain, shock and sudden death.
+    playlist = [GM3UPlaylist loadNowPlaying];   // Load Now Playing list.
+    [playlistView reloadData];                  // Removing this will cause pain, shock and sudden death.
     playlistStore = [[NSMutableDictionary alloc] init];
     [playlistStore setObject:playlist forKey:@"Now Playing"];
     [playlistView registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, @"internalTableRows", nil]];
@@ -92,16 +76,16 @@
 
 - (void) contextMenuSelected:(id)sender
 {
-    BOOL on = ([sender state] == NSOnState);
-    [sender setState:on ? NSOffState : NSOnState];
     NSTableColumn *column = [sender representedObject];
 
-    if (on)
+    if ([sender state] == 1)
     {
-        [playlistView removeTableColumn:column];
+        [sender setState:NSOffState];
+        [column setHidden:YES];
         [playlistView sizeLastColumnToFit];
     } else {
-        [playlistView addTableColumn:column];
+        [sender setState:NSOnState];
+        [column setHidden:NO];
         [playlistView sizeToFit];
     }
 
@@ -113,22 +97,19 @@
     NSMutableArray *cols = [NSMutableArray array];
     for (NSTableColumn *column in [playlistView tableColumns])
     {
-        [cols addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                         [[column headerCell] title], @"title",
-                         [NSNumber numberWithFloat:[column width]], @"width",
-                         nil]];
+        if (![column isHidden])
+            [cols addObject:[[column headerCell] title]];
     }
-    [[NSUserDefaults standardUserDefaults] setObject:cols forKey:@"ColumnsUserDefault"];
+    [[NSUserDefaults standardUserDefaults] setObject:cols forKey:@"PlaylistTableColumns"];
 }
 
 - (void) performFinalCleanup
 {
     // Switch to Now Playing and save it.
     playlist = [playlistStore objectForKey:@"Now Playing"];
-    if ([self savePlaylist:[GUtilities nowPlayingPath]])
-        NSLog(@"Now Playing was saved.");
-
+    [self savePlaylist:[GUtilities nowPlayingPath]];
     [self saveTableColumns];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     NSLog(@"Goonj will now quit.");
 }
 
