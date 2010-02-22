@@ -35,7 +35,6 @@
 
     // Create Application Support folder if it doesn't exist.
     NSString *location = [GUtilities applicationSupportPath];
-	NSLog(@"%@", location);
     BOOL isDir = [[NSFileManager defaultManager] fileExistsAtPath:location
                                                       isDirectory:&isDir];
     if (!isDir)
