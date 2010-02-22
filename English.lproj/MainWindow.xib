@@ -655,7 +655,7 @@
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSScrollView" id="70984094">
 											<reference key="NSNextResponder" ref="688213079"/>
-											<int key="NSvFlags">4403</int>
+											<int key="NSvFlags">4402</int>
 											<array class="NSMutableArray" key="NSSubviews">
 												<object class="NSClipView" id="146027509">
 													<reference key="NSNextResponder" ref="70984094"/>
@@ -663,7 +663,7 @@
 													<array class="NSMutableArray" key="NSSubviews">
 														<object class="NSTableView" id="197494780">
 															<reference key="NSNextResponder" ref="146027509"/>
-															<int key="NSvFlags">4352</int>
+															<int key="NSvFlags">4378</int>
 															<string key="NSFrameSize">{546, 505}</string>
 															<reference key="NSSuperview" ref="146027509"/>
 															<bool key="NSEnabled">YES</bool>
