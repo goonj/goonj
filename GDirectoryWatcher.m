@@ -68,6 +68,9 @@ void FSEventCallback(
     if (self = [super init]) {
         NSArray *paths = [[NSUserDefaults standardUserDefaults]
             arrayForKey:@"LibraryFolderLocations"];
+		
+		if ([paths count] == 0)
+			return nil;
 
         watchedDirectories = [[NSMutableArray alloc]
             initWithCapacity:[paths count]];

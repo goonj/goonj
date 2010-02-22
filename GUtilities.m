@@ -55,7 +55,9 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
         NSUserDomainMask, NO);
-    return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Goonj"];
+    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Goonj"];
+	path = [path stringByExpandingTildeInPath];
+	return path;
 }
 
 + (NSString *) nowPlayingPath

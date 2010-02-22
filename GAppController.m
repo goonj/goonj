@@ -34,7 +34,8 @@
     [mainWindowController window];
 
     // Create Application Support folder if it doesn't exist.
-    NSString *location = [GUtilities nowPlayingPath];
+    NSString *location = [GUtilities applicationSupportPath];
+	NSLog(@"%@", location);
     BOOL isDir = [[NSFileManager defaultManager] fileExistsAtPath:location
                                                       isDirectory:&isDir];
     if (!isDir)
@@ -44,9 +45,10 @@
                                                         error:NO];
 
     directoryWatcher = [[GDirectoryWatcher alloc] initWithDefaultWatchDirectories];
-    [NSThread detachNewThreadSelector:@selector(startWatching)
-                             toTarget:directoryWatcher
-                           withObject:nil];
+    if (directoryWatcher)
+		[NSThread detachNewThreadSelector:@selector(startWatching)
+								 toTarget:directoryWatcher
+							   withObject:nil];
 
 	libraryManager = [[GLibraryManager alloc] initWithDefaultDatabase];
 	[NSThread detachNewThreadSelector:@selector(startManager)
@@ -59,6 +61,8 @@
     [[NSNotificationCenter defaultCenter]
         postNotificationName:@"GoonjWillTerminateNotification"
                   object:nil];
+	
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction) showPreferencesWindow:(id)sender
