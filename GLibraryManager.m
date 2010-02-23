@@ -39,6 +39,7 @@
 
 - (BOOL) createInitialDatabase
 {
+	NSLog(@"create initial db");
 	int err;
     err = sqlite3_open_v2([databasePath cStringUsingEncoding:NSUTF8StringEncoding],
 	        &databaseConnection,
@@ -135,9 +136,71 @@
 	}
 }
 
+- (NSInteger) artistId:(NSString *)artist
+{
+	NSString *statement;
+	int err;
+	sqlite3_stmt *preparedStatement;
+	
+	statement = [NSString stringWithFormat:@"SELECT id FROM artists WHERE name='%@'",
+				 artist];
+
+	err = sqlite3_prepare_v2(databaseConnection,
+							 [statement cStringUsingEncoding:NSUTF8StringEncoding],
+							 [statement length],
+							 &preparedStatement,
+							 NULL);
+	
+	if (err != SQLITE_OK)
+		return -1;
+	
+	do {
+		err = sqlite3_step(preparedStatement);
+	} while (err == SQLITE_ROW && err != SQLITE_DONE);
+	
+	if (sqlite3_column_count(preparedStatement) == 0) {
+		statement = [NSString stringWithFormat:@"INSERT INTO artists (name) VALUES (%@)", artist];
+		sqlite3_finalize(preparedStatement);
+		sqlite3_prepare_v2(databaseConnection,
+						   [statement cStringUsingEncoding:NSUTF8StringEncoding],
+						   [statement length],
+						   &preparedStatement,
+						   NULL);
+		err = sqlite3_step(preparedStatement);
+		
+		if (err != SQLITE_OK)
+			return -1;
+		
+		do {
+			err = sqlite3_step(preparedStatement);
+		} while (err == SQLITE_ROW && err != SQLITE_DONE);
+		
+		sqlite3_finalize(preparedStatement);
+		return -1; // TODO: return an actual ID from here.
+	} else
+		NSLog(@"artist already in table");
+}
+
 - (void) addTrack:(NSString *)aURL
 {
-	// NSLog(@"%@", [GTrack metadataForFile:aURL]);
+	
+	NSDictionary *metadata = [GTrack metadataForFile:aURL];
+	NSString *temp, *statement;
+	sqlite3_stmt *preparedStatement;
+	int err;
+	
+	// 1. Check to see if artist exists in database.
+	//    Yes? Then get the ID. No? Insert him and get the ID.
+	temp = [metadata valueForKey:@"artist"];
+	[self artistId:temp];
+
+	// 2. Check to see if album exists in database.
+	//    Yes? Then get the ID. No? Insert it and get the ID.
+
+	// 3. Check to see if genre exists in database.
+	//    Yes? Then get the ID. No? Insert it and get the ID.
+	
+	// 4. Insert the track.
 }
 
 - (BOOL) singleStepQuery:(NSString *)aQueryString
