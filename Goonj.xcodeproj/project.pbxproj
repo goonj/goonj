@@ -69,6 +69,7 @@
 		C5D6AB5C10ED515200D53F25 /* GStatusBarAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */; };
 		C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E911104D70E002A64E5 /* GVolumeHigh.png */; };
 		C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E921104D70E002A64E5 /* GVolumeLow.png */; };
+		C5FA7194114F930A000A5AC3 /* Library.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7193114F930A000A5AC3 /* Library.xcdatamodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -158,6 +159,7 @@
 		C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBarAlternate.png; path = Images/GStatusBarAlternate.png; sourceTree = "<group>"; };
 		C5E55E911104D70E002A64E5 /* GVolumeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeHigh.png; path = Images/GVolumeHigh.png; sourceTree = "<group>"; };
 		C5E55E921104D70E002A64E5 /* GVolumeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeLow.png; path = Images/GVolumeLow.png; sourceTree = "<group>"; };
+		C5FA7193114F930A000A5AC3 /* Library.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Library.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 		634CADC0110095C400BFC105 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C5FA7193114F930A000A5AC3 /* Library.xcdatamodel */,
 				634CADC1110095EF00BFC105 /* GDirectoryWatcher.h */,
 				634CADC2110095EF00BFC105 /* GDirectoryWatcher.m */,
 				631CEE41111309E40005372F /* GLibraryManager.h */,
@@ -501,6 +504,7 @@
 				89EF37151121C66700FB9A38 /* CAComponentDescription.cpp in Sources */,
 				89EF37181121C66700FB9A38 /* CAXException.cpp in Sources */,
 				89EF37191121C66700FB9A38 /* CAStreamBasicDescription.cpp in Sources */,
+				C5FA7194114F930A000A5AC3 /* Library.xcdatamodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
