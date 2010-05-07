@@ -22,21 +22,9 @@
 */
 
 #import <Cocoa/Cocoa.h>
-#import "sqlite3.h"
 
 
 @interface GLibraryManager : NSObject {
-    sqlite3 *databaseConnection;
-	NSString *databasePath;
 }
-
-- (id) initWithDefaultDatabase;
-- (BOOL) createInitialDatabase;
-- (BOOL) createDatabaseSchema;
-- (BOOL) performInitialScan;
-- (void) addTracksFromDirectory:(NSString *)aDirectory;
-- (void) addTrack:(NSString *)aURL;
-- (BOOL) singleStepQuery:(NSString *)aQueryString;
-- (void) startManager;
 
 @end
