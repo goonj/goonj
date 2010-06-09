@@ -533,8 +533,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
-					"\"$(SRCROOT)/Frameworks\"",
-					"\"$(SRCROOT)/Dependencies/BWToolkit\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -556,8 +554,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
-					"\"$(SRCROOT)/Frameworks\"",
-					"\"$(SRCROOT)/Dependencies/BWToolkit\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
