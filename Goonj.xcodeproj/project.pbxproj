@@ -45,8 +45,6 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C521D6B1111F1A6B008B1179 /* MetaEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = C521D6B0111F1A6B008B1179 /* MetaEditor.xib */; };
-		C54EC3F6111B5D45008D852B /* libtag.1.7.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
-		C54EC3F7111B5D4A008D852B /* libtag.1.7.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */; };
 		C54EC421111C4B25008D852B /* GMetadataEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = C54EC41F111C4B25008D852B /* GMetadataEditorController.h */; };
 		C54EC422111C4B25008D852B /* GMetadataEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54EC420111C4B25008D852B /* GMetadataEditorController.m */; };
 		C551BA7B10B54F2E00174867 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C551BA7A10B54F2E00174867 /* Credits.html */; };
@@ -66,6 +64,8 @@
 		C5D6AB5C10ED515200D53F25 /* GStatusBarAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */; };
 		C5E55E931104D70E002A64E5 /* GVolumeHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E911104D70E002A64E5 /* GVolumeHigh.png */; };
 		C5E55E941104D70E002A64E5 /* GVolumeLow.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E55E921104D70E002A64E5 /* GVolumeLow.png */; };
+		C5F535BD11C28C200026584B /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F535BC11C28C200026584B /* libtag.dylib */; };
+		C5F535DE11C28F7B0026584B /* libtag.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5F535BC11C28C200026584B /* libtag.dylib */; };
 		C5FA7194114F930A000A5AC3 /* Library.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C5FA7193114F930A000A5AC3 /* Library.xcdatamodel */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C54EC3F7111B5D4A008D852B /* libtag.1.7.0.dylib in CopyFiles */,
+				C5F535DE11C28F7B0026584B /* libtag.dylib in CopyFiles */,
 				C5D1E9BA1113630500C3898B /* BWToolkitFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,7 +131,6 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Goonj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goonj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C521D6AD111F1A5F008B1179 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MetaEditor.xib; sourceTree = "<group>"; };
-		C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.7.0.dylib; path = usr/local/lib/libtag.1.7.0.dylib; sourceTree = SDKROOT; };
 		C54EC41F111C4B25008D852B /* GMetadataEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMetadataEditorController.h; sourceTree = "<group>"; };
 		C54EC420111C4B25008D852B /* GMetadataEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMetadataEditorController.m; sourceTree = "<group>"; };
 		C551B84E10AFE4CC00174867 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
@@ -153,6 +152,7 @@
 		C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBarAlternate.png; path = Images/GStatusBarAlternate.png; sourceTree = "<group>"; };
 		C5E55E911104D70E002A64E5 /* GVolumeHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeHigh.png; path = Images/GVolumeHigh.png; sourceTree = "<group>"; };
 		C5E55E921104D70E002A64E5 /* GVolumeLow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GVolumeLow.png; path = Images/GVolumeLow.png; sourceTree = "<group>"; };
+		C5F535BC11C28C200026584B /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.dylib; path = usr/local/lib/libtag.dylib; sourceTree = SDKROOT; };
 		C5FA7193114F930A000A5AC3 /* Library.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Library.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,10 +163,10 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				C5D1E989111362F600C3898B /* BWToolkitFramework.framework in Frameworks */,
-				C54EC3F6111B5D45008D852B /* libtag.1.7.0.dylib in Frameworks */,
 				89EF36E41121C54A00FB9A38 /* CoreServices.framework in Frameworks */,
 				89EF36E51121C54A00FB9A38 /* AudioUnit.framework in Frameworks */,
 				89EF36E61121C54A00FB9A38 /* AudioToolbox.framework in Frameworks */,
+				C5F535BD11C28C200026584B /* libtag.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +208,7 @@
 				89EF36E31121C54A00FB9A38 /* AudioToolbox.framework */,
 				C5D1E988111362F600C3898B /* BWToolkitFramework.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				C54EC3F5111B5D45008D852B /* libtag.1.7.0.dylib */,
+				C5F535BC11C28C200026584B /* libtag.dylib */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "install_name_tool -change /usr/local/lib/libtag.1.dylib @loader_path/../Frameworks/libtag.1.7.0.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"";
+			shellScript = "install_name_tool -change /usr/local/lib/libtag.1.dylib @loader_path/../Frameworks/libtag.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
