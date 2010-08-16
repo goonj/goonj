@@ -39,7 +39,7 @@
 	return NO;
 }
 
-+ (id < GOrderedMutableCollection >) initPlaylistWithFile:(NSString *)aURL
++ (id) initPlaylistWithFile:(NSString *)aURL
 {
 	NSString *ext = [aURL pathExtension];
 

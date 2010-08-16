@@ -22,6 +22,8 @@
 		638392261058D34C00DCE47D /* GAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638392251058D34C00DCE47D /* GAppController.m */; };
 		638392BE1058D9CA00DCE47D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638392BD1058D9CA00DCE47D /* MainWindow.xib */; };
 		63917FB41062871C00DDF469 /* GTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63917FB31062871C00DDF469 /* GTrack.m */; };
+		63D8004F12196978002DEF66 /* GPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D8004D12196978002DEF66 /* GPlaylist.h */; };
+		63D8005012196978002DEF66 /* GPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8004E12196978002DEF66 /* GPlaylist.m */; };
 		63ECAFC5105B59A000E635C7 /* GPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */; };
 		89EF36E41121C54A00FB9A38 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EF36E11121C54A00FB9A38 /* CoreServices.framework */; };
 		89EF36E51121C54A00FB9A38 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EF36E21121C54A00FB9A38 /* AudioUnit.framework */; };
@@ -108,6 +110,8 @@
 		638392251058D34C00DCE47D /* GAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAppController.m; sourceTree = "<group>"; };
 		63917FB21062871C00DDF469 /* GTrack.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; includeInIndex = 0; path = GTrack.h; sourceTree = "<group>"; };
 		63917FB31062871C00DDF469 /* GTrack.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GTrack.m; sourceTree = "<group>"; };
+		63D8004D12196978002DEF66 /* GPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylist.h; sourceTree = "<group>"; };
+		63D8004E12196978002DEF66 /* GPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylist.m; sourceTree = "<group>"; };
 		63ECAFC3105B59A000E635C7 /* GPlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaylistViewController.h; sourceTree = "<group>"; };
 		63ECAFC4105B59A000E635C7 /* GPlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPlaylistViewController.m; sourceTree = "<group>"; };
 		89EF36E11121C54A00FB9A38 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
@@ -146,7 +150,6 @@
 		C58308B4111FFC550089D77F /* GoonjRewindup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoonjRewindup.png; path = Images/GoonjRewindup.png; sourceTree = "<group>"; };
 		C58308FA1120436A0089D77F /* GPlaybackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPlaybackController.h; sourceTree = "<group>"; };
 		C58308FB1120436A0089D77F /* GPlaybackController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GPlaybackController.m; sourceTree = "<group>"; };
-		C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCollectionProtocols.h; sourceTree = "<group>"; };
 		C5D1E988111362F600C3898B /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = Dependencies/BWToolkit/BWToolkitFramework.framework; sourceTree = "<group>"; };
 		C5D6AB5910ED515200D53F25 /* GStatusBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBar.png; path = Images/GStatusBar.png; sourceTree = "<group>"; };
 		C5D6AB5A10ED515200D53F25 /* GStatusBarAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GStatusBarAlternate.png; path = Images/GStatusBarAlternate.png; sourceTree = "<group>"; };
@@ -179,7 +182,6 @@
 				89EF36FC1121C66700FB9A38 /* Public Utility */,
 				634CADC0110095C400BFC105 /* Library */,
 				63668AE31084CC7600CC02E5 /* Playlist */,
-				C594BC1910C99EDB006AB16C /* GCollectionProtocols.h */,
 				C581284D10B80EDF00BBF0F6 /* GPreferencesController.h */,
 				C581284E10B80EDF00BBF0F6 /* GPreferencesController.m */,
 				638392241058D34C00DCE47D /* GAppController.h */,
@@ -295,6 +297,8 @@
 				63668AE51084CD0100CC02E5 /* GXSPFPlaylist.m */,
 				63668AE71084CD0A00CC02E5 /* GM3UPlaylist.h */,
 				63668AE81084CD0A00CC02E5 /* GM3UPlaylist.m */,
+				63D8004D12196978002DEF66 /* GPlaylist.h */,
+				63D8004E12196978002DEF66 /* GPlaylist.m */,
 			);
 			name = Playlist;
 			sourceTree = "<group>";
@@ -356,6 +360,7 @@
 				89EF37161121C66700FB9A38 /* CAComponentDescription.h in Headers */,
 				89EF37171121C66700FB9A38 /* CAXException.h in Headers */,
 				89EF371A1121C66700FB9A38 /* CAStreamBasicDescription.h in Headers */,
+				63D8004F12196978002DEF66 /* GPlaylist.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +481,7 @@
 				89EF37181121C66700FB9A38 /* CAXException.cpp in Sources */,
 				89EF37191121C66700FB9A38 /* CAStreamBasicDescription.cpp in Sources */,
 				C5FA7194114F930A000A5AC3 /* Library.xcdatamodel in Sources */,
+				63D8005012196978002DEF66 /* GPlaylist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

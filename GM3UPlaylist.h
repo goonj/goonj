@@ -22,11 +22,10 @@
 */
 
 #import <Cocoa/Cocoa.h>
-#import "GCollectionProtocols.h"
 #import "GUtilities.h"
 
 
-@interface GM3UPlaylist : NSObject < GOrderedMutableCollection > {
+@interface GM3UPlaylist : NSObject {
     NSMutableArray *trackList;
 }
 

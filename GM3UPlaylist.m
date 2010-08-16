@@ -144,9 +144,9 @@
     return YES;
 }
 
-+ (id < GOrderedMutableCollection >) loadNowPlaying
++ (id) loadNowPlaying
 {
-    id < GOrderedMutableCollection > listArray = [[GM3UPlaylist alloc] initWithFile:[GUtilities nowPlayingPath]];
+    id listArray = [[GM3UPlaylist alloc] initWithFile:[GUtilities nowPlayingPath]];
     return listArray;
 }
 

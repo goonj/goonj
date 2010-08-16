@@ -26,11 +26,10 @@
 #import "GTrack.h"
 #import "GM3UPlaylist.h"
 #import "GUtilities.h"
-#import "GCollectionProtocols.h"
 
 
 @interface GPlaylistViewController : NSObject {
-	id < GOrderedMutableCollection > playlist;
+	id playlist;
     NSMutableDictionary *playlistStore;
 
 	IBOutlet NSWindow *mainWindow;
