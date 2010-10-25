@@ -13,6 +13,7 @@ profile
 # Other
 *.tmproj
 *.tm_build_errors
+CogAudio
 
 # Dependencies folder
 *~
