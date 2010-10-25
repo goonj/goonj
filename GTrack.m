@@ -23,9 +23,9 @@
     Copyright 2009 Ankur Sethi.
 */
 
-#import "/usr/local/include/taglib/taglib.h"
-#import "/usr/local/include/taglib/fileref.h"
-#import "/usr/local/include/taglib/tag.h"
+#import "TagLib/taglib.h"
+#import "TagLib/fileref.h"
+#import "TagLib/tag.h"
 #import "GTrack.h"
 
 
